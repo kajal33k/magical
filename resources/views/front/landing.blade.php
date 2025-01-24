@@ -22,13 +22,13 @@
                 <div class="overflow-hidden">
                     <div id="slider" class="flex transition-transform duration-500">
                         <img src="{{ asset('asset/img/one.jpg') }}" alt="Product Image"
-                            class="w-full h-64 lg:h-96 object-cover flex-shrink-0 thumbnail">
+                            class="w-full h-64 lg:h-full object-cover flex-shrink-0 thumbnail">
                         <img src="{{ asset('asset/img/two.jpg') }}" alt="Product Image"
-                            class="w-full h-64 lg:h-96 object-cover flex-shrink-0 thumbnail">
+                            class="w-full h-64 lg:h-full object-cover flex-shrink-0 thumbnail">
                         <img src="{{ asset('asset/img/three.jpg') }}" alt="Product Image"
-                            class="w-full h-64 lg:h-96 object-cover flex-shrink-0 thumbnail">
+                            class="w-full h-64 lg:h-full object-cover flex-shrink-0 thumbnail">
                         <img src="{{ asset('asset/img/four.jpg') }}" alt="Product Image"
-                            class="w-full h-64 lg:h-96 object-cover flex-shrink-0 thumbnail">
+                            class="w-full h-64 lg:h-full object-cover flex-shrink-0 thumbnail">
                     </div>
                 </div>
 

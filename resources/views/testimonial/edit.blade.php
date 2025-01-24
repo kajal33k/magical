@@ -1,5 +1,4 @@
 @extends('layouts.aap')
-
 @section('content')
     <div class="container">
         <div class="row">

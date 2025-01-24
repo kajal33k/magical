@@ -13,7 +13,7 @@
         }
     </style>
 
-    
+
     <section class="container mx-auto p-6 sticky">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 ">
             <!-- Left Section: Product Images -->
@@ -510,12 +510,12 @@
     <h1 class="text-center text-3xl font-bold">Our Customer Review</h1>
 </div>
 
-    {{-- review1 --}}
-<div class="flex flex-row px-44 gap-6 mt-8 items-center">
-    <div>
+{{-- review1 --}}
+<div class="flex flex-col sm:flex-row px-4 sm:px-44 gap-6 mt-8 items-center">
+    <div class="w-full sm:w-auto">
         <img src="{{asset('asset/img/testimonial1.jpg')}}" alt="John Doe's Testimonial" class="rounded-lg w-full h-full object-cover">
     </div>
-    <div class="text-center">
+    <div class="text-center mt-4 sm:mt-0">
         <h3 class="text-lg font-semibold text-gray-900">John Doe</h3>
         <p class="text-gray-500 text-sm">January 24, 2025</p>
         <p class="mt-2 text-gray-700 italic text-wrap">
@@ -523,26 +523,27 @@
         </p>
     </div>
 </div>
-    {{-- review2 --}}
-    <div class="flex flex-row px-44 gap-6 mt-8 items-center">
-       
-        <div class="text-center">
-            <h3 class="text-lg font-semibold text-gray-900">John Doe</h3>
-            <p class="text-gray-500 text-sm">January 24, 2025</p>
-            <p class="mt-2 text-gray-700 italic text-wrap">
-                "This product is amazing! It exceeded all of my expectations, and I highly recommend it to anyone looking for quality and reliability."
-            </p>
-        </div>
-        <div>
-            <img src="{{asset('asset/img/testimonial2.jpg')}}" alt="John Doe's Testimonial" class="rounded-lg w-full h-full object-cover">
-        </div>
+
+{{-- review2 --}}
+<div class="flex flex-col sm:flex-row px-4 sm:px-44 gap-6 mt-8 items-center">
+    <div class="text-center mt-4 sm:mt-0">
+        <h3 class="text-lg font-semibold text-gray-900">John Doe</h3>
+        <p class="text-gray-500 text-sm">January 24, 2025</p>
+        <p class="mt-2 text-gray-700 italic text-wrap">
+            "This product is amazing! It exceeded all of my expectations, and I highly recommend it to anyone looking for quality and reliability."
+        </p>
     </div>
-        {{-- review 3--}}
-<div class="flex flex-row px-44 gap-6 mt-8 items-center">
-    <div>
+    <div class="w-full sm:w-auto">
+        <img src="{{asset('asset/img/testimonial2.jpg')}}" alt="John Doe's Testimonial" class="rounded-lg w-full h-full object-cover">
+    </div>
+</div>
+
+{{-- review 3 --}}
+<div class="flex flex-col sm:flex-row px-4 sm:px-44 gap-6 mt-8 items-center">
+    <div class="w-full sm:w-auto">
         <img src="{{asset('asset/img/testimonial3.jpg')}}" alt="John Doe's Testimonial" class="rounded-lg w-full h-full object-cover">
     </div>
-    <div class="text-center">
+    <div class="text-center mt-4 sm:mt-0">
         <h3 class="text-lg font-semibold text-gray-900">John Doe</h3>
         <p class="text-gray-500 text-sm">January 24, 2025</p>
         <p class="mt-2 text-gray-700 italic text-wrap">

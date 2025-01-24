@@ -1,9 +1,7 @@
-
 @include('components.topbar')
 @extends('components.main')
 
 @section('content')
-
     <style>
         .hide-scrollbar {
             -ms-overflow-style: none;
@@ -105,7 +103,7 @@
                             <span class="text-yellow-400 text-xl">&#9733;</span>
                         @endfor
                     </div>
-                    <p class="text-gray-800 text-lg font-semibold">(14,34,758+ (1.4 Million) Positive Reviews)</p>
+                    <p class="text-gray-800 text-lg font-semibold">( 50 Thousand Positive Reviews)</p>
                     <p class="text-red-600 text-xl font-bold">Rs. 599.00</p>
 
                     <!-- Call to Action -->
@@ -170,24 +168,24 @@
                     </script>
 
                     <!-- Order Now Button -->
-                 <div class="flex justify-center mt-8">
-                    <button id="orderBtn"
-                    class="bg-black text-white py-1 px-8 rounded-lg hover:bg-gray-800 animate-bounce hidden md:block">
-                    <img src="{{asset('asset/img/order.jpg')}}" alt="" class="h-20 w-full">
-                </button>
-                 </div>
+                    <div class="flex justify-center mt-8">
+                        <button id="orderBtn"
+                            class="bg-black text-white py-1 px-8 rounded-lg hover:bg-gray-800 animate-bounce hidden md:block">
+                            <img src="{{ asset('asset/img/order.jpg') }}" alt="" class="h-20 w-full">
+                        </button>
+                    </div>
                     {{-- mobile menu --}}
                     <div class="fixed bottom-0 left-0 w-full bg-white shadow-lg z-50 md:hidden block">
                         <div class="max-w-md mx-auto p-4">
-                          <button class="w-full bg-black text-white py-0 rounded-md text-center">
-                            <img src="{{asset('asset/img/order.jpg')}}" alt="" class="h-16 w-full">
-                          </button>
+                            <button class="w-full bg-black text-white py-0 rounded-md text-center">
+                                <img src="{{ asset('asset/img/order.jpg') }}" alt="" class="h-16 w-full">
+                            </button>
                         </div>
-                      </div>
-                      
+                    </div>
+
                     <p class="text-sm text-gray-500">✨ Apply 50% Discount Code ✨</p>
                     <div class="flex justify-center">
-                        <img src="{{asset('asset/img/FREESHIPPIng.avif')}}" alt="">
+                        <img src="{{ asset('asset/img/FREESHIPPIng.avif') }}" alt="">
                     </div>
                 </div>
 
@@ -378,30 +376,35 @@
                     <h2 class="text-xl font-bold text-center">Attention! Poor quality hair dye can cause multiple
                         conditions
                     </h2>
-                    <div class="grid grid-cols-2 md:grid-cols-2 gap-4 mt-4">
+                    {{-- <div class="grid grid-cols-2 md:grid-cols-2 gap-4 mt-4">
                         <div class="space-y-2">
-                            <img src="{{ asset('asset/img/SLIDE2.png') }}" alt="Damaged Hair" class="rounded-lg shadow">
+                            <img src="{{ asset('asset/img/demage hair.avif') }}" alt="Damaged Hair" class="rounded-lg shadow">
                             <p class="text-center text-sm">Damaged hair</p>
                         </div>
                         <div class="space-y-2">
-                            <img src="{{ asset('asset/img/SLIDE2.png') }}" alt="Harms Scalp" class="rounded-lg shadow">
+                            <img src="{{ asset('asset/img/harms hair2.avif') }}" alt="Harms Scalp" class="rounded-lg shadow">
                             <p class="text-center text-sm">Harms to scalp</p>
                         </div>
                         <div class="space-y-2">
-                            <img src="{{ asset('asset/img/SLIDE2.png') }}" alt="Hair Loss" class="rounded-lg shadow">
+                            <img src="{{ asset('asset/img/hair3.avif') }}" alt="Hair Loss" class="rounded-lg shadow">
                             <p class="text-center text-sm">Hair loss</p>
                         </div>
                         <div class="space-y-2">
-                            <img src="{{ asset('asset/img/SLIDE2.png') }}" alt="Harmful to Health"
+                            <img src="{{ asset('asset/img/hair4.avif') }}" alt="Harmful to Health"
                                 class="rounded-lg shadow">
                             <p class="text-center text-sm">Harmful to health</p>
                         </div>
+                    </div> --}}
+                    <div class=" flex justify-center">
+                        <img src="{{ asset('asset/img/hair3.avif') }}"
+                            alt="How to Use Step 1" class="rounded-lg shadow">
+    
                     </div>
                 </div>
 
                 <!-- How to Use Section -->
                 <div class=" flex justify-center">
-                    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3p3a2Jkcjl1cDk4dHFnM3czMHNsdm1zaW5uZzN0OXplbTg2MzdpbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6Ej5lfviMaEnu/giphy.gif"
+                    <img src="https://cdn.shopnova.top/image/289c28790d6dc6998b0355e98e6b20373a2773f7.gif"
                         alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
@@ -415,27 +418,27 @@
 
                 <!-- How to Use Section -->
                 <div class=" flex justify-center">
-                    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3p3a2Jkcjl1cDk4dHFnM3czMHNsdm1zaW5uZzN0OXplbTg2MzdpbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6Ej5lfviMaEnu/giphy.gif"
+                    <img src="https://cdn.shopnova.top/image/8ac44b4dca6bf551f69d7912294355c6e468894e.gif"
                         alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
 
                 {{-- ugb --}}
                 <div class=" flex justify-center">
-                    <img src="{{ asset('asset/img/52109f4bae54f48f272aa6ec7695f20249e04bdd.avif') }}"
+                    <img src="{{ asset('asset/img/hair5.avif') }}"
                         alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
                 <!-- How to Use Section -->
                 <div class=" flex justify-center">
-                    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3p3a2Jkcjl1cDk4dHFnM3czMHNsdm1zaW5uZzN0OXplbTg2MzdpbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6Ej5lfviMaEnu/giphy.gif"
+                    <img src="https://cdn.shopnova.top/image/b7a11538cdceb9d4f0d2ee0648f6c0a67bcbc9c6.gif"
                         alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
 
                 {{-- ugb --}}
                 <div class=" flex justify-center">
-                    <img src="{{ asset('asset/img/52109f4bae54f48f272aa6ec7695f20249e04bdd.avif') }}"
+                    <img src="{{ asset('asset/img/hair6.avif') }}"
                         alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
@@ -446,13 +449,13 @@
 
                 {{-- ugb --}}
                 <div class=" flex justify-center">
-                    <img src="{{ asset('asset/img/52109f4bae54f48f272aa6ec7695f20249e04bdd.avif') }}"
+                    <img src="{{ asset('asset/img/hair7.avif') }}"
                         alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
                 <!-- How to Use Section -->
                 <div class=" flex justify-center">
-                    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3p3a2Jkcjl1cDk4dHFnM3czMHNsdm1zaW5uZzN0OXplbTg2MzdpbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6Ej5lfviMaEnu/giphy.gif"
+                    <img src="https://cdn.shopnova.top/image/e0640f232d45b74aaa16b295cfc7dd1f7f7de0aa.gif"
                         alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
@@ -461,13 +464,13 @@
 
                 {{-- ugb --}}
                 <div class=" flex justify-center">
-                    <img src="{{ asset('asset/img/52109f4bae54f48f272aa6ec7695f20249e04bdd.avif') }}"
+                    <img src="{{ asset('asset/img/hair8.avif') }}"
                         alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
                 <!-- How to Use Section -->
                 <div class=" flex justify-center">
-                    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3p3a2Jkcjl1cDk4dHFnM3czMHNsdm1zaW5uZzN0OXplbTg2MzdpbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6Ej5lfviMaEnu/giphy.gif"
+                    <img src="https://cdn.shopnova.top/image/5ec664374db2eb54f3f4131894813aa284527119.gif"
                         alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
@@ -475,26 +478,26 @@
 
                 {{-- ugb --}}
                 <div class=" flex justify-center">
-                    <img src="{{ asset('asset/img/52109f4bae54f48f272aa6ec7695f20249e04bdd.avif') }}"
+                    <img src="{{ asset('asset/img/hair9.avif') }}"
                         alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
                 <!-- How to Use Section -->
                 <div class=" flex justify-center">
-                    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3p3a2Jkcjl1cDk4dHFnM3czMHNsdm1zaW5uZzN0OXplbTg2MzdpbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6Ej5lfviMaEnu/giphy.gif"
+                    <img src="http://cdn.shopnova.top/image/a1f2433281e01e8edf09a816e44553181f90080f.gif"
                         alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
 
                 {{-- ujg --}}
                 <div class=" flex justify-center">
-                    <img src="{{ asset('asset/img/52109f4bae54f48f272aa6ec7695f20249e04bdd.avif') }}"
+                    <img src="{{ asset('asset/img/hair10.avif') }}"
                         alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
                 {{-- 6fr8 --}}
                 <div class=" flex justify-center">
-                    <img src="{{ asset('asset/img/52109f4bae54f48f272aa6ec7695f20249e04bdd.avif') }}"
+                    <img src="{{ asset('asset/img/hair11.avif') }}"
                         alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
@@ -507,6 +510,8 @@
             </div>
         </div>
     </section>
+
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -539,4 +544,118 @@
             });
         });
     </script>
-@endsection
+
+    <!--HTML CODE-->
+    <div class="w-full relative ">
+        <div class="swiper multiple-slide-carousel swiper-container relative px-44 overflow-hidden">
+            <div class="swiper-wrapper mb-16 max-w-5xl">
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 max-w-full mx-auto">
+                        <img src="{{asset('asset/img/test.jpg')}}" alt="Shampoo Bottle" class="w-full h-[500px] object-cover rounded-lg mb-4">
+                        <h3 class="text-xl font-semibold text-indigo-600 mb-2">Shampoo Brand</h3>
+                        <p class="text-gray-600 text-sm mb-4">This shampoo works wonders for your hair, leaving it soft and shiny. Great for all hair types!</p>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-yellow-500 text-xl">⭐⭐⭐⭐⭐</span>
+                            <span class="text-gray-600 text-sm">(120 reviews)</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 max-w-full mx-auto">
+                        <img src="{{asset('asset/img/test2.jpg')}}" alt="Shampoo Bottle" class="w-full h-[500px] object-cover rounded-lg mb-4">
+                        <h3 class="text-xl font-semibold text-indigo-600 mb-2">Shampoo Brand</h3>
+                        <p class="text-gray-600 text-sm mb-4">This shampoo works wonders for your hair, leaving it soft and shiny. Great for all hair types!</p>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-yellow-500 text-xl">⭐⭐⭐⭐⭐</span>
+                            <span class="text-gray-600 text-sm">(120 reviews)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 max-w-full mx-auto">
+                        <img src="{{asset('asset/img/test3.jpg')}}" alt="Shampoo Bottle" class="w-full h-[500px] object-cover rounded-lg mb-4">
+                        <h3 class="text-xl font-semibold text-indigo-600 mb-2">Shampoo Brand</h3>
+                        <p class="text-gray-600 text-sm mb-4">This shampoo works wonders for your hair, leaving it soft and shiny. Great for all hair types!</p>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-yellow-500 text-xl">⭐⭐⭐⭐⭐</span>
+                            <span class="text-gray-600 text-sm">(120 reviews)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 max-w-full mx-auto">
+                        <img src="{{asset('asset/img/test4.jpg')}}" alt="Shampoo Bottle" class="w-full h-[500px]  object-cover rounded-lg mb-4">
+                        <h3 class="text-xl font-semibold text-indigo-600 mb-2">Shampoo Brand</h3>
+                        <p class="text-gray-600 text-sm mb-4">This shampoo works wonders for your hair, leaving it soft and shiny. Great for all hair types!</p>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-yellow-500 text-xl">⭐⭐⭐⭐⭐</span>
+                            <span class="text-gray-600 text-sm">(120 reviews)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute flex justify-center items-center m-auto left-0 right-0 w-fit bottom-12">
+                <button id="slider-button-left"
+                    class="swiper-button-prev group !p-2 flex justify-center items-center  !w-12 !h-12 transition-all duration-500   !-translate-x-16"
+                    data-carousel-prev>
+                    {{-- <svg class="h-5 w-5 text-indigo-600 group-hover:text-white" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M10.0002 11.9999L6 7.99971L10.0025 3.99719" stroke="currentColor" stroke-width="1.6"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg> --}}
+                </button>
+                <button id="slider-button-right"
+                    class="swiper-button-next group !p-2  flex justify-center items-center  !w-12 !h-12 transition-all duration-500 !translate-x-16"
+                    data-carousel-next>
+                    {{-- <svg class="h-5 w-5 text-indigo-600 group-hover:text-white" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M5.99984 4.00012L10 8.00029L5.99748 12.0028" stroke="currentColor" stroke-width="1.6"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg> --}}
+                </button>
+            </div>
+    </div>
+        <style>
+            /* CSS Code */
+            .swiper-wrapper {
+                width: 100%;
+                height: max-content !important;
+                padding-bottom: 64px !important;
+                -webkit-transition-timing-function: linear !important;
+                transition-timing-function: linear !important;
+                position: relative;
+            }
+
+            .swiper-pagination-bullet {
+                background: #4f46e5;
+            }
+        </style>
+
+        <!--JAVASCRIPT CODE-->
+        <script>
+            var swiper = new Swiper(".multiple-slide-carousel", {
+                loop: true,
+                slidesPerView: 1,
+                spaceBetween: 20,
+                navigation: {
+                    nextEl: ".multiple-slide-carousel .swiper-button-next",
+                    prevEl: ".multiple-slide-carousel .swiper-button-prev",
+                },
+                breakpoints: {
+                    1920: {
+                        slidesPerView: 3,
+                        spaceBetween: 30
+                    },
+                    1028: {
+                        slidesPerView: 2,
+                        spaceBetween: 30
+                    },
+                    990: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    }
+                }
+            });
+        </script>
+    @endsection

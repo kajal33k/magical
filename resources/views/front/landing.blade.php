@@ -1,7 +1,7 @@
 @include('components.topbar')
 @extends('components.main')
-
 @section('content')
+
     <style>
         .hide-scrollbar {
             -ms-overflow-style: none;
@@ -13,7 +13,7 @@
         }
     </style>
 
-
+    
     <section class="container mx-auto p-6 sticky">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 ">
             <!-- Left Section: Product Images -->
@@ -93,7 +93,7 @@
 
 
             <!-- Right Section: Product Details -->
-            <div class="bg-white rounded-lg p-6 space-y-6 overflow-y-auto hide-scrollbar lg:ml-0 max-h-screen">
+            <div class="bg-white rounded-lg p-6 space-y-6 md:overflow-y-auto hide-scrollbar lg:ml-0 max-h-screen">
                 <!-- Product Information -->
                 <div class="text-center space-y-4">
                     <h1 class="text-3xl font-bold">Black Hair Shampoo (Ammonia Free) | Buy 1 Get 1 Free</h1>
@@ -396,9 +396,9 @@
                         </div>
                     </div> --}}
                     <div class=" flex justify-center">
-                        <img src="{{ asset('asset/img/hair3.avif') }}"
-                            alt="How to Use Step 1" class="rounded-lg shadow">
-    
+                        <img src="{{ asset('asset/img/hair3.avif') }}" alt="How to Use Step 1"
+                            class="rounded-lg shadow">
+
                     </div>
                 </div>
 
@@ -425,8 +425,7 @@
 
                 {{-- ugb --}}
                 <div class=" flex justify-center">
-                    <img src="{{ asset('asset/img/hair5.avif') }}"
-                        alt="How to Use Step 1" class="rounded-lg shadow">
+                    <img src="{{ asset('asset/img/hair5.avif') }}" alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
                 <!-- How to Use Section -->
@@ -438,8 +437,7 @@
 
                 {{-- ugb --}}
                 <div class=" flex justify-center">
-                    <img src="{{ asset('asset/img/hair6.avif') }}"
-                        alt="How to Use Step 1" class="rounded-lg shadow">
+                    <img src="{{ asset('asset/img/hair6.avif') }}" alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
                 <div>
@@ -449,8 +447,7 @@
 
                 {{-- ugb --}}
                 <div class=" flex justify-center">
-                    <img src="{{ asset('asset/img/hair7.avif') }}"
-                        alt="How to Use Step 1" class="rounded-lg shadow">
+                    <img src="{{ asset('asset/img/hair7.avif') }}" alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
                 <!-- How to Use Section -->
@@ -464,8 +461,7 @@
 
                 {{-- ugb --}}
                 <div class=" flex justify-center">
-                    <img src="{{ asset('asset/img/hair8.avif') }}"
-                        alt="How to Use Step 1" class="rounded-lg shadow">
+                    <img src="{{ asset('asset/img/hair8.avif') }}" alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
                 <!-- How to Use Section -->
@@ -478,8 +474,7 @@
 
                 {{-- ugb --}}
                 <div class=" flex justify-center">
-                    <img src="{{ asset('asset/img/hair9.avif') }}"
-                        alt="How to Use Step 1" class="rounded-lg shadow">
+                    <img src="{{ asset('asset/img/hair9.avif') }}" alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
                 <!-- How to Use Section -->
@@ -491,14 +486,12 @@
 
                 {{-- ujg --}}
                 <div class=" flex justify-center">
-                    <img src="{{ asset('asset/img/hair10.avif') }}"
-                        alt="How to Use Step 1" class="rounded-lg shadow">
+                    <img src="{{ asset('asset/img/hair10.avif') }}" alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
                 {{-- 6fr8 --}}
                 <div class=" flex justify-center">
-                    <img src="{{ asset('asset/img/hair11.avif') }}"
-                        alt="How to Use Step 1" class="rounded-lg shadow">
+                    <img src="{{ asset('asset/img/hair11.avif') }}" alt="How to Use Step 1" class="rounded-lg shadow">
 
                 </div>
                 {{-- last img --}}
@@ -512,150 +505,82 @@
     </section>
 
 
+{{-- review section --}}
+<div class="flex justify-center mt-4">
+    <h1 class="text-center text-3xl font-bold">Our Customer Review</h1>
+</div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const thumbnails = document.querySelectorAll(".thumbnail");
-            const popup = document.getElementById("image-popup");
-            const popupImage = document.getElementById("popup-image");
-            const closePopup = document.getElementById("close-popup");
-            const mainImage = document.getElementById("main-image");
+    {{-- review1 --}}
+<div class="flex flex-row px-44 gap-6 mt-8 items-center">
+    <div>
+        <img src="{{asset('asset/img/testimonial1.jpg')}}" alt="John Doe's Testimonial" class="rounded-lg w-full h-full object-cover">
+    </div>
+    <div class="text-center">
+        <h3 class="text-lg font-semibold text-gray-900">John Doe</h3>
+        <p class="text-gray-500 text-sm">January 24, 2025</p>
+        <p class="mt-2 text-gray-700 italic text-wrap">
+            "This product is amazing! It exceeded all of my expectations, and I highly recommend it to anyone looking for quality and reliability."
+        </p>
+    </div>
+</div>
+    {{-- review2 --}}
+    <div class="flex flex-row px-44 gap-6 mt-8 items-center">
+       
+        <div class="text-center">
+            <h3 class="text-lg font-semibold text-gray-900">John Doe</h3>
+            <p class="text-gray-500 text-sm">January 24, 2025</p>
+            <p class="mt-2 text-gray-700 italic text-wrap">
+                "This product is amazing! It exceeded all of my expectations, and I highly recommend it to anyone looking for quality and reliability."
+            </p>
+        </div>
+        <div>
+            <img src="{{asset('asset/img/testimonial2.jpg')}}" alt="John Doe's Testimonial" class="rounded-lg w-full h-full object-cover">
+        </div>
+    </div>
+        {{-- review 3--}}
+<div class="flex flex-row px-44 gap-6 mt-8 items-center">
+    <div>
+        <img src="{{asset('asset/img/testimonial3.jpg')}}" alt="John Doe's Testimonial" class="rounded-lg w-full h-full object-cover">
+    </div>
+    <div class="text-center">
+        <h3 class="text-lg font-semibold text-gray-900">John Doe</h3>
+        <p class="text-gray-500 text-sm">January 24, 2025</p>
+        <p class="mt-2 text-gray-700 italic text-wrap">
+            "This product is amazing! It exceeded all of my expectations, and I highly recommend it to anyone looking for quality and reliability."
+        </p>
+    </div>
+</div>
 
-            // Add click event to thumbnails
-            thumbnails.forEach(thumbnail => {
-                thumbnail.addEventListener("click", function() {
-                    popupImage.src = this.src; // Set the popup image source
-                    popup.classList.remove("hidden"); // Show the popup
-                });
-            });
 
-            // Close popup
-            closePopup.addEventListener("click", function() {
-                popup.classList.add("hidden");
-            });
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const thumbnails = document.querySelectorAll(".thumbnail");
+        const popup = document.getElementById("image-popup");
+        const popupImage = document.getElementById("popup-image");
+        const closePopup = document.getElementById("close-popup");
+        const mainImage = document.getElementById("main-image");
 
-            // Change main image on desktop click
-            thumbnails.forEach(thumbnail => {
-                thumbnail.addEventListener("click", function() {
-                    if (window.innerWidth >= 1024) {
-                        mainImage.src = this.src; // Update main image on desktop
-                    }
-                });
+        // Add click event to thumbnails
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener("click", function() {
+                popupImage.src = this.src; // Set the popup image source
+                popup.classList.remove("hidden"); // Show the popup
             });
         });
-    </script>
 
-    <!--HTML CODE-->
-    <div class="w-full relative ">
-        <div class="swiper multiple-slide-carousel swiper-container relative px-44 overflow-hidden">
-            <div class="swiper-wrapper mb-16 max-w-5xl">
-                <div class="swiper-slide">
-                    <div class="bg-white rounded-2xl shadow-lg p-6 max-w-full mx-auto">
-                        <img src="{{asset('asset/img/test.jpg')}}" alt="Shampoo Bottle" class="w-full h-[500px] object-cover rounded-lg mb-4">
-                        <h3 class="text-xl font-semibold text-indigo-600 mb-2">Shampoo Brand</h3>
-                        <p class="text-gray-600 text-sm mb-4">This shampoo works wonders for your hair, leaving it soft and shiny. Great for all hair types!</p>
-                        <div class="flex items-center space-x-2">
-                            <span class="text-yellow-500 text-xl">⭐⭐⭐⭐⭐</span>
-                            <span class="text-gray-600 text-sm">(120 reviews)</span>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="swiper-slide">
-                    <div class="bg-white rounded-2xl shadow-lg p-6 max-w-full mx-auto">
-                        <img src="{{asset('asset/img/test2.jpg')}}" alt="Shampoo Bottle" class="w-full h-[500px] object-cover rounded-lg mb-4">
-                        <h3 class="text-xl font-semibold text-indigo-600 mb-2">Shampoo Brand</h3>
-                        <p class="text-gray-600 text-sm mb-4">This shampoo works wonders for your hair, leaving it soft and shiny. Great for all hair types!</p>
-                        <div class="flex items-center space-x-2">
-                            <span class="text-yellow-500 text-xl">⭐⭐⭐⭐⭐</span>
-                            <span class="text-gray-600 text-sm">(120 reviews)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="bg-white rounded-2xl shadow-lg p-6 max-w-full mx-auto">
-                        <img src="{{asset('asset/img/test3.jpg')}}" alt="Shampoo Bottle" class="w-full h-[500px] object-cover rounded-lg mb-4">
-                        <h3 class="text-xl font-semibold text-indigo-600 mb-2">Shampoo Brand</h3>
-                        <p class="text-gray-600 text-sm mb-4">This shampoo works wonders for your hair, leaving it soft and shiny. Great for all hair types!</p>
-                        <div class="flex items-center space-x-2">
-                            <span class="text-yellow-500 text-xl">⭐⭐⭐⭐⭐</span>
-                            <span class="text-gray-600 text-sm">(120 reviews)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="bg-white rounded-2xl shadow-lg p-6 max-w-full mx-auto">
-                        <img src="{{asset('asset/img/test4.jpg')}}" alt="Shampoo Bottle" class="w-full h-[500px]  object-cover rounded-lg mb-4">
-                        <h3 class="text-xl font-semibold text-indigo-600 mb-2">Shampoo Brand</h3>
-                        <p class="text-gray-600 text-sm mb-4">This shampoo works wonders for your hair, leaving it soft and shiny. Great for all hair types!</p>
-                        <div class="flex items-center space-x-2">
-                            <span class="text-yellow-500 text-xl">⭐⭐⭐⭐⭐</span>
-                            <span class="text-gray-600 text-sm">(120 reviews)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="absolute flex justify-center items-center m-auto left-0 right-0 w-fit bottom-12">
-                <button id="slider-button-left"
-                    class="swiper-button-prev group !p-2 flex justify-center items-center  !w-12 !h-12 transition-all duration-500   !-translate-x-16"
-                    data-carousel-prev>
-                    {{-- <svg class="h-5 w-5 text-indigo-600 group-hover:text-white" xmlns="http://www.w3.org/2000/svg"
-                        width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M10.0002 11.9999L6 7.99971L10.0025 3.99719" stroke="currentColor" stroke-width="1.6"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg> --}}
-                </button>
-                <button id="slider-button-right"
-                    class="swiper-button-next group !p-2  flex justify-center items-center  !w-12 !h-12 transition-all duration-500 !translate-x-16"
-                    data-carousel-next>
-                    {{-- <svg class="h-5 w-5 text-indigo-600 group-hover:text-white" xmlns="http://www.w3.org/2000/svg"
-                        width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M5.99984 4.00012L10 8.00029L5.99748 12.0028" stroke="currentColor" stroke-width="1.6"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg> --}}
-                </button>
-            </div>
-    </div>
-        <style>
-            /* CSS Code */
-            .swiper-wrapper {
-                width: 100%;
-                height: max-content !important;
-                padding-bottom: 64px !important;
-                -webkit-transition-timing-function: linear !important;
-                transition-timing-function: linear !important;
-                position: relative;
-            }
+        // Close popup
+        closePopup.addEventListener("click", function() {
+            popup.classList.add("hidden");
+        });
 
-            .swiper-pagination-bullet {
-                background: #4f46e5;
-            }
-        </style>
-
-        <!--JAVASCRIPT CODE-->
-        <script>
-            var swiper = new Swiper(".multiple-slide-carousel", {
-                loop: true,
-                slidesPerView: 1,
-                spaceBetween: 20,
-                navigation: {
-                    nextEl: ".multiple-slide-carousel .swiper-button-next",
-                    prevEl: ".multiple-slide-carousel .swiper-button-prev",
-                },
-                breakpoints: {
-                    1920: {
-                        slidesPerView: 3,
-                        spaceBetween: 30
-                    },
-                    1028: {
-                        slidesPerView: 2,
-                        spaceBetween: 30
-                    },
-                    990: {
-                        slidesPerView: 1,
-                        spaceBetween: 0
-                    }
+        // Change main image on desktop click
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener("click", function() {
+                if (window.innerWidth >= 1024) {
+                    mainImage.src = this.src; // Update main image on desktop
                 }
             });
-        </script>
-    @endsection
+        });
+    });
+</script>
+@endsection

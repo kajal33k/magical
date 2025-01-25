@@ -123,7 +123,7 @@
                     @endfor
                 </div>
                 <p class="text-gray-800 text-lg font-semibold">(50 Thousand Positive Reviews)</p>
-                <p class="text-red-600 text-xl font-bold">Rs. 599.00</p>
+                <p class="text-green-600 text-xl font-bold"> <strike class="text-red-600 px-1"> Rs. 1299.00 </strike>  599.00</p>
 
                 <!-- Countdown Timer -->
                 <div id="countdown"
@@ -370,7 +370,7 @@
                 </div>
                 <!-- Text Content -->
                 <div class="w-full md:w-2/3 text-center md:text-left">
-                    <h3 class="text-lg font-semibold text-gray-900">John Doe</h3>
+                    <h3 class="text-lg font-semibold text-gray-900">Ram Das</h3>
                     <p class="text-gray-500 text-sm">January 24, 2025</p>
                     <p class="mt-2 text-gray-700 italic">
                         Magical Hair Colour Shampu exceeded my expectations! The vibrant shade I chose lasted for weeks, and
@@ -388,7 +388,7 @@
                 </div>
                 <!-- Text Content -->
                 <div class="w-full md:w-2/3 text-center md:text-right">
-                    <h3 class="text-lg font-semibold text-gray-900">Jane Doe</h3>
+                    <h3 class="text-lg font-semibold text-gray-900">shashi jha</h3>
                     <p class="text-gray-500 text-sm">January 24, 2025</p>
                     <p class="mt-2 text-gray-700 italic">
                         "This product is incredible! It has transformed the way I work, and I can't imagine going back to
@@ -408,7 +408,7 @@
                 </div>
                 <!-- Text Content -->
                 <div class="w-full md:w-2/3 text-center md:text-left">
-                    <h3 class="text-lg font-semibold text-gray-900">Sam Smith</h3>
+                    <h3 class="text-lg font-semibold text-gray-900">Samridh Sinha</h3>
                     <p class="text-gray-500 text-sm">January 24, 2025</p>
                     <p class="mt-2 text-gray-700 italic">
                         Magical Hair Colour Shampu is a must-have for anyone looking to switch up their hair colour. It's

@@ -6,25 +6,18 @@
             display: grid;
             gap: 1rem;
             grid-template-columns: repeat(auto-fill, minmax(0, 600px));
-            /* Max width 600px per item */
+            /* Max width 500px per item */
             align-items: flex-start;
-            padding: 1rem; /* Add padding for general spacing */
-            margin: 0 auto; /* Center the container */
         }
-    
+
+
         @media (min-width: 1024px) and (max-width: 1440px) {
-            .container {
-                padding: 0 2rem; /* Adjust padding for laptop screen size */
-            }
-    
             .left {
                 position: sticky;
                 top: 0;
-                margin-top: 2rem; /* Optional: Add margin if needed */
             }
         }
     </style>
-    
     <div class="container grid grid-cols-1 lg:grid-cols-1 gap-2 ">
 
 
@@ -65,44 +58,72 @@
                     class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
         </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const slider = document.getElementById("slider");
+        const thumbnails = document.querySelectorAll("[data-slide]");
+        const prevButton = document.getElementById("prev");
+        const nextButton = document.getElementById("next");
+        const slideCount = slider.children.length;
+        let currentIndex = 0;
+        let autoplayInterval;
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const slider = document.getElementById("slider");
-                const thumbnails = document.querySelectorAll("[data-slide]");
-                const prevButton = document.getElementById("prev");
-                const nextButton = document.getElementById("next");
-                const slideCount = slider.children.length;
-                let currentIndex = 0;
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
 
-                function updateSlider() {
-                    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-                }
+        // Navigate to the previous slide
+        prevButton.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+            updateSlider();
+        });
 
-                // Navigate to previous slide
-                prevButton.addEventListener("click", () => {
-                    currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-                    updateSlider();
-                });
+        // Navigate to the next slide
+        nextButton.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % slideCount;
+            updateSlider();
+        });
 
-                // Navigate to next slide
-                nextButton.addEventListener("click", () => {
-                    currentIndex = (currentIndex + 1) % slideCount;
-                    updateSlider();
-                });
-
-                // Thumbnail click event
-                thumbnails.forEach((thumbnail) => {
-                    thumbnail.addEventListener("click", (e) => {
-                        currentIndex = parseInt(thumbnail.dataset.slide);
-                        updateSlider();
-                    });
-                });
-
-                // Initialize
+        // Thumbnail click event
+        thumbnails.forEach((thumbnail) => {
+            thumbnail.addEventListener("click", (e) => {
+                currentIndex = parseInt(thumbnail.dataset.slide);
                 updateSlider();
+                resetAutoplay(); // Restart autoplay after manual interaction
             });
-        </script>
+        });
+
+        // Autoplay function
+        function startAutoplay() {
+            autoplayInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % slideCount;
+                updateSlider();
+            }, 2000); // 2-second interval
+        }
+
+        function stopAutoplay() {
+            clearInterval(autoplayInterval);
+        }
+
+        function resetAutoplay() {
+            stopAutoplay();
+            startAutoplay();
+        }
+
+        // Stop autoplay when hovering over slider or buttons
+        slider.addEventListener("mouseenter", stopAutoplay);
+        slider.addEventListener("mouseleave", startAutoplay);
+        prevButton.addEventListener("mouseenter", stopAutoplay);
+        prevButton.addEventListener("mouseleave", startAutoplay);
+        nextButton.addEventListener("mouseenter", stopAutoplay);
+        nextButton.addEventListener("mouseleave", startAutoplay);
+
+        // Initialize
+        updateSlider();
+        startAutoplay();
+    });
+</script>
+
 
 
         <div class="right bg-white p-2 lg:pl-32 w-full">
@@ -167,7 +188,7 @@
                 <!-- Order Now Button -->
 
                 <div id="orderBtn"
-                    class="flex justify-center items-center bg-black text-white font-medium py-2 px-4 rounded-full shadow-lg hover:shadow-xl hover:bg-gray-800 transition duration-300 cursor-pointer animate-bounce"      
+                    class="flex justify-center items-center bg-black text-white font-medium py-2 px-4 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-800 transition duration-300 cursor-pointer animate-bounce"      
                        onclick="openModal()">
                     <!-- Cart Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
@@ -227,7 +248,7 @@
                     <li><span class="font-semibold text-pink-500 text-sm">BUY 1 GET 1 FREE</span> 💝</li>
                     <li><span class="font-semibold text-pink-500 text-sm">FREE SHIPPING</span> 💝</li>
                     <li><span class="font-semibold text-pink-500 text-sm">CASH ON DELIVERY</span> 💝💝💝💝</li>
-                    <li><span class="font-semibold text-pink-500 text-sm">Magical Black Hair Shampoo 3 in 1</span></li>
+                    <li><span class="font-semibold text-pink-500 text-sm">Magical Black Hair Shampoo 3 in 1<./</li>
                     <li><span class="font-semibold text-pink-500 text-sm">TODAY ONLY: Rs. 599</span></li>
                 </ul>
             </div>
@@ -411,7 +432,7 @@
 
     <!-- Order Now Button (Desktop & Mobile) -->
     <div id="orderBtn"
-        class="fixed z-50 md:hidden block bottom-0 w-full flex justify-center items-center bg-black text-white font-medium py-2 px-4 transition duration-300 cursor-pointer mt-8 rounded-full animate-bounce"
+        class="fixed z-50 md:hidden block bottom-0 w-full flex justify-center items-center bg-black text-white font-medium py-2 px-4 transition duration-300 cursor-pointer mt-8"
         onclick="openModal()">
         <!-- Cart Icon -->
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"

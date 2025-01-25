@@ -32,7 +32,7 @@
     </div>
 </nav> --}}
 <nav class="bg-black lg:p-4 p-1 shadow-md">
-  <div class="container mx-auto flex justify-between items-center">
+  <div class="container mx-auto flex justify-around items-center">
       <div class="flex items-center mt-4 lg:mt-0">
           <img src="{{asset('asset/img/New-Project-8.png')}}" alt="Magical Logo" class="h-10 lg:h-12 w-auto">
       </div>

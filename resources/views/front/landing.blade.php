@@ -432,7 +432,7 @@
 
     <!-- Order Now Button (Desktop & Mobile) -->
     <div id="orderBtn"
-        class="fixed z-50 md:hidden block bottom-0 w-full flex justify-center items-center bg-black text-white font-medium py-2 px-4 transition duration-300 cursor-pointer mt-8"
+        class="fixed z-50 md:hidden block bottom-0 w-full flex justify-center items-center bg-black text-white font-medium py-2 px-4 transition duration-300 cursor-pointer mt-8 animate-bounce"
         onclick="openModal()">
         <!-- Cart Icon -->
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"

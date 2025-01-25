@@ -26,13 +26,13 @@
             <div class="overflow-hidden relative">
                 <div id="slider" class="flex transition-transform duration-500">
                     <img src="{{ asset('asset/img/post 04.jpg') }}" alt="Product Image 1"
-                        class="w-full h-64 lg:h-full object-cover flex-shrink-0">
+                        class="w-full h-auto lg:h-full object-cover flex-shrink-0">
                     <img src="{{ asset('asset/img/two.jpg') }}" alt="Product Image 2"
-                        class="w-full h-64 lg:h-full object-cover flex-shrink-0">
+                        class="w-full h-auto lg:h-full object-cover flex-shrink-0">
                     <img src="{{ asset('asset/img/three.jpg') }}" alt="Product Image 3"
-                        class="w-full h-64 lg:h-full object-cover flex-shrink-0">
+                        class="w-full h-auto lg:h-full object-cover flex-shrink-0">
                     <img src="{{ asset('asset/img/four.jpg') }}" alt="Product Image 4"
-                        class="w-full h-64 lg:h-full object-cover flex-shrink-0">
+                        class="w-full h-auto lg:h-full object-cover flex-shrink-0">
                 </div>
 
                 <!-- Navigation Buttons -->

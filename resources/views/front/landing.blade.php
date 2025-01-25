@@ -160,7 +160,8 @@
                 <!-- Order Now Button -->
 
                 <div id="orderBtn"
-                    class="flex justify-center items-center bg-black text-white font-medium py-2 px-4 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-800 transition duration-300 cursor-pointer">
+                    class="flex justify-center items-center bg-black text-white font-medium py-2 px-4 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-800 transition duration-300 cursor-pointer animate-bounce"      
+                       onclick="openModal()">
                     <!-- Cart Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2">
@@ -183,8 +184,8 @@
 
 
                 <!-- Mobile Order Button -->
-
-                <div id="orderBtn"
+                {{-- 
+                <button id="orderBtn"
                     class="fixed z-50 md:hidden block bottom-0 left-0 w-full flex items-center justify-center py-4 px-6 bg-gradient-to-r from-black to-gray-800 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-yellow-500">
                     <!-- Cart Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-3" fill="none" viewBox="0 0 24 24"
@@ -202,7 +203,7 @@
                             Apply 50% Discount Code
                         </span>
                     </div>
-                </div>
+                </button> --}}
 
 
                 <p class="text-sm text-gray-500">✨ Apply 50% Discount Code ✨</p>
@@ -403,110 +404,157 @@
         </div>
     </div>
 
-    <!-- Modal Popup -->
-    <div id="orderModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden overflow-y-auto max-h-screen" role="dialog" aria-labelledby="orderModalTitle" aria-modal="true">
-        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-4xl max-h-[500px] overflow-auto transition-transform transform scale-95 duration-300 ease-in-out mt-4" aria-labelledby="orderModalTitle">
+    <!-- Order Now Button (Desktop & Mobile) -->
+    <div id="orderBtn"
+        class="fixed z-50 md:hidden block bottom-0 w-full flex justify-center items-center bg-black text-white font-medium py-2 px-4 transition duration-300 cursor-pointer mt-8"
+        onclick="openModal()">
+        <!-- Cart Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.8 9H21M7 13L5.4 5M9 22a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z" />
+        </svg>
+        <button class="grid grid-cols-1">
+            <!-- Main Text -->
+            <span class="mr-0">
+                Order Now
+            </span>
+            <!-- Confetti Icons and Discount Code -->
+            <span class="items-center text-yellow-400">
+                Apply 50% Discount Code
+            </span>
+        </button>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="orderModal"
+        class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden overflow-y-auto max-h-screen"
+        role="dialog" aria-labelledby="orderModalTitle" aria-modal="true">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-4xl max-h-[500px] overflow-auto transition-transform transform scale-95 duration-300 ease-in-out mt-4"
+            aria-labelledby="orderModalTitle">
             <!-- Close Icon -->
-            <button id="closeModal" class="absolute top-3 right-3 text-green-500 hover:text-green-600 focus:outline-none" aria-label="Close">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <button id="closeModal" class="absolute top-3 right-3 text-green-500 hover:text-green-600 focus:outline-none"
+                aria-label="Close" onclick="closeModal()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-    
+
             <!-- Modal Content -->
             <div class="lg:max-w-4xl mx-auto p-6 bg-white shadow-md rounded-md">
-                <h2 id="orderModalTitle" class="text-2xl font-semibold text-gray-700 mb-6">Please fill in the form to order</h2>
+                <h2 id="orderModalTitle" class="text-2xl font-semibold text-gray-700 mb-6">Please fill in the form to
+                    order</h2>
                 <form id="shippingForm" method="POST" action="#" novalidate>
-                    
+
                     <!-- Full Name -->
                     <div class="mb-4 flex flex-col space-y-2">
-                        <label for="full-name" class="text-sm font-medium text-gray-700">Full Name <span class="text-red-600">*</span></label>
-                        <input type="text" id="full-name" name="full-name" class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter Your Name" required aria-describedby="fullNameHelp">
+                        <label for="full-name" class="text-sm font-medium text-gray-700">Full Name <span
+                                class="text-red-600">*</span></label>
+                        <input type="text" id="full-name" name="full-name"
+                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            placeholder="Enter Your Name" required aria-describedby="fullNameHelp">
                         <span id="fullNameHelp" class="text-xs text-red-500 hidden">This field is required</span>
                     </div>
-    
+
                     <!-- Mobile Number -->
                     <div class="mb-4">
-                        <label for="mobile-number" class="block text-sm font-medium text-gray-700">Mobile Number <span class="text-red-600">*</span></label>
-                        <input type="tel" id="mobile-number" name="mobile-number" class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter Your Mobile Number" required>
+                        <label for="mobile-number" class="block text-sm font-medium text-gray-700">Mobile Number <span
+                                class="text-red-600">*</span></label>
+                        <input type="tel" id="mobile-number" name="mobile-number"
+                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            placeholder="Enter Your Mobile Number" required>
                     </div>
-    
+
                     <!-- House/Village -->
                     <div class="mb-4">
-                        <label for="house-village" class="block text-sm font-medium text-gray-700">House/Village <span class="text-red-600">*</span></label>
-                        <input type="text" id="house-village" name="house-village" class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter your house or village name" required>
+                        <label for="house-village" class="block text-sm font-medium text-gray-700">House/Village <span
+                                class="text-red-600">*</span></label>
+                        <input type="text" id="house-village" name="house-village"
+                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            placeholder="Enter your house or village name" required>
                     </div>
-    
+
                     <!-- Area / Landmark -->
                     <div class="mb-4">
-                        <label for="area-landmark" class="block text-sm font-medium text-gray-700">Area / Landmark <span class="text-red-600">*</span></label>
-                        <input type="text" id="area-landmark" name="area-landmark" class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter area or landmark" required>
+                        <label for="area-landmark" class="block text-sm font-medium text-gray-700">Area / Landmark <span
+                                class="text-red-600">*</span></label>
+                        <input type="text" id="area-landmark" name="area-landmark"
+                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            placeholder="Enter area or landmark" required>
                     </div>
-    
+
                     <!-- State -->
                     <div class="mb-4">
-                        <label for="state" class="block text-sm font-medium text-gray-700">State <span class="text-red-600">*</span></label>
-                        <select id="state" name="state" class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+                        <label for="state" class="block text-sm font-medium text-gray-700">State <span
+                                class="text-red-600">*</span></label>
+                        <select id="state" name="state"
+                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            required>
                             <option value="" disabled selected>Select State</option>
                             <option value="state-1">State 1</option>
                             <option value="state-2">State 2</option>
                         </select>
                     </div>
-    
+
                     <!-- City -->
                     <div class="mb-4">
-                        <label for="city" class="block text-sm font-medium text-gray-700">City <span class="text-red-600">*</span></label>
-                        <input type="text" id="city" name="city" class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter your city" required>
+                        <label for="city" class="block text-sm font-medium text-gray-700">City <span
+                                class="text-red-600">*</span></label>
+                        <input type="text" id="city" name="city"
+                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            placeholder="Enter your city" required>
                     </div>
-    
+
                     <!-- Pin Code -->
                     <div class="mb-4">
-                        <label for="pin-code" class="block text-sm font-medium text-gray-700">Pin Code <span class="text-red-600">*</span></label>
-                        <input type="text" id="pin-code" name="pin-code" class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter Pin Code" required>
+                        <label for="pin-code" class="block text-sm font-medium text-gray-700">Pin Code <span
+                                class="text-red-600">*</span></label>
+                        <input type="text" id="pin-code" name="pin-code"
+                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            placeholder="Enter Pin Code" required>
                     </div>
-    
+
                     <!-- Product -->
                     <div class="mb-4">
                         <p class="text-sm font-medium text-gray-700">FruitGlow Hair Color (Ammonia Free)</p>
                         <p class="text-lg font-bold text-gray-900">Rs. 599.00</p>
                     </div>
-    
+
                     <!-- Confirm Order Button -->
                     <div class="mb-4">
-                        <button type="submit" class="w-full py-2 px-4 bg-black text-white font-semibold rounded-md hover:bg-black focus:outline-none focus:ring-2 focus:ring-blue-400">Confirm Order - Rs. 599.00</button>
+                        <button type="submit"
+                            class="w-full py-2 px-4 bg-black text-white font-semibold rounded-md hover:bg-black focus:outline-none focus:ring-2 focus:ring-blue-400">Confirm
+                            Order - Rs. 599.00</button>
                     </div>
                 </form>
             </div>
-    
+
             <!-- Modal Icon Image -->
             <div class="mt-6">
-                <img src="{{ asset('asset/img/pop.webp') }}" alt="Order Confirmation" class="rounded-lg shadow-xl w-full">
+                <img src="{{ asset('asset/img/pop.webp') }}" alt="Order Confirmation"
+                    class="rounded-lg shadow-xl w-full">
             </div>
         </div>
     </div>
-    
+
     <script>
-        const orderBtn = document.getElementById("orderBtn");
-        const orderModal = document.getElementById("orderModal");
-        const closeModal = document.getElementById("closeModal");
-    
-        // Open modal when the Order Now button is clicked
-        orderBtn.addEventListener("click", () => {
-            orderModal.classList.remove("hidden");
-        });
-    
-        // Close modal when the Close button is clicked
-        closeModal.addEventListener("click", () => {
-            orderModal.classList.add("hidden");
-        });
-    
+        // Open modal
+        function openModal() {
+            document.getElementById("orderModal").classList.remove("hidden");
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById("orderModal").classList.add("hidden");
+        }
+
         // Handle form submission
         const shippingForm = document.getElementById("shippingForm");
         shippingForm.addEventListener("submit", (e) => {
             e.preventDefault();
             alert("Order Completed Successfully!");
-            orderModal.classList.add("hidden");
+            closeModal();
         });
     </script>
-    
 @endsection

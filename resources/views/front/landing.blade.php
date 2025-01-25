@@ -459,7 +459,18 @@
 
             <!-- Modal Content -->
             <div class="lg:max-w-4xl mx-auto p-6 bg-white shadow-md rounded-md">
-                <h2 id="orderModalTitle" class="text-2xl font-semibold text-gray-700 mb-6">Please fill in the form to order</h2>
+                <h2 id="orderModalTitle" class="text-2xl font-semibold text-gray-700 mb-6">Please fill in the form to
+                    order</h2>
+                @if ($errors->any())
+                    <div class="mb-4 p-4 text-red-700 bg-red-100 border border-red-400 rounded">
+                        <ul class="list-disc pl-5">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <form id="shippingForm" method="POST" action="{{ route('orderRequest.store') }}" novalidate>
                     @csrf
                     <!-- Full Name -->
@@ -483,8 +494,8 @@
 
                     <!-- House/Village -->
                     <div class="mb-4">
-                        <label for="house_village_name" class="block text-sm font-medium text-gray-700">House/Village <span
-                                class="text-red-600">*</span></label>
+                        <label for="house_village_name" class="block text-sm font-medium text-gray-700">House/Village
+                            <span class="text-red-600">*</span></label>
                         <input type="text" id="house_village_name" name="house_village_name"
                             class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                             placeholder="Enter your house or village name" required>

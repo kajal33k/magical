@@ -26,7 +26,7 @@ class OrderRequestController extends Controller
 
     public function store(OrderRequestValidation $request)
     {
-        dd($request);
+        // dd($request);
         // Save order to database
         $order = OrderRequest::create($request->validated());
 
@@ -42,8 +42,8 @@ class OrderRequestController extends Controller
             // Log the error for debugging
             \Log::error('Email sending failed: ' . $e->getMessage());
         }
-
-        return redirect()->back()->with('success', 'Order placed successfully!');
+        return redirect()->route('thank-you');
+        // return redirect()->back()->with('success', 'Order placed successfully!');
     }
 
 }

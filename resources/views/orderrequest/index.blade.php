@@ -44,37 +44,49 @@
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>name</th>
-                                    <th>email</th>
-                                    <th>number</th>
-                                    <th>msg</th>
-                                    <th>Action</th>
-                                </tr>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Mobile Number</th>
+                                        <th>House/Village</th>
+                                        <th>Area/Landmark</th>
+                                        <th>State</th>
+                                        <th>City</th>
+                                        <th>Pin Code</th>
+                                        <th>Color</th>
+                                        {{-- <th>Created At</th> --}}
+                                        {{-- <th>Updated At</th> --}}
+                                        <th>Action</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                @forelse ($orderRequestData as $orderRequest)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-
-                                        <td>{{$orderRequest->name}}</td>
-                                        <td>{{$orderRequest->email}}</td>
-                                        <td>{{$orderRequest->number}}</td>
-                                        <td>{!! $orderRequest->msg !!}</td>
-                                        <td>
-                                            <a href="{{ route('orderRequest.delete', $orderRequest->id) }}" class="btn btn-danger">Delete</a>
-                                            <!-- Add delete button if needed -->
-
-                                        </td>
-                                    </tr>
-                                @empty
-                                    <tr>
-                                        <td colspan="5">No posts found</td>
-                                    </tr>
-                                @endforelse
+                                    @forelse ($orderRequestData as $orderRequest)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $orderRequest->name }}</td>
+                                            <td>{{ $orderRequest->email }}</td>
+                                            <td>{{ $orderRequest->mobile_number }}</td>
+                                            <td>{{ $orderRequest->house_village_name }}</td>
+                                            <td>{{ $orderRequest->area_landmark }}</td>
+                                            <td>{{ $orderRequest->state }}</td>
+                                            <td>{{ $orderRequest->city }}</td>
+                                            <td>{{ $orderRequest->pin_code }}</td>
+                                            <td>{{ ucfirst($orderRequest->color) }}</td>
+                                            {{-- <td>{{ $orderRequest->created_at->format('d-m-Y H:i:s') }}</td> --}}
+                                            {{-- <td>{{ $orderRequest->updated_at->format('d-m-Y H:i:s') }}</td> --}}
+                                            <td>
+                                                <a href="{{ route('orderRequest.delete', $orderRequest->id) }}" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="13" class="text-center">No orders found</td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
+
                         </div>
                     </div>
 

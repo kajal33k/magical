@@ -1,28 +1,15 @@
 @extends('components.main')
 @section('content')
-@include('components.topbar')
-
-    <style>
-        .container {
-            display: grid;
-            gap: 1rem;
-            grid-template-columns: repeat(auto-fill, minmax(0, 600px));
-            /* Max width 500px per item */
-            align-items: flex-start;
-        }
+    @include('components.topbar')
 
 
-        @media (min-width: 1024px) and (max-width: 1440px) {
-            .left {
-                position: sticky;
-                top: 0;
-            }
-        }
-    </style>
-    <div class="container grid grid-cols-1 lg:grid-cols-1 gap-2 ">
 
 
-        <div class="left p-4 w-full">
+
+    <div class="container grid gap-4 grid-cols-[repeat(auto-fill,minmax(0,600px))] items-start">
+
+
+        <div class="left p-4 w-full lg:sticky lg:top-0">
             <!-- Main Slider -->
             <div class="overflow-hidden relative">
                 <div id="slider" class="flex transition-transform duration-500">
@@ -59,71 +46,71 @@
                     class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
         </div>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const slider = document.getElementById("slider");
-        const thumbnails = document.querySelectorAll("[data-slide]");
-        const prevButton = document.getElementById("prev");
-        const nextButton = document.getElementById("next");
-        const slideCount = slider.children.length;
-        let currentIndex = 0;
-        let autoplayInterval;
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const slider = document.getElementById("slider");
+                const thumbnails = document.querySelectorAll("[data-slide]");
+                const prevButton = document.getElementById("prev");
+                const nextButton = document.getElementById("next");
+                const slideCount = slider.children.length;
+                let currentIndex = 0;
+                let autoplayInterval;
 
-        function updateSlider() {
-            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
+                function updateSlider() {
+                    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
 
-        // Navigate to the previous slide
-        prevButton.addEventListener("click", () => {
-            currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-            updateSlider();
-        });
+                // Navigate to the previous slide
+                prevButton.addEventListener("click", () => {
+                    currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                    updateSlider();
+                });
 
-        // Navigate to the next slide
-        nextButton.addEventListener("click", () => {
-            currentIndex = (currentIndex + 1) % slideCount;
-            updateSlider();
-        });
+                // Navigate to the next slide
+                nextButton.addEventListener("click", () => {
+                    currentIndex = (currentIndex + 1) % slideCount;
+                    updateSlider();
+                });
 
-        // Thumbnail click event
-        thumbnails.forEach((thumbnail) => {
-            thumbnail.addEventListener("click", (e) => {
-                currentIndex = parseInt(thumbnail.dataset.slide);
+                // Thumbnail click event
+                thumbnails.forEach((thumbnail) => {
+                    thumbnail.addEventListener("click", (e) => {
+                        currentIndex = parseInt(thumbnail.dataset.slide);
+                        updateSlider();
+                        resetAutoplay(); // Restart autoplay after manual interaction
+                    });
+                });
+
+                // Autoplay function
+                function startAutoplay() {
+                    autoplayInterval = setInterval(() => {
+                        currentIndex = (currentIndex + 1) % slideCount;
+                        updateSlider();
+                    }, 2000); // 2-second interval
+                }
+
+                function stopAutoplay() {
+                    clearInterval(autoplayInterval);
+                }
+
+                function resetAutoplay() {
+                    stopAutoplay();
+                    startAutoplay();
+                }
+
+                // Stop autoplay when hovering over slider or buttons
+                slider.addEventListener("mouseenter", stopAutoplay);
+                slider.addEventListener("mouseleave", startAutoplay);
+                prevButton.addEventListener("mouseenter", stopAutoplay);
+                prevButton.addEventListener("mouseleave", startAutoplay);
+                nextButton.addEventListener("mouseenter", stopAutoplay);
+                nextButton.addEventListener("mouseleave", startAutoplay);
+
+                // Initialize
                 updateSlider();
-                resetAutoplay(); // Restart autoplay after manual interaction
+                startAutoplay();
             });
-        });
-
-        // Autoplay function
-        function startAutoplay() {
-            autoplayInterval = setInterval(() => {
-                currentIndex = (currentIndex + 1) % slideCount;
-                updateSlider();
-            }, 2000); // 2-second interval
-        }
-
-        function stopAutoplay() {
-            clearInterval(autoplayInterval);
-        }
-
-        function resetAutoplay() {
-            stopAutoplay();
-            startAutoplay();
-        }
-
-        // Stop autoplay when hovering over slider or buttons
-        slider.addEventListener("mouseenter", stopAutoplay);
-        slider.addEventListener("mouseleave", startAutoplay);
-        prevButton.addEventListener("mouseenter", stopAutoplay);
-        prevButton.addEventListener("mouseleave", startAutoplay);
-        nextButton.addEventListener("mouseenter", stopAutoplay);
-        nextButton.addEventListener("mouseleave", startAutoplay);
-
-        // Initialize
-        updateSlider();
-        startAutoplay();
-    });
-</script>
+        </script>
 
 
 
@@ -189,8 +176,8 @@
                 <!-- Order Now Button -->
 
                 <div id="orderBtn"
-                    class="flex justify-center items-center bg-black text-white font-medium py-2 px-4 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-800 transition duration-300 cursor-pointer animate-bounce"      
-                       onclick="openModal()">
+                    class="flex justify-center items-center bg-black text-white font-medium py-2 px-4 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-800 transition duration-300 cursor-pointer animate-bounce"
+                    onclick="openModal()">
                     <!-- Cart Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2">
@@ -249,7 +236,7 @@
                     <li><span class="font-semibold text-pink-500 text-sm">BUY 1 GET 1 FREE</span> 💝</li>
                     <li><span class="font-semibold text-pink-500 text-sm">FREE SHIPPING</span> 💝</li>
                     <li><span class="font-semibold text-pink-500 text-sm">CASH ON DELIVERY</span> 💝💝💝💝</li>
-                    <li><span class="font-semibold text-pink-500 text-sm">Magical Black Hair Shampoo 3 in 1<./</li>
+                    <li><span class="font-semibold text-pink-500 text-sm">Magical Black Hair Shampoo 3 in 1<. /</li>
                     <li><span class="font-semibold text-pink-500 text-sm">TODAY ONLY: Rs. 599</span></li>
                 </ul>
             </div>
@@ -381,7 +368,7 @@
             <div class="flex flex-col md:flex-row items-center gap-6">
                 <!-- Image -->
                 <div class="w-full md:w-1/3">
-                    <img src="{{ asset('asset/img/testimonial1.jpg') }}" alt="John Doe's Testimonial"
+                    <img src="{{ asset('asset/img/testimonial4.jpg') }}" alt="John Doe's Testimonial"
                         class="rounded-lg w-full h-auto object-cover">
                 </div>
                 <!-- Text Content -->
@@ -389,7 +376,8 @@
                     <h3 class="text-lg font-semibold text-gray-900">John Doe</h3>
                     <p class="text-gray-500 text-sm">January 24, 2025</p>
                     <p class="mt-2 text-gray-700 italic">
-                        Magical Hair Colour Shampu exceeded my expectations! The vibrant shade I chose lasted for weeks, and my hair felt soft and nourished. It's easy to use and has a pleasant scent. Highly recommended!
+                        Magical Hair Colour Shampu exceeded my expectations! The vibrant shade I chose lasted for weeks, and
+                        my hair felt soft and nourished. It's easy to use and has a pleasant scent. Highly recommended!
                     </p>
                 </div>
             </div>
@@ -407,7 +395,9 @@
                     <p class="text-gray-500 text-sm">January 24, 2025</p>
                     <p class="mt-2 text-gray-700 italic">
                         "This product is incredible! It has transformed the way I work, and I can't imagine going back to
-                        anything else."I love how Magical Hair Colour Shampu transformed my hair. The colour was stunning, and my hair felt silky smooth. It's a game-changer for home hair colouring. I'm thrilled with the results!
+                        anything else."I love how Magical Hair Colour Shampu transformed my hair. The colour was stunning,
+                        and my hair felt silky smooth. It's a game-changer for home hair colouring. I'm thrilled with the
+                        results!
                     </p>
                 </div>
             </div>
@@ -424,7 +414,9 @@
                     <h3 class="text-lg font-semibold text-gray-900">Sam Smith</h3>
                     <p class="text-gray-500 text-sm">January 24, 2025</p>
                     <p class="mt-2 text-gray-700 italic">
-                        Magical Hair Colour Shampu is a must-have for anyone looking to switch up their hair colour. It's gentle on the hair and delivers vibrant, long-lasting results. I'm impressed by its quality and ease of use. Absolutely fantastic!
+                        Magical Hair Colour Shampu is a must-have for anyone looking to switch up their hair colour. It's
+                        gentle on the hair and delivers vibrant, long-lasting results. I'm impressed by its quality and ease
+                        of use. Absolutely fantastic!
                     </p>
                 </div>
             </div>
@@ -584,5 +576,4 @@
             closeModal();
         });
     </script>
-
 @endsection

@@ -1,5 +1,5 @@
 <!-- Notification Banner -->
-<div class="fixed top-0 w-full md:h-16 h-10 bg-[#88D040] text-white z-30 shadow-md">
+<div class="fixed top-0 w-full md:w-full md:h-16 h-10 bg-[#88D040] text-white z-30 shadow-md">
     <div class="text-center">
         <h1 class="md:text-base text-xs font-semibold flex items-center justify-center text-wrap text-black px">
             BIG BILLION SALE IS LIVE TODAY OFFER 50% OFF
@@ -12,7 +12,7 @@
 </div>
 
 <!-- Navbar -->
-<nav class="bg-black lg:p-4 p-1 shadow-md -mt-12 md:mt-0">
+<nav class="bg-black lg:p-4 p-1 shadow-md -mt-12 md:mt-0 w-full">
     <div class="container mx-auto flex justify-between items-center">
         <!-- Logo Section -->
         <div class="flex items-center mt-4 lg:mt-0">

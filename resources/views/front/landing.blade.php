@@ -619,14 +619,6 @@
         function closeModal() {
             document.getElementById("orderModal").classList.add("hidden");
         }
-
-        // Handle form submission
-        const shippingForm = document.getElementById("shippingForm");
-        shippingForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            alert("Order Completed Successfully!");
-            closeModal();
-        });
     </script>
 
 @endsection

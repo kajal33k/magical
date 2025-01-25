@@ -26,14 +26,10 @@ use App\Http\Controllers\OrderRequestController;
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/landing', [HomeController::class, 'landing'])->name('landing');
 Route::get('/about',[HomeController::class,'about'])->name('about');
-Route::get('/services',[HomeController::class,'services'])->name('services');
+
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
-Route::get('/team',[HomeController::class,'team'])->name('team');
-Route::get('/testimonial',[HomeController::class,'testimonial'])->name('testimonial');
-Route::get('/price',[HomeController::class,'price'])->name('price');
-Route::get('/appointment',[HomeController::class,'appointment'])->name('appointment');
-Route::get('/blog',[HomeController::class,'blog'])->name('blog');
-Route::get('/blog/{blog}',[HomeController::class,'blogDetails'])->name('blog-details');
+
+
 
 Route::get('login-form',[AuthController::class,'index'])->name('login-form');
 Route::get('registration',[AuthController::class,'registration'])->name('registration');
@@ -47,7 +43,7 @@ Route::get('reset-password',[AuthController::class,'reset_password'])->name('res
 Route::post('store-password',[AuthController::class,'store_password'])->name('store-password');
 
 Route::post('appointment/store',[AppointmentController::class,'store'])->name('appointment.store');
-Route::get('orderRequest/store',[OrderRequestController::class,'store'])->name('orderRequest.store');
+Route::post('orderRequest/store',[OrderRequestController::class,'store'])->name('orderRequest.store');
 
 
 Route::get('dashboard', [AuthController::class, 'dashboard'])

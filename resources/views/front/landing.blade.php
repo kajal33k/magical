@@ -1,6 +1,7 @@
 @extends('components.main')
 @section('content')
-    @include('components.topbar')
+@include('components.topbar')
+
     <style>
         .container {
             display: grid;
@@ -627,4 +628,5 @@
             closeModal();
         });
     </script>
+
 @endsection

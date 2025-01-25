@@ -1,127 +1,26 @@
 @extends('components.main')
 @section('content')
-@include('components.topbar')
-    <!-- Modal Popup -->
-    <div id="orderModal"
-        class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden overflow-y-auto hide-scrollbar lg:ml-0 max-h-screen"
-        role="dialog" aria-labelledby="orderModalTitle" aria-modal="true">
-        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-lg max-h-[500px] overflow-auto">
-            <!-- Close Icon -->
-            <button id="closeModal" class="absolute top-3 right-3 text-green-500 hover:text-green-600 focus:outline-none"
-                aria-label="Close">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
+    @include('components.topbar')
+    <style>
+        .container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(0, 600px)); /* Max width 500px per item */
+    align-items: flex-start;
+}
 
-            <!-- Modal Title -->
-            <h2 id="orderModalTitle" class="text-2xl font-bold mb-4">
-                Complete Your Order
-            </h2>
-
-            <!-- Order Details -->
-            <div class="space-y-4 mb-6 ">
-                <p class="text-lg font-medium">
-                    BLOSDREAM 3 in 1 Black Hair Shampoo (Ammonia Free) | Buy 1 Get 1 Free
-                </p>
-                <p class="text-gray-600">
-                    ⭐️⭐️⭐️⭐️⭐️ (1.4 Million Positive Reviews)
-                </p>
-                <p class="text-xl font-bold text-red-600">Rs. 599.00</p>
-                <p class="font-semibold">Subtotal: Rs. 599.00</p>
-                <p class="font-semibold">Shipping: Free</p>
-                <p class="font-semibold">Total: Rs. 599.00</p>
-            </div>
-
-            <!-- Shipping Address Form -->
-            <form id="shippingForm" class="space-y-4 " novalidate>
-                <!-- Full Name -->
-                <div>
-                    <label for="fullName" class="block font-semibold">
-                        Full Name <span class="text-red-600">*</span>
-                    </label>
-                    <input type="text" id="fullName" name="fullName" required
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                </div>
-
-                <!-- Phone Number -->
-                <div>
-                    <label for="phone" class="block font-semibold">
-                        Phone Number <span class="text-red-600">*</span>
-                    </label>
-                    <input type="text" id="phone" name="phone" pattern="\d{10}" required
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                </div>
-
-                <!-- Address -->
-                <div>
-                    <label for="address" class="block font-semibold">
-                        House Name, Street Name <span class="text-red-600">*</span>
-                    </label>
-                    <input type="text" id="address" name="address" required
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                </div>
-
-                <!-- Landmark -->
-                <div>
-                    <label for="landmark" class="block font-semibold">
-                        Area Name, Landmark, Alternative Number
-                    </label>
-                    <input type="text" id="landmark" name="landmark"
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                </div>
-
-                <!-- City -->
-                <div>
-                    <label for="city" class="block font-semibold">
-                        City <span class="text-red-600">*</span>
-                    </label>
-                    <input type="text" id="city" name="city" required
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                </div>
-
-                <!-- Pincode -->
-                <div>
-                    <label for="pincode" class="block font-semibold">
-                        Pincode <span class="text-red-600">*</span>
-                    </label>
-                    <input type="text" id="pincode" name="pincode" required
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                </div>
-
-                <!-- State -->
-                <div>
-                    <label for="state" class="block font-semibold">
-                        State <span class="text-red-600">*</span>
-                    </label>
-                    <input type="text" id="state" name="state" required
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                </div>
-
-                <!-- Complete Order Button -->
-                <button type="submit"
-                    class="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 focus:ring-4 focus:ring-gray-700 focus:outline-none">
-                    Complete Order - Rs. 599.00
-                </button>
-            </form>
-
-            {{-- icon img --}}
-            <div>
-                <img src="{{ asset('asset/img/pop.webp') }}" alt="">
-            </div>
-            <!-- Close Button -->
-            {{-- <button id="closeModal" class="mt-6  text-sm text-gray-500 hover:text-gray-700 focus:outline-none"
-                            aria-label="Close">
-                            Close
-                        </button> --}}
-        </div>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
+    
+        @media (min-width: 1024px) and (max-width: 1440px) {
+            .left {
+                position: sticky;
+                top: 0;
+            }
+        }
+    </style>
+    <div class="container grid grid-cols-1 lg:grid-cols-1 gap-2 ">
 
 
-        <div class="left relative bg-white p-4">
+        <div class="left  p-4">
             <!-- Main Slider -->
             <div class="overflow-hidden relative">
                 <div id="slider" class="flex transition-transform duration-500">
@@ -147,7 +46,7 @@
             </div>
 
             <!-- Thumbnails -->
-            <div class="flex justify-center space-x-4 mt-4">
+            <div class="flex justify-center md:space-x-4 mt-4">
                 <img data-slide="0" src="{{ asset('asset/img/one.jpg') }}" alt="Thumbnail 1"
                     class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <img data-slide="1" src="{{ asset('asset/img/two.jpg') }}" alt="Thumbnail 2"
@@ -198,7 +97,7 @@
         </script>
 
 
-        <div class="right bg-white p-6 lg:overflow-y-auto hide-scrollbar lg:ml-0 lg:max-h-screen">
+        <div class="right bg-white p-2 lg:pl-32">
             {{-- product --}}
             <div class="text-center space-y-4">
                 <h1 class="text-3xl font-bold">Black Hair Shampoo (Ammonia Free) | Buy 1 Get 1 Free</h1>
@@ -214,10 +113,10 @@
                 <!-- Countdown Timer -->
                 <div id="countdown"
                     class="bg-amber-50 p-6 rounded-xl shadow-md flex items-center justify-center space-x-8 mb-4">
-                    <div class="flex flex-col items-center">
+                    {{-- <div class="flex flex-col items-center">
                         <span id="hours" class="text-3xl font-bold text-amber-600">00</span>
                         <span class="text-sm font-medium text-amber-500">Hours</span>
-                    </div>
+                    </div> --}}
                     <div class="w-px bg-amber-300 h-8"></div>
                     <div class="flex flex-col items-center">
                         <span id="minutes" class="text-3xl font-bold text-amber-600">00</span>
@@ -262,20 +161,41 @@
                 </script>
 
                 <!-- Order Now Button -->
-                <div class="flex justify-center mt-8">
+                {{-- <div class="flex justify-center mt-8">
                     <button id="orderBtn"
                         class="bg-black text-white py-1 px-8 rounded-lg hover:bg-gray-800 animate-bounce">
                         <img src="{{ asset('asset/img/order.jpg') }}" alt="Order Now" class="h-20 w-full">
                     </button>
+                </div> --}}
+                <div id="orderBtn"
+                    class="flex justify-center items-center bg-black text-white font-medium py-2 px-4 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-800 transition duration-300 cursor-pointer">
+                    <!-- Cart Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.8 9H21M7 13L5.4 5M9 22a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z" />
+                    </svg>
+                    <button class="grid grid-cols-1">
+                        <!-- Main Text -->
+                        <span class="mr-2">
+                            Order Now - Cash on Delivery
+                        </span>
+
+                        <!-- Confetti Icons and Discount Code -->
+                        <span class=" items-center text-yellow-400">
+                            Apply 50% Discount Code
+                        </span>
+                    </button>
+
                 </div>
 
+
                 <!-- Mobile Order Button -->
-                <div class="fixed bottom-0 left-0 w-full bg-white shadow-lg z-50 md:hidden block">
+                <div id="orderBtn" class="fixed bottom-0 left-0 w-full bg-white shadow-lg z-50 md:hidden block">
                     <div class="max-w-md mx-auto p-4">
-                        <button id="orderBtn"
-                        class="bg-black text-white py-1 px-8 rounded-lg hover:bg-gray-800 ">
-                        <img src="{{ asset('asset/img/order.jpg') }}" alt="Order Now" class="h-20 w-full">
-                    </button>
+                        <button class="bg-black text-white py-1 px-8 rounded-lg hover:bg-gray-800 ">
+                            <img src="{{ asset('asset/img/order.jpg') }}" alt="Order Now" class="h-20 w-full">
+                        </button>
                     </div>
                 </div>
 
@@ -412,10 +332,11 @@
 
         </div>
     </div>
+
     <div class="bg-white py-12">
         <!-- Review Section Header -->
         <div class="flex justify-center">
-            <h1 class="text-3xl font-bold text-gray-900">Our Customer Reviews</h1>
+            <h1 class="text-3xl font-bold text-gray-900 text-wrap p-2">Our Customer Reviews</h1>
         </div>
 
         <!-- Reviews Section -->
@@ -473,6 +394,123 @@
                     </p>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Modal Popup -->
+    <div id="orderModal"
+        class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden overflow-y-auto hide-scrollbar lg:ml-0 max-h-screen"
+        role="dialog" aria-labelledby="orderModalTitle" aria-modal="true">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-lg max-h-[500px] overflow-auto">
+            <!-- Close Icon -->
+            <button id="closeModal" class="absolute top-3 right-3 text-green-500 hover:text-green-600 focus:outline-none"
+                aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <!-- Modal Title -->
+            <h2 id="orderModalTitle" class="text-2xl font-bold mb-4">
+                Complete Your Order
+            </h2>
+
+            <!-- Order Details -->
+            <div class="space-y-4 mb-6 ">
+                <p class="text-lg font-medium">
+                    BLOSDREAM 3 in 1 Black Hair Shampoo (Ammonia Free) | Buy 1 Get 1 Free
+                </p>
+                <p class="text-gray-600">
+                    ⭐️⭐️⭐️⭐️⭐️ (1.4 Million Positive Reviews)
+                </p>
+                <p class="text-xl font-bold text-red-600">Rs. 599.00</p>
+                <p class="font-semibold">Subtotal: Rs. 599.00</p>
+                <p class="font-semibold">Shipping: Free</p>
+                <p class="font-semibold">Total: Rs. 599.00</p>
+            </div>
+
+            <!-- Shipping Address Form -->
+            <form id="shippingForm" class="space-y-4 " novalidate>
+                <!-- Full Name -->
+                <div>
+                    <label for="fullName" class="block font-semibold">
+                        Full Name <span class="text-red-600">*</span>
+                    </label>
+                    <input type="text" id="fullName" name="fullName" required
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+                </div>
+
+                <!-- Phone Number -->
+                <div>
+                    <label for="phone" class="block font-semibold">
+                        Phone Number <span class="text-red-600">*</span>
+                    </label>
+                    <input type="text" id="phone" name="phone" pattern="\d{10}" required
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+                </div>
+
+                <!-- Address -->
+                <div>
+                    <label for="address" class="block font-semibold">
+                        House Name, Street Name <span class="text-red-600">*</span>
+                    </label>
+                    <input type="text" id="address" name="address" required
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+                </div>
+
+                <!-- Landmark -->
+                <div>
+                    <label for="landmark" class="block font-semibold">
+                        Area Name, Landmark, Alternative Number
+                    </label>
+                    <input type="text" id="landmark" name="landmark"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+                </div>
+
+                <!-- City -->
+                <div>
+                    <label for="city" class="block font-semibold">
+                        City <span class="text-red-600">*</span>
+                    </label>
+                    <input type="text" id="city" name="city" required
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+                </div>
+
+                <!-- Pincode -->
+                <div>
+                    <label for="pincode" class="block font-semibold">
+                        Pincode <span class="text-red-600">*</span>
+                    </label>
+                    <input type="text" id="pincode" name="pincode" required
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+                </div>
+
+                <!-- State -->
+                <div>
+                    <label for="state" class="block font-semibold">
+                        State <span class="text-red-600">*</span>
+                    </label>
+                    <input type="text" id="state" name="state" required
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+                </div>
+
+                <!-- Complete Order Button -->
+                <button type="submit"
+                    class="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 focus:ring-4 focus:ring-gray-700 focus:outline-none">
+                    Complete Order - Rs. 599.00
+                </button>
+            </form>
+
+            {{-- icon img --}}
+            <div>
+                <img src="{{ asset('asset/img/pop.webp') }}" alt="">
+            </div>
+            <!-- Close Button -->
+            {{-- <button id="closeModal" class="mt-6  text-sm text-gray-500 hover:text-gray-700 focus:outline-none"
+                         aria-label="Close">
+                         Close
+                     </button> --}}
         </div>
     </div>
     <script>

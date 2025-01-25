@@ -100,7 +100,7 @@
         <div class="right bg-white p-2 lg:pl-32">
             {{-- product --}}
             <div class="text-center space-y-4">
-                <h1 class="text-3xl font-bold">Black Hair Shampoo (Ammonia Free) | Buy 1 Get 1 Free</h1>
+                <h1 class="text-3xl font-bold">Magical Black Hair shampoo (Ammonia Free) Hurry up 50% of offer Buy 1 Get 1 free..</h1>
                 <div class="flex justify-center items-center space-x-1">
                     <!-- Star Ratings -->
                     @for ($i = 0; $i < 5; $i++)

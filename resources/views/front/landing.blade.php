@@ -6,18 +6,25 @@
             display: grid;
             gap: 1rem;
             grid-template-columns: repeat(auto-fill, minmax(0, 600px));
-            /* Max width 500px per item */
+            /* Max width 600px per item */
             align-items: flex-start;
+            padding: 1rem; /* Add padding for general spacing */
+            margin: 0 auto; /* Center the container */
         }
-
-
+    
         @media (min-width: 1024px) and (max-width: 1440px) {
+            .container {
+                padding: 0 2rem; /* Adjust padding for laptop screen size */
+            }
+    
             .left {
                 position: sticky;
                 top: 0;
+                margin-top: 2rem; /* Optional: Add margin if needed */
             }
         }
     </style>
+    
     <div class="container grid grid-cols-1 lg:grid-cols-1 gap-2 ">
 
 
@@ -160,7 +167,7 @@
                 <!-- Order Now Button -->
 
                 <div id="orderBtn"
-                    class="flex justify-center items-center bg-black text-white font-medium py-2 px-4 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-800 transition duration-300 cursor-pointer animate-bounce"      
+                    class="flex justify-center items-center bg-black text-white font-medium py-2 px-4 rounded-full shadow-lg hover:shadow-xl hover:bg-gray-800 transition duration-300 cursor-pointer animate-bounce"      
                        onclick="openModal()">
                     <!-- Cart Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
@@ -214,14 +221,14 @@
 
             <!-- Offers Section -->
             <div class="text-center">
-                <p class="text-pink-600 font-bold text-lg">💖 TODAY'S OFFER - LIMITED TIME ONLY 💖</p>
-                <ul class="list-disc px-6 text-gray-700 text-left space-y-2 mt-4">
-                    <li><span class="font-semibold text-pink-500">50% OFF TODAY</span> 💝</li>
-                    <li><span class="font-semibold text-pink-500">BUY 1 GET 1 FREE</span> 💝</li>
-                    <li><span class="font-semibold text-pink-500">FREE SHIPPING</span> 💝</li>
-                    <li><span class="font-semibold text-pink-500">CASH ON DELIVERY</span> 💝💝💝💝</li>
-                    <li>BLOSDREAM Black Hair Shampoo 3 in 1</li>
-                    <li><span class="font-semibold text-pink-500">TODAY ONLY: Rs. 599</span></li>
+                <p class="text-pink-600 font-bold md:text-lg text-sm">💖 TODAY'S OFFER - LIMITED TIME ONLY 💖</p>
+                <ul class="list-disc md:px-6 text-gray-700 text-left space-y-2 mt-4">
+                    <li><span class="font-semibold text-pink-500 text-sm">50% OFF TODAY</span> 💝</li>
+                    <li><span class="font-semibold text-pink-500 text-sm">BUY 1 GET 1 FREE</span> 💝</li>
+                    <li><span class="font-semibold text-pink-500 text-sm">FREE SHIPPING</span> 💝</li>
+                    <li><span class="font-semibold text-pink-500 text-sm">CASH ON DELIVERY</span> 💝💝💝💝</li>
+                    <li><span class="font-semibold text-pink-500 text-sm">Magical Black Hair Shampoo 3 in 1</span></li>
+                    <li><span class="font-semibold text-pink-500 text-sm">TODAY ONLY: Rs. 599</span></li>
                 </ul>
             </div>
 
@@ -278,7 +285,7 @@
 
             </div>
             <div>
-                3-in-1 Magic: Say goodbye to multiple products! BLOSDREAM combines shampooing, conditioning, and hair
+                3-in-1 Magic: Say goodbye to multiple products! Magical combines shampooing, conditioning, and hair
                 dyeing in one easy step.
             </div>
 
@@ -404,7 +411,7 @@
 
     <!-- Order Now Button (Desktop & Mobile) -->
     <div id="orderBtn"
-        class="fixed z-50 md:hidden block bottom-0 w-full flex justify-center items-center bg-black text-white font-medium py-2 px-4 transition duration-300 cursor-pointer mt-8"
+        class="fixed z-50 md:hidden block bottom-0 w-full flex justify-center items-center bg-black text-white font-medium py-2 px-4 transition duration-300 cursor-pointer mt-8 rounded-full animate-bounce"
         onclick="openModal()">
         <!-- Cart Icon -->
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"

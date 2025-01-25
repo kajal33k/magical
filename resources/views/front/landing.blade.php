@@ -3,13 +3,14 @@
     @include('components.topbar')
     <style>
         .container {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(0, 600px)); /* Max width 500px per item */
-    align-items: flex-start;
-}
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(0, 600px));
+            /* Max width 500px per item */
+            align-items: flex-start;
+        }
 
-    
+
         @media (min-width: 1024px) and (max-width: 1440px) {
             .left {
                 position: sticky;
@@ -100,7 +101,8 @@
         <div class="right bg-white p-2 lg:pl-32">
             {{-- product --}}
             <div class="text-center space-y-4">
-                <h1 class="text-3xl font-bold">Magical Black Hair shampoo (Ammonia Free) Hurry up 50% of offer Buy 1 Get 1 free..</h1>
+                <h1 class="text-3xl font-bold">Magical Black Hair shampoo (Ammonia Free) Hurry up 50% of offer
+                    Buy 1 Get 1 free..</h1>
                 <div class="flex justify-center items-center space-x-1">
                     <!-- Star Ratings -->
                     @for ($i = 0; $i < 5; $i++)
@@ -113,13 +115,9 @@
                 <!-- Countdown Timer -->
                 <div id="countdown"
                     class="bg-amber-50 p-6 rounded-xl shadow-md flex items-center justify-center space-x-8 mb-4">
-                    {{-- <div class="flex flex-col items-center">
-                        <span id="hours" class="text-3xl font-bold text-amber-600">00</span>
-                        <span class="text-sm font-medium text-amber-500">Hours</span>
-                    </div> --}}
-                    <div class="w-px bg-amber-300 h-8"></div>
+                    {{-- <div class="w-px bg-amber-300 h-8"></div> --}}
                     <div class="flex flex-col items-center">
-                        <span id="minutes" class="text-3xl font-bold text-amber-600">00</span>
+                        <span id="minutes" class="text-3xl font-bold text-amber-600">30</span>
                         <span class="text-sm font-medium text-amber-500">Minutes</span>
                     </div>
                     <div class="w-px bg-amber-300 h-8"></div>
@@ -130,7 +128,7 @@
                 </div>
 
                 <script>
-                    // Set the target time (adjust as needed)
+                    // Set the target time (30 minutes from now)
                     const targetDate = new Date();
                     targetDate.setMinutes(targetDate.getMinutes() + 30); // Add 30 minutes
 
@@ -140,12 +138,10 @@
                         const remainingTime = targetDate - now;
 
                         if (remainingTime > 0) {
-                            const hours = Math.floor((remainingTime / (1000 * 60 * 60)) % 24);
-                            const minutes = Math.floor((remainingTime / (1000 * 60)) % 60);
-                            const seconds = Math.floor((remainingTime / 1000) % 60);
+                            const minutes = Math.floor((remainingTime / (1000 * 60)) % 60); // Calculate remaining minutes
+                            const seconds = Math.floor((remainingTime / 1000) % 60); // Calculate remaining seconds
 
                             // Update the DOM
-                            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
                             document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
                             document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
                         } else {
@@ -160,13 +156,9 @@
                     updateTimer();
                 </script>
 
+
                 <!-- Order Now Button -->
-                {{-- <div class="flex justify-center mt-8">
-                    <button id="orderBtn"
-                        class="bg-black text-white py-1 px-8 rounded-lg hover:bg-gray-800 animate-bounce">
-                        <img src="{{ asset('asset/img/order.jpg') }}" alt="Order Now" class="h-20 w-full">
-                    </button>
-                </div> --}}
+
                 <div id="orderBtn"
                     class="flex justify-center items-center bg-black text-white font-medium py-2 px-4 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-800 transition duration-300 cursor-pointer">
                     <!-- Cart Icon -->
@@ -177,8 +169,8 @@
                     </svg>
                     <button class="grid grid-cols-1">
                         <!-- Main Text -->
-                        <span class="mr-2">
-                            Order Now - Cash on Delivery
+                        <span class="mr-0">
+                            Order Now
                         </span>
 
                         <!-- Confetti Icons and Discount Code -->
@@ -191,13 +183,27 @@
 
 
                 <!-- Mobile Order Button -->
-                <div id="orderBtn" class="fixed bottom-0 left-0 w-full bg-white shadow-lg z-50 md:hidden block">
-                    <div class="max-w-md mx-auto p-4">
-                        <button class="bg-black text-white py-1 px-8 rounded-lg hover:bg-gray-800 ">
-                            <img src="{{ asset('asset/img/order.jpg') }}" alt="Order Now" class="h-20 w-full">
-                        </button>
+
+                <div id="orderBtn"
+                    class="fixed z-50 md:hidden block bottom-0 left-0 w-full flex items-center justify-center py-4 px-6 bg-gradient-to-r from-black to-gray-800 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                    <!-- Cart Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-3" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.8 9H21M7 13L5.4 5M9 22a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z" />
+                    </svg>
+
+                    <!-- Main Text and Confetti Text -->
+                    <div class="flex flex-col items-center justify-center">
+                        <span class="font-semibold text-lg lg:text-xl text-center leading-tight">
+                            Order Now
+                        </span>
+                        <span class="text-xs lg:text-sm text-yellow-400 mt-1 text-center">
+                            Apply 50% Discount Code
+                        </span>
                     </div>
                 </div>
+
 
                 <p class="text-sm text-gray-500">✨ Apply 50% Discount Code ✨</p>
                 <div class="flex justify-center">
@@ -398,143 +404,109 @@
     </div>
 
     <!-- Modal Popup -->
-    <div id="orderModal"
-        class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden overflow-y-auto hide-scrollbar lg:ml-0 max-h-screen"
-        role="dialog" aria-labelledby="orderModalTitle" aria-modal="true">
-        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-lg max-h-[500px] overflow-auto">
+    <div id="orderModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden overflow-y-auto max-h-screen" role="dialog" aria-labelledby="orderModalTitle" aria-modal="true">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-4xl max-h-[500px] overflow-auto transition-transform transform scale-95 duration-300 ease-in-out mt-4" aria-labelledby="orderModalTitle">
             <!-- Close Icon -->
-            <button id="closeModal" class="absolute top-3 right-3 text-green-500 hover:text-green-600 focus:outline-none"
-                aria-label="Close">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
+            <button id="closeModal" class="absolute top-3 right-3 text-green-500 hover:text-green-600 focus:outline-none" aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-
-            <!-- Modal Title -->
-            <h2 id="orderModalTitle" class="text-2xl font-bold mb-4">
-                Complete Your Order
-            </h2>
-
-            <!-- Order Details -->
-            <div class="space-y-4 mb-6 ">
-                <p class="text-lg font-medium">
-                    BLOSDREAM 3 in 1 Black Hair Shampoo (Ammonia Free) | Buy 1 Get 1 Free
-                </p>
-                <p class="text-gray-600">
-                    ⭐️⭐️⭐️⭐️⭐️ (1.4 Million Positive Reviews)
-                </p>
-                <p class="text-xl font-bold text-red-600">Rs. 599.00</p>
-                <p class="font-semibold">Subtotal: Rs. 599.00</p>
-                <p class="font-semibold">Shipping: Free</p>
-                <p class="font-semibold">Total: Rs. 599.00</p>
+    
+            <!-- Modal Content -->
+            <div class="lg:max-w-4xl mx-auto p-6 bg-white shadow-md rounded-md">
+                <h2 id="orderModalTitle" class="text-2xl font-semibold text-gray-700 mb-6">Please fill in the form to order</h2>
+                <form id="shippingForm" method="POST" action="#" novalidate>
+                    
+                    <!-- Full Name -->
+                    <div class="mb-4 flex flex-col space-y-2">
+                        <label for="full-name" class="text-sm font-medium text-gray-700">Full Name <span class="text-red-600">*</span></label>
+                        <input type="text" id="full-name" name="full-name" class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter Your Name" required aria-describedby="fullNameHelp">
+                        <span id="fullNameHelp" class="text-xs text-red-500 hidden">This field is required</span>
+                    </div>
+    
+                    <!-- Mobile Number -->
+                    <div class="mb-4">
+                        <label for="mobile-number" class="block text-sm font-medium text-gray-700">Mobile Number <span class="text-red-600">*</span></label>
+                        <input type="tel" id="mobile-number" name="mobile-number" class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter Your Mobile Number" required>
+                    </div>
+    
+                    <!-- House/Village -->
+                    <div class="mb-4">
+                        <label for="house-village" class="block text-sm font-medium text-gray-700">House/Village <span class="text-red-600">*</span></label>
+                        <input type="text" id="house-village" name="house-village" class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter your house or village name" required>
+                    </div>
+    
+                    <!-- Area / Landmark -->
+                    <div class="mb-4">
+                        <label for="area-landmark" class="block text-sm font-medium text-gray-700">Area / Landmark <span class="text-red-600">*</span></label>
+                        <input type="text" id="area-landmark" name="area-landmark" class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter area or landmark" required>
+                    </div>
+    
+                    <!-- State -->
+                    <div class="mb-4">
+                        <label for="state" class="block text-sm font-medium text-gray-700">State <span class="text-red-600">*</span></label>
+                        <select id="state" name="state" class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+                            <option value="" disabled selected>Select State</option>
+                            <option value="state-1">State 1</option>
+                            <option value="state-2">State 2</option>
+                        </select>
+                    </div>
+    
+                    <!-- City -->
+                    <div class="mb-4">
+                        <label for="city" class="block text-sm font-medium text-gray-700">City <span class="text-red-600">*</span></label>
+                        <input type="text" id="city" name="city" class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter your city" required>
+                    </div>
+    
+                    <!-- Pin Code -->
+                    <div class="mb-4">
+                        <label for="pin-code" class="block text-sm font-medium text-gray-700">Pin Code <span class="text-red-600">*</span></label>
+                        <input type="text" id="pin-code" name="pin-code" class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter Pin Code" required>
+                    </div>
+    
+                    <!-- Product -->
+                    <div class="mb-4">
+                        <p class="text-sm font-medium text-gray-700">FruitGlow Hair Color (Ammonia Free)</p>
+                        <p class="text-lg font-bold text-gray-900">Rs. 599.00</p>
+                    </div>
+    
+                    <!-- Confirm Order Button -->
+                    <div class="mb-4">
+                        <button type="submit" class="w-full py-2 px-4 bg-black text-white font-semibold rounded-md hover:bg-black focus:outline-none focus:ring-2 focus:ring-blue-400">Confirm Order - Rs. 599.00</button>
+                    </div>
+                </form>
             </div>
-
-            <!-- Shipping Address Form -->
-            <form id="shippingForm" class="space-y-4 " novalidate>
-                <!-- Full Name -->
-                <div>
-                    <label for="fullName" class="block font-semibold">
-                        Full Name <span class="text-red-600">*</span>
-                    </label>
-                    <input type="text" id="fullName" name="fullName" required
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                </div>
-
-                <!-- Phone Number -->
-                <div>
-                    <label for="phone" class="block font-semibold">
-                        Phone Number <span class="text-red-600">*</span>
-                    </label>
-                    <input type="text" id="phone" name="phone" pattern="\d{10}" required
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                </div>
-
-                <!-- Address -->
-                <div>
-                    <label for="address" class="block font-semibold">
-                        House Name, Street Name <span class="text-red-600">*</span>
-                    </label>
-                    <input type="text" id="address" name="address" required
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                </div>
-
-                <!-- Landmark -->
-                <div>
-                    <label for="landmark" class="block font-semibold">
-                        Area Name, Landmark, Alternative Number
-                    </label>
-                    <input type="text" id="landmark" name="landmark"
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                </div>
-
-                <!-- City -->
-                <div>
-                    <label for="city" class="block font-semibold">
-                        City <span class="text-red-600">*</span>
-                    </label>
-                    <input type="text" id="city" name="city" required
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                </div>
-
-                <!-- Pincode -->
-                <div>
-                    <label for="pincode" class="block font-semibold">
-                        Pincode <span class="text-red-600">*</span>
-                    </label>
-                    <input type="text" id="pincode" name="pincode" required
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                </div>
-
-                <!-- State -->
-                <div>
-                    <label for="state" class="block font-semibold">
-                        State <span class="text-red-600">*</span>
-                    </label>
-                    <input type="text" id="state" name="state" required
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-                </div>
-
-                <!-- Complete Order Button -->
-                <button type="submit"
-                    class="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 focus:ring-4 focus:ring-gray-700 focus:outline-none">
-                    Complete Order - Rs. 599.00
-                </button>
-            </form>
-
-            {{-- icon img --}}
-            <div>
-                <img src="{{ asset('asset/img/pop.webp') }}" alt="">
+    
+            <!-- Modal Icon Image -->
+            <div class="mt-6">
+                <img src="{{ asset('asset/img/pop.webp') }}" alt="Order Confirmation" class="rounded-lg shadow-xl w-full">
             </div>
-            <!-- Close Button -->
-            {{-- <button id="closeModal" class="mt-6  text-sm text-gray-500 hover:text-gray-700 focus:outline-none"
-                         aria-label="Close">
-                         Close
-                     </button> --}}
         </div>
     </div>
+    
     <script>
-        // Get references to elements
         const orderBtn = document.getElementById("orderBtn");
         const orderModal = document.getElementById("orderModal");
         const closeModal = document.getElementById("closeModal");
-        const shippingForm = document.getElementById("shippingForm");
-
-        // Show the modal when Order Now button is clicked
+    
+        // Open modal when the Order Now button is clicked
         orderBtn.addEventListener("click", () => {
             orderModal.classList.remove("hidden");
         });
-
-        // Close the modal when Close button is clicked
+    
+        // Close modal when the Close button is clicked
         closeModal.addEventListener("click", () => {
             orderModal.classList.add("hidden");
         });
-
-        // Optionally, submit the form using JavaScript (can add an AJAX request here)
+    
+        // Handle form submission
+        const shippingForm = document.getElementById("shippingForm");
         shippingForm.addEventListener("submit", (e) => {
-            e.preventDefault(); // Prevent form submission
-            alert("Order Completed Successfully!"); // Placeholder action
-            orderModal.classList.add("hidden"); // Hide modal after form submission
+            e.preventDefault();
+            alert("Order Completed Successfully!");
+            orderModal.classList.add("hidden");
         });
     </script>
+    
 @endsection

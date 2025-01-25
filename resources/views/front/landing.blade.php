@@ -1,28 +1,12 @@
 @extends('components.main')
 @section('content')
-@include('components.topbar')
-
-    <style>
-        .container {
-            display: grid;
-            gap: 1rem;
-            grid-template-columns: repeat(auto-fill, minmax(0, 600px));
-            /* Max width 500px per item */
-            align-items: flex-start;
-        }
+    @include('components.topbar')
 
 
-        @media (min-width: 1024px) and (max-width: 1440px) {
-            .left {
-                position: sticky;
-                top: 0;
-            }
-        }
-    </style>
-    <div class="container grid grid-cols-1 lg:grid-cols-1 gap-2 ">
+    <div class="container grid gap-4 grid-cols-[repeat(auto-fill,minmax(0,500px))] items-start w-full md:mx-24">
 
 
-        <div class="left p-4 w-full">
+        <div class="left p-4 w-full lg:sticky lg:top-0">
             <!-- Main Slider -->
             <div class="overflow-hidden relative">
                 <div id="slider" class="flex transition-transform duration-500">
@@ -381,7 +365,7 @@
             <div class="flex flex-col md:flex-row items-center gap-6">
                 <!-- Image -->
                 <div class="w-full md:w-1/3">
-                    <img src="{{ asset('asset/img/testimonial1.jpg') }}" alt="John Doe's Testimonial"
+                    <img src="{{ asset('asset/img/testimonial4.jpg') }}" alt="John Doe's Testimonial"
                         class="rounded-lg w-full h-auto object-cover">
                 </div>
                 <!-- Text Content -->

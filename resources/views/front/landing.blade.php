@@ -58,44 +58,72 @@
                     class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
         </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const slider = document.getElementById("slider");
+        const thumbnails = document.querySelectorAll("[data-slide]");
+        const prevButton = document.getElementById("prev");
+        const nextButton = document.getElementById("next");
+        const slideCount = slider.children.length;
+        let currentIndex = 0;
+        let autoplayInterval;
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const slider = document.getElementById("slider");
-                const thumbnails = document.querySelectorAll("[data-slide]");
-                const prevButton = document.getElementById("prev");
-                const nextButton = document.getElementById("next");
-                const slideCount = slider.children.length;
-                let currentIndex = 0;
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
 
-                function updateSlider() {
-                    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-                }
+        // Navigate to the previous slide
+        prevButton.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+            updateSlider();
+        });
 
-                // Navigate to previous slide
-                prevButton.addEventListener("click", () => {
-                    currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-                    updateSlider();
-                });
+        // Navigate to the next slide
+        nextButton.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % slideCount;
+            updateSlider();
+        });
 
-                // Navigate to next slide
-                nextButton.addEventListener("click", () => {
-                    currentIndex = (currentIndex + 1) % slideCount;
-                    updateSlider();
-                });
-
-                // Thumbnail click event
-                thumbnails.forEach((thumbnail) => {
-                    thumbnail.addEventListener("click", (e) => {
-                        currentIndex = parseInt(thumbnail.dataset.slide);
-                        updateSlider();
-                    });
-                });
-
-                // Initialize
+        // Thumbnail click event
+        thumbnails.forEach((thumbnail) => {
+            thumbnail.addEventListener("click", (e) => {
+                currentIndex = parseInt(thumbnail.dataset.slide);
                 updateSlider();
+                resetAutoplay(); // Restart autoplay after manual interaction
             });
-        </script>
+        });
+
+        // Autoplay function
+        function startAutoplay() {
+            autoplayInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % slideCount;
+                updateSlider();
+            }, 2000); // 2-second interval
+        }
+
+        function stopAutoplay() {
+            clearInterval(autoplayInterval);
+        }
+
+        function resetAutoplay() {
+            stopAutoplay();
+            startAutoplay();
+        }
+
+        // Stop autoplay when hovering over slider or buttons
+        slider.addEventListener("mouseenter", stopAutoplay);
+        slider.addEventListener("mouseleave", startAutoplay);
+        prevButton.addEventListener("mouseenter", stopAutoplay);
+        prevButton.addEventListener("mouseleave", startAutoplay);
+        nextButton.addEventListener("mouseenter", stopAutoplay);
+        nextButton.addEventListener("mouseleave", startAutoplay);
+
+        // Initialize
+        updateSlider();
+        startAutoplay();
+    });
+</script>
+
 
 
         <div class="right bg-white p-2 lg:pl-32 w-full">
@@ -214,14 +242,14 @@
 
             <!-- Offers Section -->
             <div class="text-center">
-                <p class="text-pink-600 font-bold text-lg">💖 TODAY'S OFFER - LIMITED TIME ONLY 💖</p>
-                <ul class="list-disc px-6 text-gray-700 text-left space-y-2 mt-4">
-                    <li><span class="font-semibold text-pink-500">50% OFF TODAY</span> 💝</li>
-                    <li><span class="font-semibold text-pink-500">BUY 1 GET 1 FREE</span> 💝</li>
-                    <li><span class="font-semibold text-pink-500">FREE SHIPPING</span> 💝</li>
-                    <li><span class="font-semibold text-pink-500">CASH ON DELIVERY</span> 💝💝💝💝</li>
-                    <li>BLOSDREAM Black Hair Shampoo 3 in 1</li>
-                    <li><span class="font-semibold text-pink-500">TODAY ONLY: Rs. 599</span></li>
+                <p class="text-pink-600 font-bold md:text-lg text-sm">💖 TODAY'S OFFER - LIMITED TIME ONLY 💖</p>
+                <ul class="list-disc md:px-6 text-gray-700 text-left space-y-2 mt-4">
+                    <li><span class="font-semibold text-pink-500 text-sm">50% OFF TODAY</span> 💝</li>
+                    <li><span class="font-semibold text-pink-500 text-sm">BUY 1 GET 1 FREE</span> 💝</li>
+                    <li><span class="font-semibold text-pink-500 text-sm">FREE SHIPPING</span> 💝</li>
+                    <li><span class="font-semibold text-pink-500 text-sm">CASH ON DELIVERY</span> 💝💝💝💝</li>
+                    <li><span class="font-semibold text-pink-500 text-sm">Magical Black Hair Shampoo 3 in 1<./</li>
+                    <li><span class="font-semibold text-pink-500 text-sm">TODAY ONLY: Rs. 599</span></li>
                 </ul>
             </div>
 
@@ -278,7 +306,7 @@
 
             </div>
             <div>
-                3-in-1 Magic: Say goodbye to multiple products! BLOSDREAM combines shampooing, conditioning, and hair
+                3-in-1 Magic: Say goodbye to multiple products! Magical combines shampooing, conditioning, and hair
                 dyeing in one easy step.
             </div>
 
@@ -404,7 +432,7 @@
 
     <!-- Order Now Button (Desktop & Mobile) -->
     <div id="orderBtn"
-        class="fixed z-50 md:hidden block bottom-0 w-full flex justify-center items-center bg-black text-white font-medium py-2 px-4 transition duration-300 cursor-pointer mt-8"
+        class="fixed z-50 md:hidden block bottom-0 w-full flex justify-center items-center bg-black text-white font-medium py-2 px-4 transition duration-300 cursor-pointer mt-8 animate-bounce"
         onclick="openModal()">
         <!-- Cart Icon -->
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"

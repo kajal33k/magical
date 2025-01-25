@@ -6,7 +6,7 @@
 
 
 
-    <div class="container grid gap-4 grid-cols-[repeat(auto-fill,minmax(0,600px))] items-start">
+    <div class="container grid gap-4 grid-cols-[repeat(auto-fill,minmax(0,500px))] items-start w-full md:mx-24">
 
 
         <div class="left p-4 w-full lg:sticky lg:top-0">

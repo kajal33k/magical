@@ -4,7 +4,6 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\BannerController;
-
 use App\Http\Controllers\PlanCOntroller;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TeamController;
@@ -12,6 +11,7 @@ use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderRequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +47,7 @@ Route::get('reset-password',[AuthController::class,'reset_password'])->name('res
 Route::post('store-password',[AuthController::class,'store_password'])->name('store-password');
 
 Route::post('appointment/store',[AppointmentController::class,'store'])->name('appointment.store');
+Route::get('orderRequest/store',[OrderRequestController::class,'store'])->name('orderRequest.store');
 
 
 Route::get('dashboard', [AuthController::class, 'dashboard'])
@@ -80,6 +81,9 @@ Route::group(['middleware' => ['auth']],function (){
     Route::post('appointment/update/{appointment}',[AppointmentController::class,'update'])->name('appointment.update');
     Route::get('appointment/delete/{appointment}',[AppointmentController::class,'delete'])->name('appointment.delete');
     Route::get('appointment/duplicate/{appointment}',[AppointmentController::class,'duplicate'])->name('appointment.duplicate');
+
+    Route::get('orderRequest/index',[OrderRequestController::class,'index'])->name('orderRequest.index');
+    Route::get('orderRequest/delete/{orderRequest}',[OrderRequestController::class,'delete'])->name('orderRequest.delete');
 
 
     //services

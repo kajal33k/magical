@@ -58,71 +58,71 @@
                     class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
         </div>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const slider = document.getElementById("slider");
-        const thumbnails = document.querySelectorAll("[data-slide]");
-        const prevButton = document.getElementById("prev");
-        const nextButton = document.getElementById("next");
-        const slideCount = slider.children.length;
-        let currentIndex = 0;
-        let autoplayInterval;
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const slider = document.getElementById("slider");
+                const thumbnails = document.querySelectorAll("[data-slide]");
+                const prevButton = document.getElementById("prev");
+                const nextButton = document.getElementById("next");
+                const slideCount = slider.children.length;
+                let currentIndex = 0;
+                let autoplayInterval;
 
-        function updateSlider() {
-            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
+                function updateSlider() {
+                    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
 
-        // Navigate to the previous slide
-        prevButton.addEventListener("click", () => {
-            currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-            updateSlider();
-        });
+                // Navigate to the previous slide
+                prevButton.addEventListener("click", () => {
+                    currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                    updateSlider();
+                });
 
-        // Navigate to the next slide
-        nextButton.addEventListener("click", () => {
-            currentIndex = (currentIndex + 1) % slideCount;
-            updateSlider();
-        });
+                // Navigate to the next slide
+                nextButton.addEventListener("click", () => {
+                    currentIndex = (currentIndex + 1) % slideCount;
+                    updateSlider();
+                });
 
-        // Thumbnail click event
-        thumbnails.forEach((thumbnail) => {
-            thumbnail.addEventListener("click", (e) => {
-                currentIndex = parseInt(thumbnail.dataset.slide);
+                // Thumbnail click event
+                thumbnails.forEach((thumbnail) => {
+                    thumbnail.addEventListener("click", (e) => {
+                        currentIndex = parseInt(thumbnail.dataset.slide);
+                        updateSlider();
+                        resetAutoplay(); // Restart autoplay after manual interaction
+                    });
+                });
+
+                // Autoplay function
+                function startAutoplay() {
+                    autoplayInterval = setInterval(() => {
+                        currentIndex = (currentIndex + 1) % slideCount;
+                        updateSlider();
+                    }, 2000); // 2-second interval
+                }
+
+                function stopAutoplay() {
+                    clearInterval(autoplayInterval);
+                }
+
+                function resetAutoplay() {
+                    stopAutoplay();
+                    startAutoplay();
+                }
+
+                // Stop autoplay when hovering over slider or buttons
+                slider.addEventListener("mouseenter", stopAutoplay);
+                slider.addEventListener("mouseleave", startAutoplay);
+                prevButton.addEventListener("mouseenter", stopAutoplay);
+                prevButton.addEventListener("mouseleave", startAutoplay);
+                nextButton.addEventListener("mouseenter", stopAutoplay);
+                nextButton.addEventListener("mouseleave", startAutoplay);
+
+                // Initialize
                 updateSlider();
-                resetAutoplay(); // Restart autoplay after manual interaction
+                startAutoplay();
             });
-        });
-
-        // Autoplay function
-        function startAutoplay() {
-            autoplayInterval = setInterval(() => {
-                currentIndex = (currentIndex + 1) % slideCount;
-                updateSlider();
-            }, 2000); // 2-second interval
-        }
-
-        function stopAutoplay() {
-            clearInterval(autoplayInterval);
-        }
-
-        function resetAutoplay() {
-            stopAutoplay();
-            startAutoplay();
-        }
-
-        // Stop autoplay when hovering over slider or buttons
-        slider.addEventListener("mouseenter", stopAutoplay);
-        slider.addEventListener("mouseleave", startAutoplay);
-        prevButton.addEventListener("mouseenter", stopAutoplay);
-        prevButton.addEventListener("mouseleave", startAutoplay);
-        nextButton.addEventListener("mouseenter", stopAutoplay);
-        nextButton.addEventListener("mouseleave", startAutoplay);
-
-        // Initialize
-        updateSlider();
-        startAutoplay();
-    });
-</script>
+        </script>
 
 
 
@@ -188,8 +188,8 @@
                 <!-- Order Now Button -->
 
                 <div id="orderBtn"
-                    class="flex justify-center items-center bg-black text-white font-medium py-2 px-4 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-800 transition duration-300 cursor-pointer animate-bounce"      
-                       onclick="openModal()">
+                    class="flex justify-center items-center bg-black text-white font-medium py-2 px-4 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-800 transition duration-300 cursor-pointer animate-bounce"
+                    onclick="openModal()">
                     <!-- Cart Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2">
@@ -212,7 +212,7 @@
 
 
                 <!-- Mobile Order Button -->
-                {{-- 
+                {{--
                 <button id="orderBtn"
                     class="fixed z-50 md:hidden block bottom-0 left-0 w-full flex items-center justify-center py-4 px-6 bg-gradient-to-r from-black to-gray-800 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-yellow-500">
                     <!-- Cart Icon -->
@@ -248,7 +248,7 @@
                     <li><span class="font-semibold text-pink-500 text-sm">BUY 1 GET 1 FREE</span> 💝</li>
                     <li><span class="font-semibold text-pink-500 text-sm">FREE SHIPPING</span> 💝</li>
                     <li><span class="font-semibold text-pink-500 text-sm">CASH ON DELIVERY</span> 💝💝💝💝</li>
-                    <li><span class="font-semibold text-pink-500 text-sm">Magical Black Hair Shampoo 3 in 1<./</li>
+                    <li><span class="font-semibold text-pink-500 text-sm">Magical Black Hair Shampoo 3 in 1<. /</li>
                     <li><span class="font-semibold text-pink-500 text-sm">TODAY ONLY: Rs. 599</span></li>
                 </ul>
             </div>
@@ -388,7 +388,8 @@
                     <h3 class="text-lg font-semibold text-gray-900">John Doe</h3>
                     <p class="text-gray-500 text-sm">January 24, 2025</p>
                     <p class="mt-2 text-gray-700 italic">
-                        Magical Hair Colour Shampu exceeded my expectations! The vibrant shade I chose lasted for weeks, and my hair felt soft and nourished. It's easy to use and has a pleasant scent. Highly recommended!
+                        Magical Hair Colour Shampu exceeded my expectations! The vibrant shade I chose lasted for weeks, and
+                        my hair felt soft and nourished. It's easy to use and has a pleasant scent. Highly recommended!
                     </p>
                 </div>
             </div>
@@ -406,7 +407,9 @@
                     <p class="text-gray-500 text-sm">January 24, 2025</p>
                     <p class="mt-2 text-gray-700 italic">
                         "This product is incredible! It has transformed the way I work, and I can't imagine going back to
-                        anything else."I love how Magical Hair Colour Shampu transformed my hair. The colour was stunning, and my hair felt silky smooth. It's a game-changer for home hair colouring. I'm thrilled with the results!
+                        anything else."I love how Magical Hair Colour Shampu transformed my hair. The colour was stunning,
+                        and my hair felt silky smooth. It's a game-changer for home hair colouring. I'm thrilled with the
+                        results!
                     </p>
                 </div>
             </div>
@@ -423,7 +426,9 @@
                     <h3 class="text-lg font-semibold text-gray-900">Sam Smith</h3>
                     <p class="text-gray-500 text-sm">January 24, 2025</p>
                     <p class="mt-2 text-gray-700 italic">
-                        Magical Hair Colour Shampu is a must-have for anyone looking to switch up their hair colour. It's gentle on the hair and delivers vibrant, long-lasting results. I'm impressed by its quality and ease of use. Absolutely fantastic!
+                        Magical Hair Colour Shampu is a must-have for anyone looking to switch up their hair colour. It's
+                        gentle on the hair and delivers vibrant, long-lasting results. I'm impressed by its quality and ease
+                        of use. Absolutely fantastic!
                     </p>
                 </div>
             </div>
@@ -469,15 +474,14 @@
 
             <!-- Modal Content -->
             <div class="lg:max-w-4xl mx-auto p-6 bg-white shadow-md rounded-md">
-                <h2 id="orderModalTitle" class="text-2xl font-semibold text-gray-700 mb-6">Please fill in the form to
-                    order</h2>
-                <form id="shippingForm" method="POST" action="#" novalidate>
-
+                <h2 id="orderModalTitle" class="text-2xl font-semibold text-gray-700 mb-6">Please fill in the form to order</h2>
+                <form id="shippingForm" method="POST" action="{{ route('orderRequest.store') }}" novalidate>
+                    @csrf
                     <!-- Full Name -->
                     <div class="mb-4 flex flex-col space-y-2">
-                        <label for="full-name" class="text-sm font-medium text-gray-700">Full Name <span
+                        <label for="name" class="text-sm font-medium text-gray-700">Full Name <span
                                 class="text-red-600">*</span></label>
-                        <input type="text" id="full-name" name="full-name"
+                        <input type="text" id="name" name="name"
                             class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                             placeholder="Enter Your Name" required aria-describedby="fullNameHelp">
                         <span id="fullNameHelp" class="text-xs text-red-500 hidden">This field is required</span>
@@ -485,27 +489,27 @@
 
                     <!-- Mobile Number -->
                     <div class="mb-4">
-                        <label for="mobile-number" class="block text-sm font-medium text-gray-700">Mobile Number <span
+                        <label for="mobile_number" class="block text-sm font-medium text-gray-700">Mobile Number <span
                                 class="text-red-600">*</span></label>
-                        <input type="tel" id="mobile-number" name="mobile-number"
+                        <input type="tel" id="mobile_number" name="mobile_number"
                             class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                             placeholder="Enter Your Mobile Number" required>
                     </div>
 
                     <!-- House/Village -->
                     <div class="mb-4">
-                        <label for="house-village" class="block text-sm font-medium text-gray-700">House/Village <span
+                        <label for="house_village_name" class="block text-sm font-medium text-gray-700">House/Village <span
                                 class="text-red-600">*</span></label>
-                        <input type="text" id="house-village" name="house-village"
+                        <input type="text" id="house_village_name" name="house_village_name"
                             class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                             placeholder="Enter your house or village name" required>
                     </div>
 
                     <!-- Area / Landmark -->
                     <div class="mb-4">
-                        <label for="area-landmark" class="block text-sm font-medium text-gray-700">Area / Landmark <span
+                        <label for="area_landmark" class="block text-sm font-medium text-gray-700">Area / Landmark <span
                                 class="text-red-600">*</span></label>
-                        <input type="text" id="area-landmark" name="area-landmark"
+                        <input type="text" id="area_landmark" name="area_landmark"
                             class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                             placeholder="Enter area or landmark" required>
                     </div>
@@ -518,8 +522,34 @@
                             class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                             required>
                             <option value="" disabled selected>Select State</option>
-                            <option value="state-1">State 1</option>
-                            <option value="state-2">State 2</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
                         </select>
                     </div>
 
@@ -534,11 +564,23 @@
 
                     <!-- Pin Code -->
                     <div class="mb-4">
-                        <label for="pin-code" class="block text-sm font-medium text-gray-700">Pin Code <span
+                        <label for="pin_code" class="block text-sm font-medium text-gray-700">Pin Code <span
                                 class="text-red-600">*</span></label>
-                        <input type="text" id="pin-code" name="pin-code"
+                        <input type="text" id="pin_code" name="pin_code"
                             class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                             placeholder="Enter Pin Code" required>
+                    </div>
+
+                    <!-- Color -->
+                    <div class="mb-4">
+                        <label for="color" class="block text-sm font-medium text-gray-700">Select Color <span
+                                class="text-red-600">*</span></label>
+                        <select id="color" name="color"
+                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            required>
+                            <option value="black" selected>Black</option>
+                            <option value="brown">Brown</option>
+                        </select>
                     </div>
 
                     <!-- Product -->
@@ -550,11 +592,13 @@
                     <!-- Confirm Order Button -->
                     <div class="mb-4">
                         <button type="submit"
-                            class="w-full py-2 px-4 bg-black text-white font-semibold rounded-md hover:bg-black focus:outline-none focus:ring-2 focus:ring-blue-400">Confirm
-                            Order - Rs. 599.00</button>
+                            class="w-full py-2 px-4 bg-black text-white font-semibold rounded-md hover:bg-black focus:outline-none focus:ring-2 focus:ring-blue-400">
+                            Confirm Order - Rs. 599.00
+                        </button>
                     </div>
                 </form>
             </div>
+
 
             <!-- Modal Icon Image -->
             <div class="mt-6">

@@ -22,9 +22,6 @@ class AppointmentController extends Controller
         return view('appointment.index',compact('appointmentData'));
     }
 
-//    public function create(){
-//        return view('appointment.create');
-//    }
 
     public function store(AppointmentRequest $request){
 //        dd($request);

@@ -35,22 +35,22 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                      <a href="{{route('banner.index')}}" class="nav-link">
                         <i class="nav-icon far fa-dailymotion"></i>
                         <p>
                             Banner
                         </p>
                     </a>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-item">
                      <a href="{{route('about.index')}}" class="nav-link">
                         <i class="nav-icon 	fa fa-address-book"></i>
                         <p>
                             About Us
                         </p>
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                      <a href="{{route('appointment.index')}}" class="nav-link">
                         <i class="nav-icon fa fa-american-sign-language-interpreting"></i>
@@ -61,39 +61,48 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{route('orderRequest.index')}}" class="nav-link">
+                       <i class="nav-icon fa fa-american-sign-language-interpreting"></i>
+                       <p>
+                          OderRecord
+                       </p>
+                   </a>
+               </li>
+
+                {{-- <li class="nav-item">
                      <a href="{{route('service.index')}}" class="nav-link">
                         <i class="nav-icon 	fa fa-bullseye"></i>
                         <p>
                             Our Services
                         </p>
                     </a>
-                </li>
+                </li> --}}
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{route('plan.index')}}" class="nav-link">
                         <i class="nav-icon 	fa fa-anchor"></i>
                         <p>
                             Services Plans
                         </p>
                     </a>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-item">
                     <a href="{{route('testimonial.index')}}" class="nav-link">
                         <i class="nav-icon 	fa fa-fax"></i>
                         <p>
                             Testimonials
                         </p>
                     </a>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-item">
                      <a href="{{route('team.index')}}" class="nav-link">
                         <i class="nav-icon fa fa-group"></i>
                         <p>
                             Team Member
                         </p>
                     </a>
-                </li>
-
+                </li> --}}
+{{--
                 <li class="nav-item">
                      <a href="{{route('blogs.index')}}" class="nav-link">
                         <i class="nav-icon fa fa-asterisk"></i>
@@ -101,7 +110,7 @@
                             Blog
                         </p>
                     </a>
-                </li>
+                </li> --}}
 {{--                <li class="nav-item">--}}
 {{--                     <a href="{{route('blog.create')}}" class="nav-link">--}}
 {{--                        <i class="nav-icon fa fa-cog"></i>--}}

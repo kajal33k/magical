@@ -21,11 +21,11 @@
     <div class="container grid grid-cols-1 lg:grid-cols-1 gap-2 ">
 
 
-        <div class="left  p-4">
+        <div class="left p-4 w-full">
             <!-- Main Slider -->
             <div class="overflow-hidden relative">
                 <div id="slider" class="flex transition-transform duration-500">
-                    <img src="{{ asset('asset/img/one.jpg') }}" alt="Product Image 1"
+                    <img src="{{ asset('asset/img/post 04.jpg') }}" alt="Product Image 1"
                         class="w-full h-64 lg:h-full object-cover flex-shrink-0">
                     <img src="{{ asset('asset/img/two.jpg') }}" alt="Product Image 2"
                         class="w-full h-64 lg:h-full object-cover flex-shrink-0">
@@ -48,7 +48,7 @@
 
             <!-- Thumbnails -->
             <div class="flex justify-center md:space-x-4 mt-4">
-                <img data-slide="0" src="{{ asset('asset/img/one.jpg') }}" alt="Thumbnail 1"
+                <img data-slide="0" src="{{ asset('asset/img/post 04.jpg') }}" alt="Thumbnail 1"
                     class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <img data-slide="1" src="{{ asset('asset/img/two.jpg') }}" alt="Thumbnail 2"
                     class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
@@ -98,7 +98,7 @@
         </script>
 
 
-        <div class="right bg-white p-2 lg:pl-32">
+        <div class="right bg-white p-2 lg:pl-32 w-full">
             {{-- product --}}
             <div class="text-center space-y-4">
                 <h1 class="text-3xl font-bold">Magical Black Hair shampoo (Ammonia Free) Hurry up 50% of offer
@@ -205,7 +205,7 @@
                     </div>
                 </button> --}}
 
-
+                <p class="text-sm text-black font-bold">Limited Time Offer</p>
                 <p class="text-sm text-gray-500">✨ Apply 50% Discount Code ✨</p>
                 <div class="flex justify-center">
                     <img src="{{ asset('asset/img/FREESHIPPIng.avif') }}" alt="Free Shipping">
@@ -360,8 +360,7 @@
                     <h3 class="text-lg font-semibold text-gray-900">John Doe</h3>
                     <p class="text-gray-500 text-sm">January 24, 2025</p>
                     <p class="mt-2 text-gray-700 italic">
-                        "This product is amazing! It exceeded all of my expectations, and I highly recommend it to anyone
-                        looking for quality and reliability."
+                        Magical Hair Colour Shampu exceeded my expectations! The vibrant shade I chose lasted for weeks, and my hair felt soft and nourished. It's easy to use and has a pleasant scent. Highly recommended!
                     </p>
                 </div>
             </div>
@@ -379,7 +378,7 @@
                     <p class="text-gray-500 text-sm">January 24, 2025</p>
                     <p class="mt-2 text-gray-700 italic">
                         "This product is incredible! It has transformed the way I work, and I can't imagine going back to
-                        anything else."
+                        anything else."I love how Magical Hair Colour Shampu transformed my hair. The colour was stunning, and my hair felt silky smooth. It's a game-changer for home hair colouring. I'm thrilled with the results!
                     </p>
                 </div>
             </div>
@@ -396,8 +395,7 @@
                     <h3 class="text-lg font-semibold text-gray-900">Sam Smith</h3>
                     <p class="text-gray-500 text-sm">January 24, 2025</p>
                     <p class="mt-2 text-gray-700 italic">
-                        "I'm blown away by the quality of this product. It truly stands out in every aspect, and I'm so glad
-                        I found it."
+                        Magical Hair Colour Shampu is a must-have for anyone looking to switch up their hair colour. It's gentle on the hair and delivers vibrant, long-lasting results. I'm impressed by its quality and ease of use. Absolutely fantastic!
                     </p>
                 </div>
             </div>

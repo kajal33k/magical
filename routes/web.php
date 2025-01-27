@@ -23,8 +23,8 @@ use App\Http\Controllers\OrderRequestController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/',[HomeController::class,'index'])->name('home');
-Route::get('/landing', [HomeController::class, 'landing'])->name('landing');
+Route::get('/',[HomeController::class,'landing'])->name('home');
+Route::get('/home2', [HomeController::class, 'index'])->name('home2');
 Route::get('/about',[HomeController::class,'about'])->name('about');
 Route::get('/privacy',[HomeController::class,'privacy'])->name('privacy');
 Route::get('/thank-you', function () {

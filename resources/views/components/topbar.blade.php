@@ -1,11 +1,11 @@
 <!-- Notification Banner -->
-<div class="fixed top-0 w-full md:w-full md:h-16 h-10 bg-[#88D040] text-white z-30 shadow-md pt-1 pb-1">
+<div class="fixed top-0 w-full md:w-full md:h-16 h-10 bg-[#88D040] text-white z-30 shadow-md">
     <div class="text-center">
-        <h1 class="md:text-base text-xs font-semibold flex items-center justify-center text-wrap text-black px">
+        <h1 class="md:text-base text-xs font-semibold flex items-center justify-center text-wrap text-black px-4">
             BIG BILLION SALE IS LIVE TODAY OFFER 50% OFF
         </h1>
-        <div class=" flex flex-wrap justify-center text-xs text-wrap text-black ">
-            <p>ALL INDIA HOME DELIVERY FREE</p>
+        <div class="mt-1 flex flex-wrap justify-center text-xs text-wrap text-black">
+            <p class="mr-4">ALL INDIA HOME DELIVERY FREE</p>
             <p>50000+ Happy Customers</p>
         </div>
     </div>
@@ -21,20 +21,27 @@
 
         <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-8">
-            <a href="#home" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400">Home</a>
-            <a href="#about" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400">About</a>
-            <a href="#product" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400">Our Product</a>
-            <a href="#contact" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400">Contact Us</a>
+            <a href="#home" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400 transition duration-300">Home</a>
+            <a href="#about" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400 transition duration-300">About</a>
+            <a href="#product" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400 transition duration-300">Our Product</a>
+            <a href="#contact" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400 transition duration-300">Contact Us</a>
         </div>
 
         <!-- Mobile Menu Button -->
         <div class="md:hidden">
-            <button id="navbar-toggle-button" class="toggle-navbar-button text-green-400 hover:text-yellow-300 transition duration-300 mt-6 md:mt-0">
+            <button id="navbar-toggle-button" class="toggle-navbar-button text-[#88D040] hover:text-yellow-300 transition duration-300 mt-6 md:mt-0">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
         </div>
+    </div>
+
+    <!-- Call Now Button (Mobile Only) -->
+    <div class="md:hidden block pl-14 flex justify-center items-center absolute left-1/2 transform -translate-x-1/2 -mt-8 z-50">
+        <a href="tel:7048943878" class="bg-[#88D040] text-black py-1 px-2 shadow-sm text-sm font-semibold hover:bg-yellow-300 transition duration-300">
+            Call Now
+        </a>
     </div>
 
     <!-- Mobile Menu -->

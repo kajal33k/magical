@@ -1,10 +1,10 @@
 <!-- Notification Banner -->
-<div class="fixed top-0 w-full md:w-full md:h-16 h-10 bg-[#88D040] text-white z-30 shadow-md">
+<div class="fixed top-0 w-full md:w-full md:h-16 h-10 bg-[#88D040] text-white z-30 shadow-md pt-1 pb-1">
     <div class="text-center">
         <h1 class="md:text-base text-xs font-semibold flex items-center justify-center text-wrap text-black px">
             BIG BILLION SALE IS LIVE TODAY OFFER 50% OFF
         </h1>
-        <div class="mt-1 flex flex-wrap justify-center text-xs text-wrap text-black">
+        <div class=" flex flex-wrap justify-center text-xs text-wrap text-black ">
             <p>ALL INDIA HOME DELIVERY FREE</p>
             <p>50000+ Happy Customers</p>
         </div>

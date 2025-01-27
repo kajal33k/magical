@@ -184,7 +184,7 @@
                     <button class="grid grid-cols-1">
                         <!-- Main Text -->
                         <span class="mr-0">
-                            Order Now
+                            Order Now - Cash on dilevery
                         </span>
 
                         <!-- Confetti Icons and Discount Code -->
@@ -433,7 +433,7 @@
         <button class="grid grid-cols-1">
             <!-- Main Text -->
             <span class="mr-0">
-                Order Now
+                Order Now - Cash on dilevery
             </span>
             <!-- Confetti Icons and Discount Code -->
             <span class="items-center text-yellow-400">

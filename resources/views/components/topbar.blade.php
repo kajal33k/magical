@@ -38,16 +38,36 @@
     </div>
 
     <!-- Call Now Button (Mobile Only) -->
-    <div class="md:hidden block pl-14 flex justify-center items-center absolute left-1/2 transform -translate-x-1/2 -mt-10 z-50">
-        <a href="tel:7048943878" class=" text-black py-1 px-2 shadow-sm text-sm font-semibold hover:bg-yellow-300 transition duration-300">
+    <div class="md:hidden block  flex justify-end items-end absolute left-2/3 transform -translate-x-1/2 -mt-10 z-50 animate-zoom-blink">
+        <a href="tel:7048943878" class="text-black py-1 px-2 shadow-sm text-sm font-semibold hover:bg-yellow-300 transition duration-300">
             <i class="ri-phone-fill text-[#88D040] text-3xl"></i>
-            
         </a>
-        <a href="https://wa.me/7048943878" class=" text-black py-1 px-2 shadow-sm text-sm font-semibold hover:bg-yellow-300 transition duration-300">
-          
+        <a href="https://wa.me/7048943878" class="text-black py-1 px-2 shadow-sm text-sm font-semibold hover:bg-yellow-300 transition duration-300">
             <i class="ri-whatsapp-fill text-[#88D040] text-3xl"></i>
         </a>
     </div>
+    
+    <style>
+        @keyframes zoom-blink {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    
+        .animate-zoom-blink {
+            animation: zoom-blink 1.5s ease-in-out infinite;
+        }
+    </style>
+    
 
     <!-- Mobile Menu -->
     <div id="mobile-menu1" class="hidden md:hidden mt-4">

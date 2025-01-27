@@ -40,12 +40,12 @@
     <!-- Call Now Button (Mobile Only) -->
     <div class="md:hidden block pl-14 flex justify-center items-center absolute left-1/2 transform -translate-x-1/2 -mt-10 z-50">
         <a href="tel:7048943878" class=" text-black py-1 px-2 shadow-sm text-sm font-semibold hover:bg-yellow-300 transition duration-300">
-            <i class="ri-phone-fill text-[#88D040] text-xl"></i>
+            <i class="ri-phone-fill text-[#88D040] text-3xl"></i>
             
         </a>
         <a href="https://wa.me/7048943878" class=" text-black py-1 px-2 shadow-sm text-sm font-semibold hover:bg-yellow-300 transition duration-300">
           
-            <i class="ri-whatsapp-fill text-[#88D040] text-xl"></i>
+            <i class="ri-whatsapp-fill text-[#88D040] text-3xl"></i>
         </a>
     </div>
 

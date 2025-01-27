@@ -522,6 +522,7 @@
                             <option value="Arunachal Pradesh">Arunachal Pradesh</option>
                             <option value="Assam">Assam</option>
                             <option value="Bihar">Bihar</option>
+                            <option value="Delhi">Delhi</option>
                             <option value="Chhattisgarh">Chhattisgarh</option>
                             <option value="Goa">Goa</option>
                             <option value="Gujarat">Gujarat</option>

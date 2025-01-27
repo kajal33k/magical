@@ -19,6 +19,11 @@ class HomeController extends Controller
       }
     public function landing(){
       return view('front.landing');
-    }  
+    }
+
+
+    public function privacy(){
+        return view('front.privacy');
+      }
 
 }

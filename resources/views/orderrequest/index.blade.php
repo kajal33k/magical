@@ -55,7 +55,7 @@
                                         <th>City</th>
                                         <th>Pin Code</th>
                                         <th>Color</th>
-                                        {{-- <th>Created At</th> --}}
+                                        <th>Created At</th>
                                         {{-- <th>Updated At</th> --}}
                                         <th>Action</th>
                                     </tr>
@@ -73,7 +73,7 @@
                                             <td>{{ $orderRequest->city }}</td>
                                             <td>{{ $orderRequest->pin_code }}</td>
                                             <td>{{ ucfirst($orderRequest->color) }}</td>
-                                            {{-- <td>{{ $orderRequest->created_at->format('d-m-Y H:i:s') }}</td> --}}
+                                            <td>{{ $orderRequest->created_at->format('d-m-Y H:i:s') }}</td>
                                             {{-- <td>{{ $orderRequest->updated_at->format('d-m-Y H:i:s') }}</td> --}}
                                             <td>
                                                 <a href="{{ route('orderRequest.delete', $orderRequest->id) }}" class="btn btn-danger">Delete</a>

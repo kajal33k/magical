@@ -11,17 +11,22 @@ use Illuminate\Support\Facades\Mail;
 
 class OrderRequestController extends Controller
 {
-    public function index(Request $request){
-        $keyword = $request->input('keyword');
-        $orderRequest = OrderRequest::query();
+    public function index(Request $request)
+{
+    $keyword = $request->input('keyword');
+    $orderRequest = OrderRequest::query();
 
-        if (!empty($keyword)) {
-            $orderRequest->where('title', 'like', "%$keyword%");
-        }
-        $orderRequestData = $orderRequest->paginate(5);
-
-        return view('orderrequest.index',compact('orderRequestData'));
+    // Apply search filter if keyword is provided
+    if (!empty($keyword)) {
+        $orderRequest->where('title', 'like', "%$keyword%");
     }
+
+    // Order by created_at column in descending order to show latest orders first
+    $orderRequestData = $orderRequest->orderBy('created_at', 'desc')->paginate(15);
+
+    return view('orderrequest.index', compact('orderRequestData'));
+}
+
 
 
     public function store(OrderRequestValidation $request)

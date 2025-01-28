@@ -123,7 +123,8 @@
                     @endfor
                 </div>
                 <p class="text-gray-800 text-lg font-semibold">(50 Thousand Positive Reviews)</p>
-                <p class="text-green-600 text-xl font-bold"> <strike class="text-red-600 px-1"> Rs. 1299.00 </strike>  599.00</p>
+                <p class="text-green-600 text-xl font-bold"> <strike class="text-red-600 px-1"> Rs. 1299.00 </strike> 599.00
+                </p>
 
                 <!-- Countdown Timer -->
                 <div id="countdown"
@@ -478,9 +479,9 @@
                         <label for="name" class="text-sm font-medium text-gray-700">Full Name <span
                                 class="text-red-600">*</span></label>
                         <input type="text" id="name" name="name"
-                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 form-input"
                             placeholder="Enter Your Name" required aria-describedby="fullNameHelp">
-                        <span id="fullNameHelp" class="text-xs text-red-500 hidden">This field is required</span>
+                        <span id="fullNameHelp" class="text-xs text-red-500"></span> <!-- Error Message Here -->
                     </div>
 
                     <!-- Mobile Number -->
@@ -488,8 +489,9 @@
                         <label for="mobile_number" class="block text-sm font-medium text-gray-700">Mobile Number <span
                                 class="text-red-600">*</span></label>
                         <input type="tel" id="mobile_number" name="mobile_number"
-                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 form-input"
                             placeholder="Enter Your Mobile Number" required>
+                        <span id="mobile_numberHelp" class="text-xs text-red-500"></span>
                     </div>
 
                     <!-- House/Village -->
@@ -497,8 +499,9 @@
                         <label for="house_village_name" class="block text-sm font-medium text-gray-700">House/Village
                             <span class="text-red-600">*</span></label>
                         <input type="text" id="house_village_name" name="house_village_name"
-                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 form-input"
                             placeholder="Enter your house or village name" required>
+                        <span id="house_village_nameHelp" class="text-xs text-red-500"></span>
                     </div>
 
                     <!-- Area / Landmark -->
@@ -506,8 +509,9 @@
                         <label for="area_landmark" class="block text-sm font-medium text-gray-700">Area / Landmark <span
                                 class="text-red-600">*</span></label>
                         <input type="text" id="area_landmark" name="area_landmark"
-                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 form-input"
                             placeholder="Enter area or landmark" required>
+                        <span id="area_landmarkHelp" class="text-xs text-red-500"></span>
                     </div>
 
                     <!-- State -->
@@ -515,39 +519,14 @@
                         <label for="state" class="block text-sm font-medium text-gray-700">State <span
                                 class="text-red-600">*</span></label>
                         <select id="state" name="state"
-                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 form-input"
                             required>
                             <option value="" disabled selected>Select State</option>
                             <option value="Andhra Pradesh">Andhra Pradesh</option>
                             <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                            <option value="Assam">Assam</option>
-                            <option value="Bihar">Bihar</option>
-                            <option value="Delhi">Delhi</option>
-                            <option value="Chhattisgarh">Chhattisgarh</option>
-                            <option value="Goa">Goa</option>
-                            <option value="Gujarat">Gujarat</option>
-                            <option value="Haryana">Haryana</option>
-                            <option value="Himachal Pradesh">Himachal Pradesh</option>
-                            <option value="Jharkhand">Jharkhand</option>
-                            <option value="Karnataka">Karnataka</option>
-                            <option value="Kerala">Kerala</option>
-                            <option value="Madhya Pradesh">Madhya Pradesh</option>
-                            <option value="Maharashtra">Maharashtra</option>
-                            <option value="Manipur">Manipur</option>
-                            <option value="Meghalaya">Meghalaya</option>
-                            <option value="Mizoram">Mizoram</option>
-                            <option value="Nagaland">Nagaland</option>
-                            <option value="Odisha">Odisha</option>
-                            <option value="Punjab">Punjab</option>
-                            <option value="Rajasthan">Rajasthan</option>
-                            <option value="Sikkim">Sikkim</option>
-                            <option value="Tamil Nadu">Tamil Nadu</option>
-                            <option value="Telangana">Telangana</option>
-                            <option value="Tripura">Tripura</option>
-                            <option value="Uttar Pradesh">Uttar Pradesh</option>
-                            <option value="Uttarakhand">Uttarakhand</option>
-                            <option value="West Bengal">West Bengal</option>
+                            <!-- Add other states here -->
                         </select>
+                        <span id="stateHelp" class="text-xs text-red-500"></span>
                     </div>
 
                     <!-- City -->
@@ -555,8 +534,9 @@
                         <label for="city" class="block text-sm font-medium text-gray-700">City <span
                                 class="text-red-600">*</span></label>
                         <input type="text" id="city" name="city"
-                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 form-input"
                             placeholder="Enter your city" required>
+                        <span id="cityHelp" class="text-xs text-red-500"></span>
                     </div>
 
                     <!-- Pin Code -->
@@ -564,8 +544,9 @@
                         <label for="pin_code" class="block text-sm font-medium text-gray-700">Pin Code <span
                                 class="text-red-600">*</span></label>
                         <input type="text" id="pin_code" name="pin_code"
-                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 form-input"
                             placeholder="Enter Pin Code" required>
+                        <span id="pin_codeHelp" class="text-xs text-red-500"></span>
                     </div>
 
                     <!-- Color -->
@@ -573,11 +554,12 @@
                         <label for="color" class="block text-sm font-medium text-gray-700">Select Color <span
                                 class="text-red-600">*</span></label>
                         <select id="color" name="color"
-                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 form-input"
                             required>
                             <option value="black" selected>Black</option>
                             <option value="brown">Brown</option>
                         </select>
+                        <span id="colorHelp" class="text-xs text-red-500"></span>
                     </div>
 
                     <!-- Product -->
@@ -593,7 +575,78 @@
                             Confirm Order - Rs. 599.00
                         </button>
                     </div>
+                    <!-- Processing Spinner (Initially hidden) -->
+                    <div id="processing" class="hidden text-center">
+                        <p class="text-gray-600">Processing your order...</p>
+                        <div
+                            class="spinner-border animate-spin border-4 border-t-4 border-gray-900 rounded-full w-8 h-8 mx-auto">
+                        </div>
+                    </div>
                 </form>
+
+
+                <!-- Include jQuery -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+                <script>
+                    $(document).ready(function() {
+                        // Handle form submission with AJAX
+                        $('#shippingForm').submit(function(e) {
+                            e.preventDefault(); // Prevent the default form submission
+
+                            // Clear previous error messages and styles
+                            $('.text-red-500').text('');
+                            $('.form-input').removeClass('border-red-500');
+
+                            // Show the processing spinner
+                            $('#processing').removeClass('hidden'); // Show processing spinner
+
+                            // Get form data
+                            var formData = $(this).serialize();
+
+                            // Send the data to the server
+                            $.ajax({
+                                url: $(this).attr('action'), // The URL to send the request to
+                                type: 'POST',
+                                data: formData,
+                                success: function(response) {
+                                    if(response.status === 'success') {
+                                        // Redirect to thank you page
+                                        window.location.href = response.redirect_url;
+                                    }
+                                },
+                                error: function(xhr) {
+                                    // Hide processing spinner
+                                    $('#processing').addClass('hidden');
+
+                                    // Display validation errors
+                                    var errors = xhr.responseJSON.errors;
+                                    if(errors) {
+                                        $.each(errors, function(key, value) {
+                                            // Display error messages
+                                            $('#' + key).addClass('border-red-500'); // Add red border to the field
+                                            $('#' + key).next('.text-red-500').text(value[0]); // Display the error message
+                                        });
+                                    }
+                                }
+                            });
+                        });
+                    });
+                    </script>
+
+    <style>
+        .spinner-border {
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+    </style>
+
             </div>
 
 

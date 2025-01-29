@@ -227,7 +227,7 @@
 
             <!-- Offers Section -->
             <div class="text-center">
-                <p class="text-pink-600 font-bold md:text-lg text-sm">💖 TODAY'S OFFER - LIMITED TIME ONLY 💖</p>
+                <p class="text-pink-600 font-bold md:text-md text-sm text-wrap mt-4">💖 TODAY'S OFFER - LIMITED TIME ONLY 💖</p>
                 <ul class="list-disc md:px-6 text-gray-700 text-left space-y-2 mt-4">
                     <li><span class="font-semibold text-pink-500 text-sm">50% OFF TODAY</span> 💝</li>
                     <li><span class="font-semibold text-pink-500 text-sm">BUY 1 GET 1 FREE</span> 💝</li>

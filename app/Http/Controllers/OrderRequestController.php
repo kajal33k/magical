@@ -64,5 +64,9 @@ class OrderRequestController extends Controller
     }
 
 
+    public function delete(OrderRequest $orderRequest){
+        $orderRequest->delete();
+        return redirect()->back()->with('success','record deleted');
+    }
 
 }

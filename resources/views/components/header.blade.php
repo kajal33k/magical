@@ -32,42 +32,46 @@
     </div>
 </nav> --}}
 <nav class="bg-black lg:p-4 p-1 shadow-md">
-  <div class="container mx-auto flex justify-between items-center">
-      <div class="flex items-center mt-4 lg:mt-0">
-          <img src="{{asset('asset/img/New-Project-8.png')}}" alt="Magical Logo" class="h-10 lg:h-12 w-auto">
-      </div>
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center mt-4 lg:mt-0">
+            <img src="{{ asset('asset/img/New-Project-8.png') }}" alt="Magical Logo" class="h-10 lg:h-12 w-auto">
+        </div>
 
-      <!-- Desktop Menu -->
-      <div class="hidden md:flex space-x-8">
-          <a href="#home" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400">Home</a>
-          <a href="#about" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400">About</a>
-          <a href="#product" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400">Our Product</a>
-          <a href="#contact" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400">Contact Us</a>
-      </div>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8">
+            <a href="#home" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400">Home</a>
+            <a href="#about" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400">About</a>
+            <a href="#product" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400">Our Product</a>
+            <a href="#contact" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400">Contact Us</a>
+        </div>
 
-<!-- Mobile Menu Button -->
-<div class="md:hidden">
-  <button id="mobile-menu-button" class="text-yellow-300 hover:text-green-400 transition duration-300">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-      </svg>
-  </button>
-</div>
-</div>
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-yellow-300 hover:text-green-400 transition duration-300">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </div>
 
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="hidden md:hidden mt-4">
-<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-  <a href="#home" class="block text-yellow-300 hover:text-green-400 py-2 transition duration-300">Home</a>
-  <a href="#about" class="block text-yellow-300 hover:text-green-400 py-2 transition duration-300">About</a>
-  <a href="#product" class="block text-yellow-300 hover:text-green-400 py-2 transition duration-300">Our Product</a>
-  <a href="#contact" class="block text-yellow-300 hover:text-green-400 py-2 transition duration-300">Contact Us</a>
-</div>
-</div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#home" class="block text-yellow-300 hover:text-green-400 py-2 transition duration-300">Home</a>
+            <a href="#about" class="block text-yellow-300 hover:text-green-400 py-2 transition duration-300">About</a>
+            <a href="#product" class="block text-yellow-300 hover:text-green-400 py-2 transition duration-300">Our
+                Product</a>
+            <a href="#contact" class="block text-yellow-300 hover:text-green-400 py-2 transition duration-300">Contact
+                Us</a>
+        </div>
+    </div>
 
 </nav>
 <script>
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
 
     mobileMenuButton.addEventListener('click', () => {
@@ -77,3 +81,44 @@
 
 <!-- Navbar & Hero End -->
 
+{{-- on scroll pop up --}}
+
+<!-- Popup Modal -->
+
+  <!-- Popup Modal -->
+  <div id="mymodal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center hidden z-50">
+    <div class="bg-white p-6 rounded-lg text-center">
+      <h2 class="text-2xl font-bold mb-4">Please fill in the details</h2>
+      <input type="text" placeholder="Name" class="px-4 py-2 border rounded mb-4 w-full" />
+      <input type="email" placeholder="Email" class="px-4 py-2 border rounded mb-4 w-full" />
+      <div class="flex justify-center space-x-4">
+        <button class="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600">Submit</button>
+        <button id="close-modal" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      // Function to show modal after scroll
+      $(window).scroll(function() {
+        var scrollPosition = $(window).scrollTop(); // current scroll position
+        var documentHeight = $(document).height(); // total height of the page
+        var windowHeight = $(window).height(); // visible height of the browser window
+
+        // Show modal when user scrolls 10% of the page
+        if (scrollPosition >= documentHeight * 0.1) {
+          // Check if modal has already been shown
+          if (localStorage.getItem('mymodal') !== 'true') {
+            $('#mymodal').removeClass('hidden');
+            localStorage.setItem('mymodal', 'true'); // Mark the modal as shown
+          }
+        }
+      });
+
+      // Close modal when the close button is clicked
+      $('#close-modal').click(function() {
+        $('#mymodal').addClass('hidden');
+      });
+    });
+  </script>

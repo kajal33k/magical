@@ -89,13 +89,45 @@
   <div id="mymodal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center hidden z-50">
     <div class="bg-white p-6 rounded-lg text-center">
       <h2 class="text-2xl font-bold mb-4">Please fill in the details</h2>
-      <input type="text" placeholder="Name" class="px-4 py-2 border rounded mb-4 w-full" />
-      <input type="email" placeholder="Email" class="px-4 py-2 border rounded mb-4 w-full" />
+      <input type="text" id="name" placeholder="Name" class="px-4 py-2 border rounded mb-4 w-full" />
+      <input type="text" id="mobile_no" placeholder="Mobile No" class="px-4 py-2 border rounded mb-4 w-full" />
       <div class="flex justify-center space-x-4">
-        <button class="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600">Submit</button>
-        <button id="close-modal" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600">Close</button>
+          <button id="submit" class="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600">Submit</button>
+          <button id="close-modal" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600">Close</button>
       </div>
-    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          $('#submit').click(function() {
+              var name = $('#name').val();
+              var mobile_no = $('#mobile_no').val();
+  
+              if (!/^\d{10}$/.test(mobile_no)) {
+                  alert("Mobile number must be exactly 10 digits.");
+                  return;
+              }
+  
+              $.ajax({
+                  url: '/store-lead',
+                  type: 'POST',
+                  data: {
+                      name: name,
+                      mobile_no: mobile_no,
+                      _token: '{{ csrf_token() }}'
+                  },
+                  success: function(response) {
+                      alert(response.message);
+                  },
+                  error: function(response) {
+                      alert('Error: ' + response.responseJSON.message);
+                  }
+              });
+          });
+      });
+  </script>
+  
   </div>
 
   <script>

@@ -17,6 +17,7 @@ class HomeController extends Controller
 
         return view('front.index');
       }
+      
     public function landing(){
       return view('front.landing');
     }

@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderRequestController;
+use App\Http\Controllers\LeadController;
+
+Route::post('/store-lead', [LeadController::class, 'store']);
+
 
 /*
 |--------------------------------------------------------------------------

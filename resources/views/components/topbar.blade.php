@@ -4,7 +4,7 @@
         <h1 class="md:text-base text-xs font-semibold flex items-center justify-center text-wrap text-black px-4 pt-[5px]">
             BIG BILLION SALE IS LIVE TODAY OFFER 50% OFF
         </h1>
-        <div class="mb-[5px] flex flex-wrap justify-center text-xs text-wrap text-black">
+        <div class="mb-[5px] md:mb-0 flex flex-wrap justify-center text-xs text-wrap text-black">
             <p class="mr-4">ALL INDIA HOME DELIVERY FREE</p>
             <p>50000+ Happy Customers</p>
         </div>

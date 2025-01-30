@@ -23,7 +23,7 @@ rel="stylesheet"
 <body>
     
 @include('landing.header')
-<div class="mt-40">
+<div class="mt-0">
     @yield('content')
 </div>
 @include('landing.footer')

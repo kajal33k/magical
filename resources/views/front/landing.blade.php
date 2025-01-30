@@ -1,6 +1,6 @@
-@extends('components.main')
+@extends('landing.main')
 @section('content')
-    @include('components.topbar')
+
 
 
     <div class="container grid gap-4 grid-cols-[repeat(auto-fill,minmax(0,500px))] items-start w-full md:mx-24">

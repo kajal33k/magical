@@ -1,10 +1,10 @@
 <!-- Notification Banner -->
 <div class="fixed top-0 w-full md:w-full md:h-16 h-10 bg-[#88D040] text-white z-30 shadow-md">
     <div class="text-center">
-        <h1 class="md:text-base text-xs font-semibold flex items-center justify-center text-wrap text-black px-4 pt-[5px]">
+        <h1 class="md:text-base text-xs font-semibold flex items-center justify-center whitespace-normal text-black px-4 pt-[5px]">
             BIG BILLION SALE IS LIVE TODAY OFFER 50% OFF
         </h1>
-        <div class="mb-[5px] md:mb-0 flex flex-wrap justify-center text-xs text-wrap text-black">
+        <div class="mb-[5px] flex flex-wrap justify-center text-xs text-black">
             <p class="mr-4">ALL INDIA HOME DELIVERY FREE</p>
             <p>50000+ Happy Customers</p>
         </div>
@@ -12,7 +12,7 @@
 </div>
 
 <!-- Navbar -->
-<nav class="bg-black lg:p-4 p-1 shadow-md -mt-12 md:mt-0 w-full">
+<nav class="bg-black lg:p-4 p-2 shadow-md -mt-12 md:mt-0 w-full">
     <div class="container mx-auto flex justify-between items-center">
         <!-- Logo Section -->
         <div class="flex items-center mt-4 lg:mt-0">
@@ -38,7 +38,7 @@
     </div>
 
     <!-- Call Now Button (Mobile Only) -->
-    <div class="md:hidden block  flex justify-end items-end absolute left-2/3 transform -translate-x-1/2 -mt-10 z-50 animate-zoom-blink">
+    <div class="md:hidden flex justify-end items-end absolute left-[200px] transform -translate-x-1/2 -mt-10 z-50 animate-zoom-blink">
         <a href="tel:7048943878" class="text-black py-1 px-2 shadow-sm text-sm font-semibold hover:bg-yellow-300 transition duration-300">
             <i class="ri-phone-fill text-[#88D040] text-3xl"></i>
         </a>
@@ -46,7 +46,7 @@
             <i class="ri-whatsapp-fill text-[#88D040] text-3xl"></i>
         </a>
     </div>
-    
+
     <style>
         @keyframes zoom-blink {
             0% {
@@ -67,7 +67,6 @@
             animation: zoom-blink 1.5s ease-in-out infinite;
         }
     </style>
-    
 
     <!-- Mobile Menu -->
     <div id="mobile-menu1" class="hidden md:hidden mt-4">

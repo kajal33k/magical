@@ -1,16 +1,7 @@
-<!-- Notification Banner -->
-<div class="fixed top-0 w-full h-12 md:h-16 bg-[#88D040] text-black text-center py-2 z-30 shadow-md flex flex-col justify-center items-center px-4">
-    <h1 class="md:text-base text-xs font-semibold flex items-center justify-center whitespace-normal text-black px-4 pt-[5px]">
-        BIG BILLION SALE IS LIVE TODAY OFFER 50% OFF
-    </h1>
-    <div class="mb-[5px] flex flex-wrap justify-center text-xs text-black">
-        <p class="mr-4">ALL INDIA HOME DELIVERY FREE</p>
-        <p>50000+ Happy Customers</p>
-    </div>    
-</div>
 
+@include('landing.topbar')
 <!-- Navbar -->
-<nav class="bg-black shadow-md fixed w-full top-12 md:top-16 z-20">
+<nav class="bg-black shadow-md w-full relative">
     <div class="container mx-auto flex justify-between items-center py-2 lg:py-4 px-4">
         <!-- Logo Section -->
         <div>
@@ -43,25 +34,36 @@
 </nav>
 
 <!-- Call Now Button (Mobile Only) -->
-<div class="fixed bottom-4 right-4 md:hidden flex space-x-2 animate-pulse">
-    <a href="tel:7048943878" class="bg-white p-2 rounded-full shadow-lg">
+<div class="md:hidden block  flex justify-end items-end absolute left-[200px] transform -translate-x-1/2 -mt-12 z-9 animate-zoom-blink">
+    <a href="tel:7048943878" class="text-black py-1 px-2 shadow-sm text-sm font-semibold hover:bg-yellow-300 transition duration-300">
         <i class="ri-phone-fill text-[#88D040] text-3xl"></i>
     </a>
-    <a href="https://wa.me/7048943878" class="bg-white p-2 rounded-full shadow-lg">
+    <a href="https://wa.me/7048943878" class="text-black py-1 px-2 shadow-sm text-sm font-semibold hover:bg-yellow-300 transition duration-300">
         <i class="ri-whatsapp-fill text-[#88D040] text-3xl"></i>
     </a>
 </div>
 
 <style>
-    @keyframes pulse {
-        0%, 100% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.2); opacity: 0.7; }
+    @keyframes zoom-blink {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        50% {
+            transform: scale(1.2);
+            opacity: 0.7;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
     }
 
-    .animate-pulse {
-        animation: pulse 1.5s infinite;
+    .animate-zoom-blink {
+        animation: zoom-blink 1.5s ease-in-out infinite;
     }
 </style>
+ 
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {

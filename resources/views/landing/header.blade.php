@@ -1,7 +1,7 @@
 
 @include('landing.topbar')
 <!-- Navbar -->
-<nav class="bg-black shadow-md w-full relative ">
+<nav class=" bg-black shadow-md w-full relative z-10" style="position: fixed">
     <div class="container mx-auto flex justify-between items-center py-2 lg:py-4 px-4">
         <!-- Logo Section -->
         <div>

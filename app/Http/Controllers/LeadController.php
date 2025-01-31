@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\Lead;
+use App\Models\lead;
 use Illuminate\Http\Request;
 
 class LeadController extends Controller

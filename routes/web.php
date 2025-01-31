@@ -15,6 +15,8 @@ use App\Http\Controllers\OrderRequestController;
 use App\Http\Controllers\LeadController;
 
 Route::post('/store-lead', [LeadController::class, 'store']);
+Route::get('contact/index',[LeadController::class,'index'])->name('contact.index');
+
 
 
 /*

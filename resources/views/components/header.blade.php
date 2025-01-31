@@ -97,7 +97,9 @@
       </div>
   </div>
   
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <scrip src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+<script>
   $(document).ready(function() {
     $('#submit').click(function() {
         var name = $('#name').val().trim();
@@ -131,6 +133,7 @@
     });
 });
 
+</script>
   
   </div>
 

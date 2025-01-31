@@ -98,35 +98,39 @@
   </div>
   
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-      $(document).ready(function() {
-          $('#submit').click(function() {
-              var name = $('#name').val();
-              var mobile_no = $('#mobile_no').val();
-  
-              if (!/^\d{10}$/.test(mobile_no)) {
-                  alert("Mobile number must be exactly 10 digits.");
-                  return;
-              }
-  
-              $.ajax({
-                  url: '/store-lead',
-                  type: 'POST',
-                  data: {
-                      name: name,
-                      mobile_no: mobile_no,
-                      _token: '{{ csrf_token() }}'
-                  },
-                  success: function(response) {
-                      alert(response.message);
-                  },
-                  error: function(response) {
-                      alert('Error: ' + response.responseJSON.message);
-                  }
-              });
-          });
-      });
-  </script>
+  $(document).ready(function() {
+    $('#submit').click(function() {
+        var name = $('#name').val().trim();
+        var mobile_no = $('#mobile_no').val().trim();
+
+        if (!/^\d{10}$/.test(mobile_no)) {
+            alert("Mobile number must be exactly 10 digits.");
+            return;
+        }
+
+        if (!/^[A-Za-z\s]+$/.test(name)) {
+            alert("Name should contain only letters and spaces.");
+            return;
+        }
+
+        $.ajax({
+            url: '/store-lead',
+            type: 'POST',
+            data: {
+                name: name,
+                mobile_no: mobile_no,
+                _token: '{{ csrf_token() }}'
+            },
+            success: function(response) {
+                alert(response.message);
+            },
+            error: function(response) {
+                alert('Error: ' + response.responseJSON.message);
+            }
+        });
+    });
+});
+
   
   </div>
 

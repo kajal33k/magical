@@ -32,16 +32,20 @@
             </div>
 
             <!-- Thumbnails -->
-            <div class="flex justify-center md:space-x-4 mt-4">
+            <div class="flex flex-wrap justify-center md:justify-start gap-x-2 sm:gap-x-4 mt-4">
                 <img data-slide="0" src="{{ asset('asset/img/post 04.jpg') }}" alt="Thumbnail 1"
-                    class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                
                 <img data-slide="1" src="{{ asset('asset/img/two.jpg') }}" alt="Thumbnail 2"
-                    class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                
                 <img data-slide="2" src="{{ asset('asset/img/three.jpg') }}" alt="Thumbnail 3"
-                    class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                
                 <img data-slide="3" src="{{ asset('asset/img/four.jpg') }}" alt="Thumbnail 4"
-                    class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
+            
         </div>
         <script>
             document.addEventListener("DOMContentLoaded", function() {
@@ -114,7 +118,7 @@
         <div class="right bg-white p-2 lg:pl-32 w-full">
             {{-- product --}}
             <div class="text-center space-y-4">
-                <h1 class="text-3xl font-bold">Magical Black Hair shampoo (Ammonia Free) Hurry up 50% of offer
+                <h1 class="text-md md:text-3xl font-bold">Magical Black Hair shampoo (Ammonia Free) Hurry up 50% of offer
                     Buy 1 Get 1 free..</h1>
                 <div class="flex justify-center items-center space-x-1">
                     <!-- Star Ratings -->
@@ -240,18 +244,21 @@
             </div>
 
             <!-- Warning Section -->
-            <div class="mt-8">
-                <h2 class="text-xl font-bold text-center text-gray-800">
+            <div class="mt-8 px-4 sm:px-6 lg:px-8">
+                <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-center text-gray-800">
                     Attention! Poor quality hair dye can cause multiple conditions
                 </h2>
-                <div class="mt-6 flex justify-center">
+            
+                <div class="mt-4 sm:mt-6 flex justify-center">
                     <img src="{{ asset('asset/img/hair3.avif') }}" alt="Hair Damage Warning"
-                        class="rounded-lg shadow-md max-w-xs">
+                        class="rounded-lg shadow-md max-w-[90%] sm:max-w-md lg:max-w-lg mx-auto">
                 </div>
-                <p class="text-center text-sm text-gray-600 mt-4">
+            
+                <p class="text-center text-sm sm:text-base text-gray-600 mt-4">
                     Choose high-quality products to avoid damage to your hair and scalp.
                 </p>
             </div>
+            
 
             <!-- How to Use Section -->
             <div class=" flex justify-center">

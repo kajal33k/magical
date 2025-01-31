@@ -3,7 +3,7 @@
 
 
 
-    <div class="container grid gap-4 grid-cols-[repeat(auto-fill,minmax(0,500px))] items-start w-full md:mx-24">
+    <div class="container mt-12 md:mt-44 grid gap-4 grid-cols-[repeat(auto-fill,minmax(0,500px))] items-start w-full md:mx-24">
 
 
         <div class="left p-4 w-full lg:sticky lg:top-0">

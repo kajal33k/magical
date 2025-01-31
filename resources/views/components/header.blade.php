@@ -85,79 +85,80 @@
 
 <!-- Popup Modal -->
 
-  <!-- Popup Modal -->
-  <div id="mymodal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center hidden z-50">
+<!-- Popup Modal -->
+<div id="mymodal"
+    class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center hidden z-50">
     <div class="bg-white p-6 rounded-lg text-center">
-      <h2 class="text-2xl font-bold mb-4">Please fill in the details</h2>
-      <input type="text" id="name" placeholder="Name" class="px-4 py-2 border rounded mb-4 w-full" />
-      <input type="text" id="mobile_no" placeholder="Mobile No" class="px-4 py-2 border rounded mb-4 w-full" />
-      <div class="flex justify-center space-x-4">
-          <button id="submit" class="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600">Submit</button>
-          <button id="close-modal" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600">Close</button>
-      </div>
-  </div>
-  
-  <scrip src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  
+        <h2 class="text-2xl font-bold mb-4">Please fill in the details</h2>
+        <input type="text" id="name" placeholder="Name" class="px-4 py-2 border rounded mb-4 w-full" />
+        <input type="text" id="mobile_no" placeholder="Mobile No" class="px-4 py-2 border rounded mb-4 w-full" />
+        <div class="flex justify-center space-x-4">
+            <button id="submit" class="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600">Submit</button>
+            <button id="close-modal" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600">Close</button>
+        </div>
+    </div>
+
+    <scrip src="https://code.jquery.com/jquery-3.6.0.min.js">
+        </script>
+
+        <script>
+            $(document).ready(function() {
+                $('#submit').click(function() {
+                    var name = $('#name').val().trim();
+                    var mobile_no = $('#mobile_no').val().trim();
+
+                    if (!/^\d{10}$/.test(mobile_no)) {
+                        alert("Mobile number must be exactly 10 digits.");
+                        return;
+                    }
+
+                    if (!/^[A-Za-z\s]+$/.test(name)) {
+                        alert("Name should contain only letters and spaces.");
+                        return;
+                    }
+
+                    $.ajax({
+                        url: '/store-lead',
+                        type: 'POST',
+                        data: {
+                            name: name,
+                            mobile_no: mobile_no,
+                            _token: '{{ csrf_token() }}'
+                        },
+                        success: function(response) {
+                            alert(response.message);
+                        },
+                        error: function(response) {
+                            alert('Error: ' + response.responseJSON.message);
+                        }
+                    });
+                });
+            });
+        </script>
+
+</div>
+
 <script>
-  $(document).ready(function() {
-    $('#submit').click(function() {
-        var name = $('#name').val().trim();
-        var mobile_no = $('#mobile_no').val().trim();
+    $(document).ready(function() {
+        // Function to show modal after scroll
+        $(window).scroll(function() {
+            var scrollPosition = $(window).scrollTop(); // current scroll position
+            var documentHeight = $(document).height(); // total height of the page
+            var windowHeight = $(window).height(); // visible height of the browser window
 
-        if (!/^\d{10}$/.test(mobile_no)) {
-            alert("Mobile number must be exactly 10 digits.");
-            return;
-        }
-
-        if (!/^[A-Za-z\s]+$/.test(name)) {
-            alert("Name should contain only letters and spaces.");
-            return;
-        }
-
-        $.ajax({
-            url: '/store-lead',
-            type: 'POST',
-            data: {
-                name: name,
-                mobile_no: mobile_no,
-                _token: '{{ csrf_token() }}'
-            },
-            success: function(response) {
-                alert(response.message);
-            },
-            error: function(response) {
-                alert('Error: ' + response.responseJSON.message);
+            // Show modal when user scrolls 10% of the page
+            if (scrollPosition >= documentHeight * 0.1) {
+                // Check if modal has already been shown
+                if (localStorage.getItem('mymodal') !== 'true') {
+                    $('#mymodal').removeClass('hidden');
+                    localStorage.setItem('mymodal', 'true'); // Mark the modal as shown
+                }
             }
         });
-    });
-});
 
+        // Close modal when the close button is clicked
+        $('#close-modal').click(function() {
+            $('#mymodal').addClass('hidden');
+        });
+    });
 </script>
-  
-  </div>
-
-  <script>
-    $(document).ready(function() {
-      // Function to show modal after scroll
-      $(window).scroll(function() {
-        var scrollPosition = $(window).scrollTop(); // current scroll position
-        var documentHeight = $(document).height(); // total height of the page
-        var windowHeight = $(window).height(); // visible height of the browser window
-
-        // Show modal when user scrolls 10% of the page
-        if (scrollPosition >= documentHeight * 0.1) {
-          // Check if modal has already been shown
-          if (localStorage.getItem('mymodal') !== 'true') {
-            $('#mymodal').removeClass('hidden');
-            localStorage.setItem('mymodal', 'true'); // Mark the modal as shown
-          }
-        }
-      });
-
-      // Close modal when the close button is clicked
-      $('#close-modal').click(function() {
-        $('#mymodal').addClass('hidden');
-      });
-    });
-  </script>

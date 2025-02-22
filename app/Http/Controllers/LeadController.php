@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\Lead;
+use App\Models\lead;
 use Illuminate\Http\Request;
 
 class LeadController extends Controller
@@ -26,16 +26,19 @@ class LeadController extends Controller
 
     public function store(Request $request)
     {
+        
         $request->validate([
             'name' => 'required|string|max:255',
             'mobile_no' => 'required|string|max:15',
         ]);
+        
 
-        Lead::create([
-            'name' => $request->name,
-            'mobile_no' => $request->mobile_no,
+        $lead = Lead::create($request->all());
+
+        return response([
+            'status' => 200,
+            'message' => 'Successfully submit',
+            'lead' => $lead,
         ]);
-
-        return redirect()->route('leads.index')->with('success', 'Lead added successfully.');
     }
 }

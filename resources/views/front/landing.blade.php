@@ -6,7 +6,7 @@
     <div class="container mt-12 md:mt-44 grid gap-4 grid-cols-[repeat(auto-fill,minmax(0,500px))] items-start w-full md:mx-24">
 
 
-        <div class="left p-4 w-full lg:sticky lg:top-0">
+        <div class="left p-4 pb-4 w-full lg:sticky lg:top-0">
             <!-- Main Slider -->
             <div class="overflow-hidden relative">
                 <div id="slider" class="flex transition-transform duration-500">
@@ -18,6 +18,13 @@
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
                     <img src="{{ asset('asset/img/four.jpg') }}" alt="Product Image 4"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
+                        <img src="{{ asset('asset/img/thumbnail1.jpg') }}" alt="Product Image 5"
+                        class="w-full h-auto lg:h-full object-cover flex-shrink-0">
+                    <img src="{{ asset('asset/img/thumbnail2.jpg') }}" alt="Product Image 6"
+                        class="w-full h-auto lg:h-full object-cover flex-shrink-0">
+                    <img src="{{ asset('asset/img/thumbnail3.jpg') }}" alt="Product Image 7"
+                        class="w-full h-auto lg:h-full object-cover flex-shrink-0">
+                        
                 </div>
 
                 <!-- Navigation Buttons -->
@@ -44,7 +51,17 @@
                 
                 <img data-slide="3" src="{{ asset('asset/img/four.jpg') }}" alt="Thumbnail 4"
                     class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
+           
+                    <img data-slide="0" src="{{ asset('asset/img/thumbnail1.jpg') }}" alt="Thumbnail 1"
+                    class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                
+                <img data-slide="1" src="{{ asset('asset/img/thumbnail2.jpg') }}" alt="Thumbnail 2"
+                    class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                
+                <img data-slide="2" src="{{ asset('asset/img/thumbnail3.jpg') }}" alt="Thumbnail 3"
+                    class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                
+                </div>
             
         </div>
         <script>

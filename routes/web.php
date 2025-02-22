@@ -33,6 +33,11 @@ Route::get('/',[HomeController::class,'landing'])->name('home');
 Route::get('/home2', [HomeController::class, 'index'])->name('home2');
 Route::get('/about',[HomeController::class,'about'])->name('about');
 Route::get('/privacy',[HomeController::class,'privacy'])->name('privacy');
+Route::get('/refund', [HomeController::class, 'refund'])->name('refund');
+Route::get('shipping', [HomeController::class, 'shipping'])->name('shipping');
+Route::get('return', [HomeController::class, 'return'])->name('return');
+Route::get('/terms_condition', [HomeController::class, 'term_condition'])->name('term_condition');
+
 Route::get('/thank-you', function () {
     return view('thankyou');
 })->name('thank-you');

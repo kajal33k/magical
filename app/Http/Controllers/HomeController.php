@@ -27,4 +27,16 @@ class HomeController extends Controller
         return view('front.privacy');
       }
 
+      public function term_condition(){
+        return view('front.terms_condition');
+      }
+      public function refund(){
+        return view('front.refund');
+      }
+      public function shipping(){
+        return view('front.shipping');
+      }
+      public function return(){
+        return view('front.return');
+      }
 }

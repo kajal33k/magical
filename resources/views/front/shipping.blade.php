@@ -4,11 +4,12 @@
 <div class="container py-10 px-6 mx-auto max-w-4xl">
   <!-- Shipping Policy -->
   <section class="mb-5 p-6 bg-gray-100 rounded-lg shadow-md">
-    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Shipping Policy</h2>
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Shipping Policy</h2>
     <p class="text-gray-700 leading-relaxed">
-        Orders are shipped within <span class="font-medium">3 days</span> via registered courier or speed post. Delivery timelines depend 
-        on the shipping provider. Shipping charges (if applicable) are non-refundable.
-    </p>
+      Shipping Policy
+
+      The orders for the user are shipped through registered domestic courier companies and/or speed post only. Orders are shipped within 3 days from the date of the order and/or payment or as per the delivery date agreed at the time of order confirmation and delivering of the shipment, subject to courier company / post office norms. Platform Owner shall not be liable for any delay in delivery by the courier company / postal authority. Delivery of all orders will be made to the address provided by the buyer at the time of purchase. Delivery of our services will be confirmed on your email ID as specified at the time of registration. If there are any shipping cost(s) levied by the seller or the Platform Owner (as the case be), the same is not refundable.
+      </p>
 </section>
 </div>    
 @endsection

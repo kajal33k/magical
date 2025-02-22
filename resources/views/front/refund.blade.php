@@ -2,24 +2,29 @@
 @section('content')
 
 <div class="container py-10 px-6 mx-auto max-w-4xl">
- <!-- Refund & Cancellation Policy -->
- <section class="mb-5 p-6 bg-gray-100 rounded-lg shadow-md">
-    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Refund & Cancellation Policy</h2>
-    <p class="text-gray-700 leading-relaxed">
-        You may cancel an order within <span class="font-medium">1 day</span> of placing it. However, cancellations are not possible once 
-        the item is shipped. Perishable goods (e.g., food items) are non-refundable.
-    </p>
-
-    <div class="p-4 mt-4 bg-red-100 border-l-4 border-red-500 text-red-700 rounded">
-        <p class="font-medium">⚠ Important:</p>
-        <p class="text-sm">Damaged or defective items must be reported within <span class="font-medium">1 day</span> of receipt for replacement or refund.</p>
-    </div>
-
-    <p class="text-gray-700 mt-4">
-        Refunds (if approved) will be processed within <span class="font-medium">7 days</span>.
-    </p>
-</section>
-
-
+    <!-- Refund & Cancellation Policy -->
+    <section class="mb-6 p-8 bg-gray-100 rounded-lg shadow-md">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Refund Policy</h2>
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Refund & Cancellation Policy</h2>
+        <p class="text-gray-700 leading-relaxed">
+            This refund and cancellation policy outlines how you can cancel or seek a refund for a product / service that you have purchased through the Platform. Under this policy:
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-4">
+            Cancellations will only be considered if the request is made within 1 day of placing the order. However, cancellation requests may not be entertained if the orders have been communicated to such sellers / merchant(s) listed on the Platform and they have initiated the process of shipping them, or the product is out for delivery. In such an event, you may choose to reject the product at the doorstep.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-4">
+            MM ENTERPRISES does not accept cancellation requests for perishable items like flowers, eatables, etc. However, the refund / replacement can be made if the user establishes that the quality of the product delivered is not good.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-4">
+            In case of receipt of damaged or defective items, please report to our customer service team. The request would be entertained once the seller/merchant listed on the Platform has checked and determined the same at its own end. This should be reported within 1 day of receipt of products. In case you feel that the product received is not as shown on the site or as per your expectations, you must bring it to the notice of our customer service within 1 day of receiving the product. The customer service team, after looking into your complaint, will take an appropriate decision.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-4">
+            In case of complaints regarding the products that come with a warranty from the manufacturers, please refer the issue to them.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-4">
+            In case of any refunds approved by MM ENTERPRISES, it will take 7 days for the refund to be processed to you.
+        </p>
+    </section>
 </div>
+
 @endsection

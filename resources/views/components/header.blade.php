@@ -36,7 +36,7 @@
 </nav>
 
 <!-- Popup Modal -->
-<<<<<<< HEAD
+
 <div id="mymodal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center hidden z-50">
   <div class="bg-white p-6 rounded-lg text-center">
       <h2 class="text-2xl font-bold mb-4">Please fill in the details</h2>
@@ -197,5 +197,5 @@
             $('#mymodal').addClass('hidden');
         });
     });
->>>>>>> 2131911b75f61651809012578a65bf3399acb9d2
+
 </script>

@@ -259,14 +259,13 @@
             </p>
         
             <h3 class="text-lg font-semibold text-gray-700 mt-6">Grievance Officer</h3>
-            <p class="text-gray-700">
-                <strong>Name:</strong> [Insert Name] <br>
-                <strong>Designation:</strong> [Insert Designation] <br>
-                <strong>Company:</strong> MM ENTERPRISES <br>
-                <strong>Address:</strong> RZ A 139 OLD PLOT NO 138 GALI NO1 SITAPURI PART 1, New Delhi <br>
-                <strong>Phone:</strong> [Insert Contact Number] <br>
-                <strong>Email:</strong> [Insert Email]
-            </p>
+            <div class="mt-4 p-4 bg-gray-200 rounded-lg">
+                <p><strong>MM ENTERPRISES</strong></p>
+                <p><strong>Address:</strong> 123 Business Street, Kanpur, India</p>
+                <p><strong>Email:</strong> <a href="mailto:contact@magicalbrands.info" class="text-blue-500">contact@magicalbrands.info</a></p>
+                <p><strong>Phone:</strong> +91 98765 43210</p>
+                <p><strong>Time:</strong> Monday - Friday (9:00 - 18:00)</p>
+            </div>
         </section>
         
         <!-- Refund & Cancellation Policy -->

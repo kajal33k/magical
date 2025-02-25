@@ -3,7 +3,8 @@
 
 
 
-    <div class="container mt-12 md:mt-44 grid gap-4 grid-cols-[repeat(auto-fill,minmax(0,500px))] items-start w-full md:mx-24">
+    <div
+        class="container mt-12 md:mt-44 grid gap-4 grid-cols-[repeat(auto-fill,minmax(0,500px))] items-start w-full md:mx-24">
 
 
         <div class="left p-4 pb-4 w-full lg:sticky lg:top-0">
@@ -18,13 +19,13 @@
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
                     <img src="{{ asset('asset/img/four.jpg') }}" alt="Product Image 4"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
-                        <img src="{{ asset('asset/img/thumbnail1.jpg') }}" alt="Product Image 5"
+                    <img src="{{ asset('asset/img/thumbnail1.jpg') }}" alt="Product Image 5"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
                     <img src="{{ asset('asset/img/thumbnail2.jpg') }}" alt="Product Image 6"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
                     <img src="{{ asset('asset/img/thumbnail3.jpg') }}" alt="Product Image 7"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
-                        
+
                 </div>
 
                 <!-- Navigation Buttons -->
@@ -42,27 +43,27 @@
             <div class="flex flex-wrap justify-center md:justify-start gap-x-2 sm:gap-x-4 mt-4">
                 <img data-slide="0" src="{{ asset('asset/img/post 04.jpg') }}" alt="Thumbnail 1"
                     class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                
+
                 <img data-slide="1" src="{{ asset('asset/img/two.jpg') }}" alt="Thumbnail 2"
                     class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                
+
                 <img data-slide="2" src="{{ asset('asset/img/three.jpg') }}" alt="Thumbnail 3"
                     class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                
+
                 <img data-slide="3" src="{{ asset('asset/img/four.jpg') }}" alt="Thumbnail 4"
                     class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
-           
-                    <img data-slide="0" src="{{ asset('asset/img/thumbnail1.jpg') }}" alt="Thumbnail 1"
+
+                <img data-slide="0" src="{{ asset('asset/img/thumbnail1.jpg') }}" alt="Thumbnail 1"
                     class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                
+
                 <img data-slide="1" src="{{ asset('asset/img/thumbnail2.jpg') }}" alt="Thumbnail 2"
                     class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                
+
                 <img data-slide="2" src="{{ asset('asset/img/thumbnail3.jpg') }}" alt="Thumbnail 3"
                     class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                
-                </div>
-            
+
+            </div>
+
         </div>
         <script>
             document.addEventListener("DOMContentLoaded", function() {
@@ -249,7 +250,8 @@
 
             <!-- Offers Section -->
             <div class="text-center">
-                <p class="text-pink-600 font-bold md:text-md text-sm text-wrap mt-4">💖 TODAY'S OFFER - LIMITED TIME ONLY 💖</p>
+                <p class="text-pink-600 font-bold md:text-md text-sm text-wrap mt-4">💖 TODAY'S OFFER - LIMITED TIME ONLY
+                    💖</p>
                 <ul class="list-disc md:px-6 text-gray-700 text-left space-y-2 mt-4">
                     <li><span class="font-semibold text-pink-500 text-sm">50% OFF TODAY</span> 💝</li>
                     <li><span class="font-semibold text-pink-500 text-sm">BUY 1 GET 1 FREE</span> 💝</li>
@@ -265,17 +267,17 @@
                 <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-center text-gray-800">
                     Attention! Poor quality hair dye can cause multiple conditions
                 </h2>
-            
+
                 <div class="mt-4 sm:mt-6 flex justify-center">
                     <img src="{{ asset('asset/img/hair3.avif') }}" alt="Hair Damage Warning"
                         class="rounded-lg shadow-md max-w-[90%] sm:max-w-md lg:max-w-lg mx-auto">
                 </div>
-            
+
                 <p class="text-center text-sm sm:text-base text-gray-600 mt-4">
                     Choose high-quality products to avoid damage to your hair and scalp.
                 </p>
             </div>
-            
+
 
             <!-- How to Use Section -->
             <div class=" flex justify-center">
@@ -542,47 +544,48 @@
                     <div class="mb-4">
                         <label for="state" class="block text-sm font-medium text-gray-700">State <span
                                 class="text-red-600">*</span></label>
-                                <select id="state" name="state"
-                                class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                                required>
-                                <option value="" disabled selected>Select State</option>
-                                <option value="Andhra Pradesh">Andhra Pradesh</option>
-                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                                <option value="Assam">Assam</option>
-                                <option value="Bihar">Bihar</option>
-                                <option value="Chhattisgarh">Chhattisgarh</option>
-                                <option value="Goa">Goa</option>
-                                <option value="Gujarat">Gujarat</option>
-                                <option value="Haryana">Haryana</option>
-                                <option value="Himachal Pradesh">Himachal Pradesh</option>
-                                <option value="Jharkhand">Jharkhand</option>
-                                <option value="Karnataka">Karnataka</option>
-                                <option value="Kerala">Kerala</option>
-                                <option value="Madhya Pradesh">Madhya Pradesh</option>
-                                <option value="Maharashtra">Maharashtra</option>
-                                <option value="Manipur">Manipur</option>
-                                <option value="Meghalaya">Meghalaya</option>
-                                <option value="Mizoram">Mizoram</option>
-                                <option value="Nagaland">Nagaland</option>
-                                <option value="Odisha">Odisha</option>
-                                <option value="Punjab">Punjab</option>
-                                <option value="Rajasthan">Rajasthan</option>
-                                <option value="Sikkim">Sikkim</option>
-                                <option value="Tamil Nadu">Tamil Nadu</option>
-                                <option value="Telangana">Telangana</option>
-                                <option value="Tripura">Tripura</option>
-                                <option value="Uttar Pradesh">Uttar Pradesh</option>
-                                <option value="Uttarakhand">Uttarakhand</option>
-                                <option value="West Bengal">West Bengal</option>
-                                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                                <option value="Chandigarh">Chandigarh</option>
-                                <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
-                                <option value="Lakshadweep">Lakshadweep</option>
-                                <option value="Delhi">Delhi</option>
-                                <option value="Puducherry">Puducherry</option>
-                                <option value="Ladakh">Ladakh</option>
-                                <option value="Lakshadweep">Lakshadweep</option>
-                            </select>
+                        <select id="state" name="state"
+                            class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            required>
+                            <option value="" disabled selected>Select State</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and
+                                Diu</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Puducherry">Puducherry</option>
+                            <option value="Ladakh">Ladakh</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                        </select>
                         <span id="stateHelp" class="text-xs text-red-500"></span>
                     </div>
 
@@ -667,7 +670,7 @@
                                 type: 'POST',
                                 data: formData,
                                 success: function(response) {
-                                    if(response.status === 'success') {
+                                    if (response.status === 'success') {
                                         // Redirect to thank you page
                                         window.location.href = response.redirect_url;
                                     }
@@ -678,31 +681,37 @@
 
                                     // Display validation errors
                                     var errors = xhr.responseJSON.errors;
-                                    if(errors) {
+                                    if (errors) {
                                         $.each(errors, function(key, value) {
                                             // Display error messages
-                                            $('#' + key).addClass('border-red-500'); // Add red border to the field
-                                            $('#' + key).next('.text-red-500').text(value[0]); // Display the error message
+                                            $('#' + key).addClass(
+                                            'border-red-500'); // Add red border to the field
+                                            $('#' + key).next('.text-red-500').text(value[
+                                            0]); // Display the error message
                                         });
                                     }
                                 }
                             });
                         });
                     });
-                    </script>
+                </script>
 
-    <style>
-        .spinner-border {
-    border-top-color: transparent;
-    animation: spin 1s linear infinite;
-}
+                <style>
+                    .spinner-border {
+                        border-top-color: transparent;
+                        animation: spin 1s linear infinite;
+                    }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+                    @keyframes spin {
+                        0% {
+                            transform: rotate(0deg);
+                        }
 
-    </style>
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+                </style>
 
             </div>
 
@@ -715,6 +724,66 @@
         </div>
     </div>
 
+
+    <section class="bg-gray-100 py-10">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-black mb-6">Important Links</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                
+                <!-- Link 1 -->
+                <a href="{{route('refund')}}" class="flex items-center space-x-4 p-4 bg-white shadow-md rounded-lg hover:bg-gray-200 transition">
+                    <div class="p-3 bg-blue-100 text-blue-600 rounded-full">
+                        🔗
+                    </div>
+                    <span class="text-lg font-medium text-gray-800">Refund Policy</span>
+                </a>
+    
+                <!-- Link 2 -->
+                <a href="{{route('term_condition')}}" class="flex items-center space-x-4 p-4 bg-white shadow-md rounded-lg hover:bg-gray-200 transition">
+                    <div class="p-3 bg-green-100 text-green-600 rounded-full">
+                        📄
+                    </div>
+                    <span class="text-lg font-medium text-gray-800">Terms & Conditions</span>
+                </a>
+    
+                <!-- Link 3 -->
+                <a href="{{route('privacy')}}" class="flex items-center space-x-4 p-4 bg-white shadow-md rounded-lg hover:bg-gray-200 transition">
+                    <div class="p-3 bg-red-100 text-red-600 rounded-full">
+                        🔍
+                    </div>
+                    <span class="text-lg font-medium text-gray-800">Privacy Policy</span>
+                </a>
+    
+                <!-- Link 4 -->
+                <a href="{{route('shipping')}}" class="flex items-center space-x-4 p-4 bg-white shadow-md rounded-lg hover:bg-gray-200 transition">
+                    <div class="p-3 bg-yellow-100 text-yellow-600 rounded-full">
+                        📢
+                    </div>
+                    <span class="text-lg font-medium text-gray-800">Shipping Policy</span>
+                </a>
+    
+                <!-- Link 5 -->
+                {{-- <a href="{{route('registration')}}" class="flex items-center space-x-4 p-4 bg-white shadow-md rounded-lg hover:bg-gray-200 transition">
+                    <div class="p-3 bg-purple-100 text-purple-600 rounded-full">
+                        📧
+                    </div>
+                    <span class="text-lg font-medium text-gray-800">Contact Support</span>
+                </a>
+     --}}
+                <!-- Link 6 -->
+                <a href="{{route('return')}}" class="flex items-center space-x-4 p-4 bg-white shadow-md rounded-lg hover:bg-gray-200 transition">
+                    <div class="p-3 bg-indigo-100 text-indigo-600 rounded-full">
+                        💼
+                    </div>
+                    <span class="text-lg font-medium text-gray-800">Return Policy</span>
+                </a>
+    
+            </div>
+        </div>
+    </section>
+    
+
+    
     <script>
         // Open modal
         function openModal() {

@@ -43,7 +43,9 @@ Route::get('/thank-you', function () {
 })->name('thank-you');
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 
-
+Route::get('seondpage',function(){
+    return view('secondpage');
+})->name('more.product');
 
 Route::get('login-form',[AuthController::class,'index'])->name('login-form');
 Route::get('registration',[AuthController::class,'registration'])->name('registration');

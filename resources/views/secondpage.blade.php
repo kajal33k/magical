@@ -136,7 +136,7 @@
         <div class="right bg-white p-2 lg:pl-32 w-full">
             {{-- product --}}
             <div class="text-center space-y-4">
-                <h1 class="text-md md:text-3xl font-bold">Magical Black Hair shampoo (Ammonia Free) Hurry up 50% of offer
+                <h1 class="text-md md:text-3xl font-bold">Magical Brands Black Hair shampoo (Ammonia Free) Hurry up 50% of offer
                     Buy 1 Get 1 free..</h1>
                 <div class="flex justify-center items-center space-x-1">
                     <!-- Star Ratings -->
@@ -240,11 +240,7 @@
                         </span>
                     </div>
                 </button> --}}
-                <a href="{{ route('more.product') }}" target="_blank" 
-                class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg shadow-md transition duration-300">
-                Get More Products
-             </a>
-             
+               <a href=""> Get More Product</a>
                 <p class="text-sm text-black font-bold">Limited Time Offer</p>
                 <p class="text-sm text-gray-500">✨ Apply 50% Discount Code ✨</p>
                 <div class="flex justify-center">

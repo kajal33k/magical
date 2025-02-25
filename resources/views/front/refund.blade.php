@@ -22,7 +22,7 @@
             In case of complaints regarding the products that come with a warranty from the manufacturers, please refer the issue to them.
         </p>
         <p class="text-gray-700 leading-relaxed mt-4">
-            In case of any refunds approved by MM ENTERPRISES, it will take 7 days for the refund to be processed to you.
+            In case of any refunds approved by MM ENTERPRISES, it will take 7 days for the refund to be credited to you.
         </p>
     </section>
 </div>

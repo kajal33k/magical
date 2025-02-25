@@ -13,10 +13,10 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
+    // public function index(){
 
-        return view('front.index');
-      }
+    //     return view('front.index');
+    //   }
       
     public function landing(){
       return view('front.landing');

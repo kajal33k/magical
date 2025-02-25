@@ -45,15 +45,16 @@
 
         <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-8">
-            <a href="#home"
+            <a href="{{route('home')}}"
                 class="text-yellow-300 font-bold text-lg hover:text-green-400 transition duration-300">Home</a>
-            <a href="#about"
+            {{-- <a href="#about"
                 class="text-yellow-300 font-bold text-lg hover:text-green-400 transition duration-300">About</a>
             <a href="#product"
                 class="text-yellow-300 font-bold text-lg hover:text-green-400 transition duration-300">Our Product</a>
             <a href="#contact"
                 class="text-yellow-300 font-bold text-lg hover:text-green-400 transition duration-300">Contact Us</a>
-        </div>
+        --}}
+            </div>
 
         <!-- Mobile Menu Button -->
         <button id="navbar-toggle" class="md:hidden text-[#88D040] hover:text-yellow-300 transition duration-300">
@@ -66,10 +67,11 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden flex flex-col items-center bg-black text-yellow-300 space-y-2 py-4">
-        <a href="#home" class="text-lg hover:text-green-400 transition duration-300">Home</a>
-        <a href="#about" class="text-lg hover:text-green-400 transition duration-300">About</a>
+        <a href="{{route('home')}}" class="text-lg hover:text-green-400 transition duration-300">Home</a>
+        {{-- <a href="#about" class="text-lg hover:text-green-400 transition duration-300">About</a>
         <a href="#product" class="text-lg hover:text-green-400 transition duration-300">Our Product</a>
         <a href="#contact" class="text-lg hover:text-green-400 transition duration-300">Contact Us</a>
+    --}}
     </div>
 </nav>
 

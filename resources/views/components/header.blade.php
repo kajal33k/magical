@@ -7,7 +7,7 @@
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex space-x-8">
-          <a href="#home" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400">Home</a>
+          <a href="{{route('home2')}}" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400">Home</a>
           <a href="#about" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400">About</a>
           <a href="#product" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400">Our Product</a>
           <a href="#contact" class="nav-link font-bold text-xl text-yellow-300 hover:text-green-400">Contact Us</a>
@@ -27,7 +27,7 @@
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden md:hidden mt-4">
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a href="#home" class="block text-yellow-300 hover:text-green-400 py-2 transition duration-300">Home</a>
+          <a href="{{route('home2')}}" class="block text-yellow-300 hover:text-green-400 py-2 transition duration-300">Home</a>
           <a href="#about" class="block text-yellow-300 hover:text-green-400 py-2 transition duration-300">About</a>
           <a href="#product" class="block text-yellow-300 hover:text-green-400 py-2 transition duration-300">Our Product</a>
           <a href="#contact" class="block text-yellow-300 hover:text-green-400 py-2 transition duration-300">Contact Us</a>

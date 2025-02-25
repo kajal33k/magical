@@ -30,7 +30,7 @@ Route::get('contact/index',[LeadController::class,'index'])->name('contact.index
 |
 */
 Route::get('/',[HomeController::class,'landing'])->name('home');
-Route::get('/home2', [HomeController::class, 'index'])->name('home2');
+// Route::get('/home2', [HomeController::class, 'index'])->name('home2');
 Route::get('/about',[HomeController::class,'about'])->name('about');
 Route::get('/privacy',[HomeController::class,'privacy'])->name('privacy');
 Route::get('/refund', [HomeController::class, 'refund'])->name('refund');

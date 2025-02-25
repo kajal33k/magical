@@ -1,7 +1,7 @@
-@extends('components.main')
+@extends('landing.main')
 @section('content')
 
-<div class="container py-10 px-6 mx-auto max-w-4xl">
+<div class="container py-10 px-6 mx-auto max-w-4xl md:mt-24 mt-8">
     <section class="mb-5 p-6 bg-gray-100 rounded-lg shadow-md">
         <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Privacy Policy</h2>
 

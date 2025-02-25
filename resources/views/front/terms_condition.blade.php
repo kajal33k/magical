@@ -1,6 +1,6 @@
-@extends('components.main')
+@extends('landing.main')
 @section('content')
-    <div class="container py-10 px-6 mx-auto max-w-4xl">
+    <div class="container py-10 px-6 mx-auto max-w-4xl md:mt-24 mt-8">
         <h1 class="text-center text-3xl font-bold text-gray-800 mb-4  bg-gray-100 p-4 rounded-lg shadow-md">Terms &amp; Conditions</h1>
         <p class="text-gray-700 leading-relaxed bg-gray-100 p-4 rounded-lg shadow-md">
             This document is an electronic record in terms of Information Technology Act, 2000 and rules there under as

@@ -43,7 +43,7 @@ Route::get('/thank-you', function () {
 })->name('thank-you');
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 
-Route::get('seondpage',function(){
+Route::get('secondpage',function(){
     return view('secondpage');
 })->name('more.product');
 

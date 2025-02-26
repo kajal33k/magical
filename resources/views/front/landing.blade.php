@@ -251,8 +251,8 @@
                 </button>
                 <div id="menuDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
                   <a href="{{ route('more.product') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">EverGloss</a>
-                  <a href="{{ route('more.product') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">EnchantiLocks</a>
-                  <a href="{{ route('more.product') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">MystiGlow Shampoo</a>
+                  <a href="{{ route('more.thirdproduct') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">EnchantiLocks</a>
+                  <a href="{{ route('more.forthproduct') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">MystiGlow Shampoo</a>
                 </div>
               </div>
               

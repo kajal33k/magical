@@ -136,7 +136,7 @@
         <div class="right bg-white p-2 lg:pl-32 w-full">
             {{-- product --}}
             <div class="text-center space-y-4">
-                <h1 class="text-md md:text-3xl font-bold"> Brands Black Hair shampoo (Ammonia Free) Hurry up 50% of offer
+                <h1 class="text-md md:text-3xl font-bold">Black Hair shampoo (Ammonia Free) Hurry up 40% of offer
                    </h1>
                 <div class="flex justify-center items-center space-x-1">
                     <!-- Star Ratings -->
@@ -145,7 +145,7 @@
                     @endfor
                 </div>
                 <p class="text-gray-800 text-lg font-semibold">(50 Thousand Positive Reviews)</p>
-                <p class="text-green-600 text-xl font-bold"> <strike class="text-red-600 px-1"> Rs. 599.00 </strike> 399.00
+                <p class="text-green-600 text-xl font-bold"> <strike class="text-red-600 px-1"> Rs. 489.00 </strike> 389.00
                 </p>
 
                 <!-- Countdown Timer -->

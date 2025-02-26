@@ -4,7 +4,9 @@
     <div class="container mx-auto flex justify-between items-center py-2 lg:py-4 px-4">
         <!-- Logo Section -->
         <div>
+            <a href="{{route('home')}}">
             <img src="{{ asset('asset/img/New-Project-8.png') }}" alt="Magical Logo" class="h-10 lg:h-12 w-auto">
+        </a>
         </div>
 
         <!-- Call Now Button (Mobile Only) -->

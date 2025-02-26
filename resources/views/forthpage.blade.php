@@ -136,8 +136,8 @@
         <div class="right bg-white p-2 lg:pl-32 w-full">
             {{-- product --}}
             <div class="text-center space-y-4">
-                <h1 class="text-md md:text-3xl font-bold">Magical Black Hair shampoo (Ammonia Free) Hurry up 50% of offer
-                    Buy 1 Get 1 free..</h1>
+                <h1 class="text-md md:text-3xl font-bold"> Brands Black Hair shampoo (Ammonia Free) Hurry up 50% of offer
+                   </h1>
                 <div class="flex justify-center items-center space-x-1">
                     <!-- Star Ratings -->
                     @for ($i = 0; $i < 5; $i++)
@@ -145,7 +145,7 @@
                     @endfor
                 </div>
                 <p class="text-gray-800 text-lg font-semibold">(50 Thousand Positive Reviews)</p>
-                <p class="text-green-600 text-xl font-bold"> <strike class="text-red-600 px-1"> Rs. 1299.00 </strike> 599.00
+                <p class="text-green-600 text-xl font-bold"> <strike class="text-red-600 px-1"> Rs. 599.00 </strike> 399.00
                 </p>
 
                 <!-- Countdown Timer -->
@@ -240,28 +240,7 @@
                         </span>
                     </div>
                 </button> --}}
-                {{-- <a href="{{ route('more.product') }}" target="_blank" 
-                class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg shadow-md transition duration-300">
-                Get More Products
-             </a>
-              --}}
-              <div class="relative inline-block text-left">
-                <button id="menuButton" class="px-4 py-2 bg-gray-600 text-white rounded-md shadow-md hover:bg-gray-700 focus:outline-none">
-                  More Products
-                </button>
-                <div id="menuDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
-                  <a href="{{ route('more.product') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">EverGloss</a>
-                  <a href="{{ route('more.product') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">EnchantiLocks</a>
-                  <a href="{{ route('more.product') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">MystiGlow Shampoo</a>
-                </div>
-              </div>
-              
-              <script>
-                document.getElementById('menuButton').addEventListener('click', function () {
-                  document.getElementById('menuDropdown').classList.toggle('hidden');
-                });
-              </script>
-              
+               <a href=""> Get More Product</a>
                 <p class="text-sm text-black font-bold">Limited Time Offer</p>
                 <p class="text-sm text-gray-500">✨ Apply 50% Discount Code ✨</p>
                 <div class="flex justify-center">

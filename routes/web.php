@@ -46,6 +46,13 @@ Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 Route::get('secondpage',function(){
     return view('secondpage');
 })->name('more.product');
+Route::get('thridpage',function(){
+    return view('thirdpage');
+})->name('more.thirdproduct');
+Route::get('forthpage',function(){
+    return view('forthpage');
+})->name('more.forthproduct');
+
 
 Route::get('login-form',[AuthController::class,'index'])->name('login-form');
 Route::get('registration',[AuthController::class,'registration'])->name('registration');

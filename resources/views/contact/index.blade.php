@@ -46,7 +46,7 @@
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Mobile Number</th>
-                                        <th>Action</th>
+            
                                     </tr>
                                 </thead>
                                 <tbody>

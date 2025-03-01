@@ -23,11 +23,6 @@ class AuthController extends Controller
         if (!Auth::check()) {
             return view('auth.login');
         }
-<<<<<<< HEAD
-        return redirect()->route('auth.dashboard');
-    }
-
-=======
 
 
         return redirect()->route('auth.dashboard');
@@ -35,7 +30,6 @@ class AuthController extends Controller
 
 
 
->>>>>>> 2c9c4f8036afc89569909e5eeb54d04fe394aba2
     public function registration()
     {
         return view('auth.registration');
@@ -44,34 +38,12 @@ class AuthController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|max:255',
-            'email' => 'required|email|unique:users,email',
-            'number' => 'required|integer',
-            'password' => 'required|min:6|confirmed'
-        ]);
-
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'number' => $request->number,
-            'password' => Hash::make($request->password),
-        ]);
-
-        return $user ? redirect()->route('login-form')->with('success', 'Successfully registered.')
-                     : back()->with('error', 'Registration failed.');
-    }
-
-    public function login(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email',
+            'name' => 'required|max:255', // Adjust the max length as needed
+            'email' => 'email',
+            'number' => 'integer',
             'password' => 'required'
         ]);
 
-<<<<<<< HEAD
-        if (Auth::attempt($request->only('email', 'password'), true)) {
-            return redirect()->route('auth.dashboard');
-=======
         // Hash the password before storing it
         $request->merge(['password' => bcrypt($request->input('password'))]);
 
@@ -92,21 +64,9 @@ class AuthController extends Controller
             //            echo  "logind ";
         } else {
             return redirect()->back()->with('error', 'email or password does not match');
->>>>>>> 2c9c4f8036afc89569909e5eeb54d04fe394aba2
         }
-        return back()->with('error', 'Email or password does not match.');
     }
 
-<<<<<<< HEAD
-    public function dashboard()
-    {
-        return view('auth.dashboard', [
-            'totalOrders' => OrderRequest::count(),
-            'todayOrders' => OrderRequest::whereDate('created_at', today())->count(),
-            'appointment' => Appointment::count(),
-            'totalContacts' => Lead::count()
-        ]);
-=======
 
     public function dashboard()
     {
@@ -115,7 +75,6 @@ class AuthController extends Controller
         $appointment = Appointment::count();
         $totalContacts = Lead::all();
         return view('auth.dashboard', compact('totalOrders', 'todayOrders', 'appointment', 'totalContacts'));
->>>>>>> 2c9c4f8036afc89569909e5eeb54d04fe394aba2
     }
 
     public function logout()
@@ -124,12 +83,9 @@ class AuthController extends Controller
         return redirect()->route('login-form');
     }
 
-<<<<<<< HEAD
-=======
 
     // forgot password
 
->>>>>>> 2c9c4f8036afc89569909e5eeb54d04fe394aba2
     public function forget()
     {
         return view('auth.forget');
@@ -137,13 +93,6 @@ class AuthController extends Controller
 
     public function forget_pass(Request $request)
     {
-<<<<<<< HEAD
-        $request->validate(['email' => 'required|email']);
-
-        $user = User::where('email', $request->email)->first();
-        if (!$user) {
-            return back()->with('error', 'Email does not exist.');
-=======
         //        try {
         //         $user = User::where('email',$request->email)->get();
         //         if(count($user) >0){
@@ -206,30 +155,8 @@ class AuthController extends Controller
             }
         } catch (\Exception $e) {
             return back()->with('error', $e->getMessage());
->>>>>>> 2c9c4f8036afc89569909e5eeb54d04fe394aba2
         }
-
-        $token = Str::random(40);
-        $url = URL::to('/reset-password?token=' . $token);
-        $data = ['url' => $url, 'email' => $request->email, 'title' => 'Password Reset'];
-
-        Mail::to($request->email)->send(new ResetPasswordMail($data));
-
-        PasswordReset::updateOrCreate(
-            ['email' => $request->email],
-            ['token' => $token, 'created_at' => Carbon::now()]
-        );
-
-        return back()->with('success', 'Password reset link has been sent to your email.');
     }
-<<<<<<< HEAD
-
-    public function reset_password(Request $request)
-    {
-        $resetData = PasswordReset::where('token', $request->token)->first();
-        if (!$resetData || Carbon::parse($resetData->created_at)->addMinutes(60)->isPast()) {
-            return redirect()->route('login-form')->with('error', 'Invalid or expired token.');
-=======
     public function reset_password(Request $request)
     {
         $resetData = PasswordReset::where('token', $request->token)->first();
@@ -242,12 +169,8 @@ class AuthController extends Controller
             return view('auth.reset_passwordView', ['email' => $user->email]);
         } else {
             return 'Invalid token.';
->>>>>>> 2c9c4f8036afc89569909e5eeb54d04fe394aba2
         }
-        return view('auth.reset_passwordView', ['email' => $resetData->email]);
     }
-<<<<<<< HEAD
-=======
     //    public function reset_password(Request $request){
     //        // Check if token is set
     //        if (!isset($request->token)) {
@@ -273,33 +196,27 @@ class AuthController extends Controller
     //            echo "Invalid token";
     //        }
     //    }
->>>>>>> 2c9c4f8036afc89569909e5eeb54d04fe394aba2
 
     public function store_password(Request $request)
     {
         $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|confirmed|min:6',
+            'password' => 'required|confirmed|string|min:6',
         ]);
 
-<<<<<<< HEAD
-        $user = User::where('email', $request->email)->first();
-=======
         // Make sure $request->id is present and valid
         $user = User::find($request->email);
         dd($user);
->>>>>>> 2c9c4f8036afc89569909e5eeb54d04fe394aba2
         if (!$user) {
-            return back()->with('error', 'User not found.');
+            return redirect()->back()->with('error', 'User not found');
         }
 
-        $user->update(['password' => Hash::make($request->password)]);
+        $user->password = Hash::make($request->password);
+        $user->save();
+
         PasswordReset::where('email', $user->email)->delete();
 
-        return redirect()->route('login-form')->with('success', 'Your password has been reset successfully.');
+        return redirect()->route('login-form')->with('success', 'Your password is successfully reset');
     }
-<<<<<<< HEAD
-=======
 
 
 
@@ -357,5 +274,4 @@ class AuthController extends Controller
     //        return redirect()->route('login-form')->with('success', 'Your password is successfully reset');
     //    }
 
->>>>>>> 2c9c4f8036afc89569909e5eeb54d04fe394aba2
 }

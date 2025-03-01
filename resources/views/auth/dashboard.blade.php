@@ -39,10 +39,13 @@
                     </div>
                 </div>
                 
+                @php
+                    $contact=\App\Models\Lead::count();
+                @endphp
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3>{{ $totalContacts }}</h3>
+                            <h3>{{ $contact }}</h3>
                             <p>Total Contacts</p>
                         </div>
                         <div class="icon">
@@ -73,7 +76,9 @@
                             </div>
                            
                         </div>
-                        <a href="{{ route('visitors.index') }}" class="btn btn-danger w-100">GetMoreDetails</a>
+                        <a href="{{ route('visitors.index') }}" class="btn btn-danger w-100">GetMoreDetails
+
+                        </a>
                     </div>
                 </div>
             

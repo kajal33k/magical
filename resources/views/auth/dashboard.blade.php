@@ -16,72 +16,55 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                  
                     <div class="small-box bg-info">
                         <div class="inner">
-                            {{-- <h3>{{$upcommingPost}}</h3> --}}
-
-                            <p>Upcoming Post</p>
+                            <h3>{{ $totalOrders ?? 0 }}</h3>
+                            <p>Total Orders</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
                         </div>
-
                     </div>
                 </div>
-                <!-- ./col -->
+                
                 <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                   
                     <div class="small-box bg-success">
                         <div class="inner">
-                            {{-- <h3>{{$blog}}</h3> --}}
-
-                            <p>Blog Category</p>
+                            <h3>{{ $todayOrders}}</h3>
+                            <p>Today's Orders</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
                         </div>
-
                     </div>
                 </div>
-                <!-- ./col -->
+                
                 <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    {{-- @php
-                        $team=\App\Models\Team::count();
-                    @endphp --}}
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            {{-- <h3>{{$team}}</h3> --}}
-
-                            <p>Team Member</p>
+                            <h3>{{ $totalContacts?->count() ?? 'N/A' }}</h3>
+                            <p>Total Contacts</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
                         </div>
-
                     </div>
                 </div>
-                <!-- ./col -->
+                
                 <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    {{-- @php
-                        $services=\App\Models\Service::count();
-                    @endphp --}}
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            {{-- <h3>{{$services}}</h3> --}}
-
-                            <p>Number of Services</p>
+                            <h3>{{ $appointment ?? 0 }}</h3>
+                            <p>Number of Appointments</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                         </div>
-
                     </div>
                 </div>
+                
+    
+
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
                     {{-- @php

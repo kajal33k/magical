@@ -13,21 +13,26 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
+use App\Models\OrderRequest;
+use App\Models\Appointment;
+use App\Models\Lead;
 
 
 class AuthController extends Controller
 {
-
-    public function index(){
-
-        if(!Auth::check()){
-            return view('auth.login');
-        }else{
-            return redirect()->route('auth.dashboard');
-        }
-
-
+    public function index()
+{
+    if (!Auth::check()) {
+        return view('auth.login');
     }
+
+    
+return redirect()->route('auth.dashboard');
+
+}
+
+
+
     public function registration(){
         return view('auth.registration');
     }
@@ -66,7 +71,18 @@ class AuthController extends Controller
 
 
     public function dashboard(){
-        return view('auth.dashboard');
+        $totalOrders = OrderRequest::count();
+    $todayOrders = OrderRequest::whereDate('created_at', today())->count();
+    $appointment = Appointment::count();
+    $totalContacts = Lead::all();
+
+    dd($totalOrders);
+
+
+    
+            return view('auth.dashboard', compact('totalOrders', 'todayOrders', 'appointment', 'totalContacts'));
+            
+
     }
 
     public function logout(){

@@ -29,6 +29,8 @@
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('asset/plugins/summernote/summernote-bs4.css') }}">
     <!-- Google Font: Source Sans Pro -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
         <style>

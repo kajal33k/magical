@@ -78,14 +78,14 @@
                     </a>
                 </li>
 
-                {{-- <li class="nav-item">
-                    <a href="{{route('plan.index')}}" class="nav-link">
+                 <li class="nav-item">
+                    <a href="{{route('visitors.index')}}" class="nav-link">
                         <i class="nav-icon 	fa fa-anchor"></i>
                         <p>
-                            Services Plans
+                            Visitors
                         </p>
                     </a>
-                </li> --}}
+                </li> 
                 {{-- <li class="nav-item">
                     <a href="{{route('testimonial.index')}}" class="nav-link">
                         <i class="nav-icon 	fa fa-fax"></i>

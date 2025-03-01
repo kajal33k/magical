@@ -42,7 +42,7 @@
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3>{{ $totalContacts?->count() ?? 'N/A' }}</h3>
+                            <h3>{{ $totalContacts }}</h3>
                             <p>Total Contacts</p>
                         </div>
                         <div class="icon">
@@ -50,55 +50,37 @@
                         </div>
                     </div>
                 </div>
+
+
+
                 
-                <div class="col-lg-3 col-6">
-                    <div class="small-box bg-danger">
-                        <div class="inner">
-                            <h3>{{ $appointment ?? 0 }}</h3>
-                            <p>Number of Appointments</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
-                    </div>
-                </div>
                 
-    
-
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    {{-- @php
-                        $testimonial=\App\Models\Testimonial::count();
-                    @endphp --}}
-                    <div class="small-box bg-danger">
-                        <div class="inner">
-                            {{-- <h3>{{$testimonial}}</h3> --}}
-
-                            <p>Number of Testimonial</p>
+                @php
+                $counterVisitor = \App\Models\Visitor::count();
+            @endphp
+            
+            
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="card shadow-sm border-0 bg-warning text-white">
+                        <div class="card-body d-flex align-items-center justify-content-between">
+                            <div>
+                                <h3 class="mb-0">{{ $counterVisitor }}</h3>
+                                <p class="mb-0">Total Visitors</p>
+                               
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-users fa-3x"></i>
+                            </div>
+                           
                         </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
-
+                        <a href="{{ route('visitors.index') }}" class="btn btn-danger w-100">GetMoreDetails</a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    {{-- @php
-                        $article=\App\Models\article::count();
-                    @endphp --}}
-                    <div class="small-box bg-warning">
-                        <div class="inner">
-                            {{-- <h3>{{$article}}</h3> --}}
+            
+            
 
-                            <p>Number of Article</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-person-add"></i>
-                        </div>
-
-                    </div>
-                </div>
+                
+                
                 <!-- ./col -->
             </div>
             <!-- /.row -->

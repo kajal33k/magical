@@ -51,14 +51,14 @@
                         </p>
                     </a>
                 </li> --}}
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                      <a href="{{route('appointment.index')}}" class="nav-link">
                         <i class="nav-icon fa fa-american-sign-language-interpreting"></i>
                         <p>
                             Appointment
                         </p>
                     </a>
-                </li>
+                </li> --}}
 
                 <li class="nav-item">
                     <a href="{{route('orderRequest.index')}}" class="nav-link">

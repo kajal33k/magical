@@ -21,19 +21,19 @@ use App\Models\Lead;
 class AuthController extends Controller
 {
     public function index()
-{
-    if (!Auth::check()) {
-        return view('auth.login');
+    {
+        if (!Auth::check()) {
+            return view('auth.login');
+        }
+
+
+        return redirect()->route('auth.dashboard');
     }
 
-    
-return redirect()->route('auth.dashboard');
-
-}
 
 
-
-    public function registration(){
+    public function registration()
+    {
         return view('auth.registration');
     }
 
@@ -52,40 +52,35 @@ return redirect()->route('auth.dashboard');
         $user = User::create($request->all());
 
         if ($user) {
-            return redirect()->route('login-form')->with('success','successfully registered ');
+            return redirect()->route('login-form')->with('success', 'successfully registered ');
         } else {
             echo "error";
         }
     }
 
-    public function login(Request $request){
-//        dd($request);
-        if (Auth::attempt(['email'=>$request->email, 'password'=>$request->password],true)){
+    public function login(Request $request)
+    {
+        //        dd($request);
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], true)) {
             return redirect()->route('auth.dashboard');
-//            echo  "logind ";
-        }
-        else{
-            return redirect()->back()->with('error','email or password does not match');
+            //            echo  "logind ";
+        } else {
+            return redirect()->back()->with('error', 'email or password does not match');
         }
     }
 
 
-    public function dashboard(){
+    public function dashboard()
+    {
         $totalOrders = OrderRequest::count();
-    $todayOrders = OrderRequest::whereDate('created_at', today())->count();
-    $appointment = Appointment::count();
-    $totalContacts = Lead::all();
-
-    
-
-
-    
-            return view('auth.dashboard', compact('totalOrders', 'todayOrders', 'appointment', 'totalContacts'));
-            
-
+        $todayOrders = OrderRequest::whereDate('created_at', today())->count();
+        $appointment = Appointment::count();
+        $totalContacts = Lead::all();
+        return view('auth.dashboard', compact('totalOrders', 'todayOrders', 'appointment', 'totalContacts'));
     }
 
-    public function logout(){
+    public function logout()
+    {
         Auth::logout();
         return redirect()->route('login-form');
     }
@@ -93,46 +88,48 @@ return redirect()->route('auth.dashboard');
 
     // forgot password
 
-    public function forget(){
+    public function forget()
+    {
         return view('auth.forget');
     }
 
-    public function forget_pass(Request $request){
-//        try {
-//         $user = User::where('email',$request->email)->get();
-//         if(count($user) >0){
-//         $token =Str::random(40);
-//         $domain = URL::to('/');
-//         $url =$domain.'/reset-password?token='.$token;
-//             $data = [
-//                 'url' => $url,
-//                 'email' => $request->email,
-//                 'title' => 'Password reset',
-//                 'body' => 'Please click on the below link to reset your password.'
-//             ];
-//         Mail::to('for',['data'=>$data],function ($massage) use ($data){
-//             $massage->to($data['email'])->subject($data['title']);
-//         });
-//
-//         }else{
-//             return back()->with('error',"email is not exists");
-//         }
-//
-//        }catch (\Exception $e){
-//            return back()->with('error',$e->getMessage());
-//        }
+    public function forget_pass(Request $request)
+    {
+        //        try {
+        //         $user = User::where('email',$request->email)->get();
+        //         if(count($user) >0){
+        //         $token =Str::random(40);
+        //         $domain = URL::to('/');
+        //         $url =$domain.'/reset-password?token='.$token;
+        //             $data = [
+        //                 'url' => $url,
+        //                 'email' => $request->email,
+        //                 'title' => 'Password reset',
+        //                 'body' => 'Please click on the below link to reset your password.'
+        //             ];
+        //         Mail::to('for',['data'=>$data],function ($massage) use ($data){
+        //             $massage->to($data['email'])->subject($data['title']);
+        //         });
+        //
+        //         }else{
+        //             return back()->with('error',"email is not exists");
+        //         }
+        //
+        //        }catch (\Exception $e){
+        //            return back()->with('error',$e->getMessage());
+        //        }
 
         try {
             // Find the user by email
             $user = User::where('email', $request->email)->get();
 
             // If user exists
-            if($user){
+            if ($user) {
                 // Generate a random token
                 $token = Str::random(40);
 
                 // Construct the password reset URL
-                $url = URL::to('/reset-password?token='.$token);
+                $url = URL::to('/reset-password?token=' . $token);
 
                 // Data to be sent in the email
                 $data = [
@@ -146,7 +143,7 @@ return redirect()->route('auth.dashboard');
                 Mail::to($data['email'])->send(new ResetPasswordMail($data));
                 $dateTime = Carbon::now()->format('Y-m-d H:i:s');
 
-   // Update or create password reset record
+                // Update or create password reset record
                 PasswordReset::updateOrCreate(
                     ['email' => $request->email],
                     [
@@ -162,53 +159,55 @@ return redirect()->route('auth.dashboard');
             return back()->with('error', $e->getMessage());
         }
     }
-    public function reset_password(Request $request){
+    public function reset_password(Request $request)
+    {
         $resetData = PasswordReset::where('token', $request->token)->first();
-//       dd($resetData);
+        //       dd($resetData);
         if ($resetData) {
             // Find the user by email
             $user = User::where('email', $resetData->email)->first();
-//            dd($user);
+            //            dd($user);
             // Pass the user's email to the reset_passwordView
             return view('auth.reset_passwordView', ['email' => $user->email]);
         } else {
             return 'Invalid token.';
         }
     }
-//    public function reset_password(Request $request){
-//        // Check if token is set
-//        if (!isset($request->token)) {
-//            echo "Page expired";
-//            return;
-//        }
-//
-//        // Find the password reset data
-//        $resetData = PasswordReset::find($request->token);
-//
-//        // If password reset data is found
-//        if ($resetData) {
-//            // Find the user by email
-//            $user = User::where('email', $resetData->email)->first();
-//
-//            // If user is found, pass user data to reset_passwordView
-//            if ($user) {
-//                return view('auth.reset_passwordView', compact('user'));
-//            } else {
-//                echo "User not found";
-//            }
-//        } else {
-//            echo "Invalid token";
-//        }
-//    }
+    //    public function reset_password(Request $request){
+    //        // Check if token is set
+    //        if (!isset($request->token)) {
+    //            echo "Page expired";
+    //            return;
+    //        }
+    //
+    //        // Find the password reset data
+    //        $resetData = PasswordReset::find($request->token);
+    //
+    //        // If password reset data is found
+    //        if ($resetData) {
+    //            // Find the user by email
+    //            $user = User::where('email', $resetData->email)->first();
+    //
+    //            // If user is found, pass user data to reset_passwordView
+    //            if ($user) {
+    //                return view('auth.reset_passwordView', compact('user'));
+    //            } else {
+    //                echo "User not found";
+    //            }
+    //        } else {
+    //            echo "Invalid token";
+    //        }
+    //    }
 
-    public function store_password(Request $request){
+    public function store_password(Request $request)
+    {
         $request->validate([
             'password' => 'required|confirmed|string|min:6',
         ]);
 
         // Make sure $request->id is present and valid
         $user = User::find($request->email);
-       dd($user);
+        dd($user);
         if (!$user) {
             return redirect()->back()->with('error', 'User not found');
         }
@@ -224,57 +223,57 @@ return redirect()->route('auth.dashboard');
 
 
 
-//    public function reset_password(Request $request) {
-//        if (!isset($request->token)) {
-//            echo "page expired";
-//            return;
-//        }
-//
-//        $resetData = PasswordReset::where('token', $request->token)->first();
-//
-//        if ($resetData) {
-//            // Manually convert created_at to a Carbon instance
-//            $createdAt = new Carbon($resetData->created_at);
-//
-//            // Check if the token has expired
-//            if ($createdAt->addMinutes(60)->isPast()) { // assuming a 60-minute expiration
-//                echo "Token has expired";
-//                return;
-//            }
-//
-//            $user = User::firstWhere('email', $resetData->email);
-//
-//            if ($user) {
-//                return view('auth.recoverPassword', compact('user'));
-//            } else {
-//                echo "User not found";
-//            }
-//        } else {
-//            echo "Invalid token";
-//        }
-//    }
+    //    public function reset_password(Request $request) {
+    //        if (!isset($request->token)) {
+    //            echo "page expired";
+    //            return;
+    //        }
+    //
+    //        $resetData = PasswordReset::where('token', $request->token)->first();
+    //
+    //        if ($resetData) {
+    //            // Manually convert created_at to a Carbon instance
+    //            $createdAt = new Carbon($resetData->created_at);
+    //
+    //            // Check if the token has expired
+    //            if ($createdAt->addMinutes(60)->isPast()) { // assuming a 60-minute expiration
+    //                echo "Token has expired";
+    //                return;
+    //            }
+    //
+    //            $user = User::firstWhere('email', $resetData->email);
+    //
+    //            if ($user) {
+    //                return view('auth.recoverPassword', compact('user'));
+    //            } else {
+    //                echo "User not found";
+    //            }
+    //        } else {
+    //            echo "Invalid token";
+    //        }
+    //    }
 
 
 
 
-//    public function store_password(Request $request){
-//        $request->validate([
-//            'password' => 'required|confirmed|string|min:6',
-//        ]);
-//
-//        // Make sure $request->id is present and valid
-//        $user = User::find($request->id);
-//
-//        if (!$user) {
-//            return redirect()->back()->with('error', 'User not found');
-//        }
-//
-//        $user->password = Hash::make($request->password);
-//        $user->save();
-//
-//        PasswordReset::where('email', $user->email)->delete();
-//
-//        return redirect()->route('login-form')->with('success', 'Your password is successfully reset');
-//    }
+    //    public function store_password(Request $request){
+    //        $request->validate([
+    //            'password' => 'required|confirmed|string|min:6',
+    //        ]);
+    //
+    //        // Make sure $request->id is present and valid
+    //        $user = User::find($request->id);
+    //
+    //        if (!$user) {
+    //            return redirect()->back()->with('error', 'User not found');
+    //        }
+    //
+    //        $user->password = Hash::make($request->password);
+    //        $user->save();
+    //
+    //        PasswordReset::where('email', $user->email)->delete();
+    //
+    //        return redirect()->route('login-form')->with('success', 'Your password is successfully reset');
+    //    }
 
 }

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 use App\Models\OrderRequest;
 use App\Models\Appointment;
-use App\Models\Lead;
+use App\Models\lead;
 
 class AuthController extends Controller
 {

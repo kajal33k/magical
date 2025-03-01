@@ -76,7 +76,7 @@ return redirect()->route('auth.dashboard');
     $appointment = Appointment::count();
     $totalContacts = Lead::all();
 
-    dd($totalOrders);
+    
 
 
     

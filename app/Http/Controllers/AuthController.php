@@ -51,7 +51,7 @@ class AuthController extends Controller
 
         if ($user) {
             return redirect()->route('login-form')->with('success', 'successfully registered ');
-        } else {
+        } else { 
             echo "error";
         }
     }

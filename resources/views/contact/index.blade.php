@@ -46,6 +46,7 @@
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Mobile Number</th>
+                                        <th>Time</th>
             
                                     </tr>
                                 </thead>
@@ -55,6 +56,7 @@
                                             <td>{{ $lead->id }}</td>
                                             <td>{{ $lead->name }}</td>
                                             <td>{{ $lead->mobile_no }}</td>
+                                            <td>{{ $lead->created_at }}</td>
                                         </tr>
                                     @empty
                                         <tr>

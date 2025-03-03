@@ -12,7 +12,7 @@ class VisitorController extends Controller
         $visitors = Visitor::select('ip_address', 'user_agent', 'country', 'created_at')
             ->latest()
             ->paginate(10);
-    
+    // dd($visitors);
         return view('visitors.index', compact('visitors'));
     }
     

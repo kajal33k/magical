@@ -13,7 +13,10 @@ class LeadController extends Controller
     $leads = Lead::when($keyword, function ($query, $keyword) {
         return $query->where('name', 'like', "%{$keyword}%")
                      ->orWhere('mobile_no', 'like', "%{$keyword}%");
-    })->paginate(10); // Use paginate() instead of all()
+    })
+    ->orderBy('id', 'desc') // ID के अनुसार Descending Order
+    ->paginate(10);
+
 
     return view('contact.index', compact('leads'));
 }

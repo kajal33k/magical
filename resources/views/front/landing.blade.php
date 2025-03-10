@@ -11,7 +11,7 @@
             <!-- Main Slider -->
             <div class="overflow-hidden relative">
                 <div id="slider" class="flex transition-transform duration-500">
-                    <img src="{{ asset('asset/img/post 04.jpg') }}" loading="lazy" alt="Product Image 1"
+                    <img src="{{ asset('asset/img/post 04-min.jpg') }}" loading="lazy" alt="Product Image 1"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
                     {{-- <img src="{{ asset('asset/img/two.jpg') }}" alt="Product Image 2"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0"> --}}
@@ -41,7 +41,7 @@
 
             <!-- Thumbnails -->
             <div class="flex flex-wrap justify-center md:justify-start gap-x-2 sm:gap-x-4 mt-4">
-                <img data-slide="0" src="{{ asset('asset/img/post 04.jpg') }}" loading="lazy" alt="Thumbnail 1"
+                <img data-slide="0" src="{{ asset('asset/img/post 04-min.jpg') }}" loading="lazy" alt="Thumbnail 1"
                     class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
 
                 {{-- <img data-slide="1" src="{{ asset('asset/img/two.jpg') }}" alt="Thumbnail 2"

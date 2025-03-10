@@ -17,13 +17,13 @@
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0"> --}}
                     <img src="{{ asset('asset/img/post2.webp') }}" loading="lazy" alt="Product Image 3"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
-                    <img src="{{ asset('asset/img/post3.webp') }}"  loading="lazy" alt="Product Image 4"
+                    <img src="{{ asset('asset/img/post3.webp') }}" loading="lazy" alt="Product Image 4"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
-                    <img src="{{ asset('asset/img/post1.webp') }}"  loading="lazy" alt="Product Image 5"
+                    <img src="{{ asset('asset/img/post1.webp') }}" loading="lazy" alt="Product Image 5"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
                     <img src="{{ asset('asset/img/post5.webp') }}" loading="lazy" alt="Product Image 6"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
-                    <img src="{{ asset('asset/img/post6.webp') }}"   loading="lazy"alt="Product Image 7"
+                    <img src="{{ asset('asset/img/post6.webp') }}" loading="lazy"alt="Product Image 7"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
 
                 </div>
@@ -245,23 +245,28 @@
                 Get More Products
              </a>
               --}}
-              <div class="relative inline-block text-left">
-                <button id="menuButton" class="px-4 py-2 bg-gray-600 text-white rounded-md shadow-md hover:bg-gray-700 focus:outline-none">
-                  More Products
-                </button>
-                <div id="menuDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
-                  <a href="{{ route('more.product') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">EverGloss</a>
-                  <a href="{{ route('more.thirdproduct') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">EnchantiLocks</a>
-                  <a href="{{ route('more.forthproduct') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">MystiGlow Shampoo</a>
+                <div class="relative inline-block text-left">
+                    <button id="menuButton"
+                        class="px-4 py-2 bg-gray-600 text-white rounded-md shadow-md hover:bg-gray-700 focus:outline-none">
+                        More Products
+                    </button>
+                    <div id="menuDropdown"
+                        class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
+                        <a href="{{ route('more.product') }}"
+                            class="block px-4 py-2 text-gray-700 hover:bg-gray-100">EverGloss</a>
+                        <a href="{{ route('more.thirdproduct') }}"
+                            class="block px-4 py-2 text-gray-700 hover:bg-gray-100">EnchantiLocks</a>
+                        <a href="{{ route('more.forthproduct') }}"
+                            class="block px-4 py-2 text-gray-700 hover:bg-gray-100">MystiGlow Shampoo</a>
+                    </div>
                 </div>
-              </div>
-              
-              <script>
-                document.getElementById('menuButton').addEventListener('click', function () {
-                  document.getElementById('menuDropdown').classList.toggle('hidden');
-                });
-              </script>
-              
+
+                <script>
+                    document.getElementById('menuButton').addEventListener('click', function() {
+                        document.getElementById('menuDropdown').classList.toggle('hidden');
+                    });
+                </script>
+
                 <p class="text-sm text-black font-bold">Limited Time Offer</p>
                 <p class="text-sm text-gray-500">✨ Apply 50% Discount Code ✨</p>
                 <div class="flex justify-center">
@@ -303,14 +308,14 @@
             <!-- How to Use Section -->
             <div class=" flex justify-center">
                 <img src="https://cdn.shopnova.top/image/289c28790d6dc6998b0355e98e6b20373a2773f7.gif"
-                    alt="How to Use Step 1"  loading="lazy" class="rounded-lg shadow">
+                    alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow">
 
             </div>
 
             {{-- ugb --}}
             <div class=" flex justify-center">
                 <img src="{{ asset('asset/img/52109f4bae54f48f272aa6ec7695f20249e04bdd.avif') }}" alt="How to Use Step 1"
-                loading="lazy"  class="rounded-lg shadow">
+                    loading="lazy" class="rounded-lg shadow">
 
             </div>
 
@@ -323,19 +328,21 @@
 
             {{-- ugb --}}
             <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/hair5.avif') }}"  loading="lazy" alt="How to Use Step 1" class="rounded-lg shadow">
+                <img src="{{ asset('asset/img/hair5.avif') }}" loading="lazy" alt="How to Use Step 1"
+                    class="rounded-lg shadow">
 
             </div>
             <!-- How to Use Section -->
             <div class=" flex justify-center">
                 <img src="https://cdn.shopnova.top/image/b7a11538cdceb9d4f0d2ee0648f6c0a67bcbc9c6.gif"
-                    alt="How to Use Step 1"  loading="lazy" class="rounded-lg shadow">
+                    alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow">
 
             </div>
 
             {{-- ugb --}}
             <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/hair6.avif') }}"  loading="lazy" alt="How to Use Step 1" class="rounded-lg shadow">
+                <img src="{{ asset('asset/img/hair6.avif') }}" loading="lazy" alt="How to Use Step 1"
+                    class="rounded-lg shadow">
 
             </div>
             <div>
@@ -345,13 +352,14 @@
 
             {{-- ugb --}}
             <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/hair7.avif') }}"  loading="lazy" alt="How to Use Step 1" class="rounded-lg shadow">
+                <img src="{{ asset('asset/img/hair7.avif') }}" loading="lazy" alt="How to Use Step 1"
+                    class="rounded-lg shadow">
 
             </div>
             <!-- How to Use Section -->
             <div class=" flex justify-center">
                 <img src="https://cdn.shopnova.top/image/e0640f232d45b74aaa16b295cfc7dd1f7f7de0aa.gif"
-                    alt="How to Use Step 1"  loading="lazy" class="rounded-lg shadow">
+                    alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow">
 
             </div>
 
@@ -359,13 +367,14 @@
 
             {{-- ugb --}}
             <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/hair8.avif') }}"  loading="lazy" alt="How to Use Step 1" class="rounded-lg shadow">
+                <img src="{{ asset('asset/img/hair8.avif') }}" loading="lazy" alt="How to Use Step 1"
+                    class="rounded-lg shadow">
 
             </div>
             <!-- How to Use Section -->
             <div class=" flex justify-center">
                 <img src="https://cdn.shopnova.top/image/5ec664374db2eb54f3f4131894813aa284527119.gif"
-                    alt="How to Use Step 1"  loading="lazy" class="rounded-lg shadow">
+                    alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow">
 
             </div>
 
@@ -384,17 +393,20 @@
 
             {{-- ujg --}}
             <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/hair10.avif') }}" loading="lazy" alt="How to Use Step 1" class="rounded-lg shadow">
+                <img src="{{ asset('asset/img/hair10.avif') }}" loading="lazy" alt="How to Use Step 1"
+                    class="rounded-lg shadow">
 
             </div>
             {{-- 6fr8 --}}
             <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/hair11.avif') }}" loading="lazy" alt="How to Use Step 1" class="rounded-lg shadow">
+                <img src="{{ asset('asset/img/hair11.avif') }}" loading="lazy" alt="How to Use Step 1"
+                    class="rounded-lg shadow">
 
             </div>
             {{-- last img --}}
             <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/steps.avif') }}" loading="lazy" alt="How to Use Step 1" class="rounded-lg shadow">
+                <img src="{{ asset('asset/img/steps.avif') }}" loading="lazy" alt="How to Use Step 1"
+                    class="rounded-lg shadow">
 
             </div>
 
@@ -413,7 +425,7 @@
             <div class="flex flex-col md:flex-row items-center gap-6">
                 <!-- Image -->
                 <div class="w-full md:w-1/3">
-                    <img src="{{ asset('asset/img/testimonial4.jpg') }}" loading="lazy" alt="John Doe's Testimonial"
+                    <img src="{{ asset('asset/img/testimonial2.webp') }}" loading="lazy" alt="John Doe's Testimonial"
                         class="rounded-lg w-full h-auto object-cover">
                 </div>
                 <!-- Text Content -->
@@ -431,7 +443,7 @@
             <div class="flex flex-col md:flex-row-reverse items-center gap-6">
                 <!-- Image -->
                 <div class="w-full md:w-1/3">
-                    <img src="{{ asset('asset/img/testimonial2.jpg') }}" loading="lazy" alt="Jane Doe's Testimonial"
+                    <img src="{{ asset('asset/img/testimonial3.webp') }}" loading="lazy" alt="Jane Doe's Testimonial"
                         class="rounded-lg w-full h-auto object-cover">
                 </div>
                 <!-- Text Content -->
@@ -451,7 +463,7 @@
             <div class="flex flex-col md:flex-row items-center gap-6">
                 <!-- Image -->
                 <div class="w-full md:w-1/3">
-                    <img src="{{ asset('asset/img/testimonial3.jpg') }}" loading="lazy" alt="Sam Smith's Testimonial"
+                    <img src="{{ asset('asset/img/testimonial4.webp') }}" loading="lazy" alt="Sam Smith's Testimonial"
                         class="rounded-lg w-full h-auto object-cover">
                 </div>
                 <!-- Text Content -->
@@ -706,9 +718,9 @@
                                         $.each(errors, function(key, value) {
                                             // Display error messages
                                             $('#' + key).addClass(
-                                            'border-red-500'); // Add red border to the field
+                                                'border-red-500'); // Add red border to the field
                                             $('#' + key).next('.text-red-500').text(value[
-                                            0]); // Display the error message
+                                                0]); // Display the error message
                                         });
                                     }
                                 }
@@ -750,39 +762,43 @@
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-center text-black mb-6">Important Links</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                
+
                 <!-- Link 1 -->
-                <a href="{{route('refund')}}" class="flex items-center space-x-4 p-4 bg-white shadow-md rounded-lg hover:bg-gray-200 transition">
+                <a href="{{ route('refund') }}"
+                    class="flex items-center space-x-4 p-4 bg-white shadow-md rounded-lg hover:bg-gray-200 transition">
                     <div class="p-3 bg-blue-100 text-blue-600 rounded-full">
                         🔗
                     </div>
                     <span class="text-lg font-medium text-gray-800">Refund Policy</span>
                 </a>
-    
+
                 <!-- Link 2 -->
-                <a href="{{route('term_condition')}}" class="flex items-center space-x-4 p-4 bg-white shadow-md rounded-lg hover:bg-gray-200 transition">
+                <a href="{{ route('term_condition') }}"
+                    class="flex items-center space-x-4 p-4 bg-white shadow-md rounded-lg hover:bg-gray-200 transition">
                     <div class="p-3 bg-green-100 text-green-600 rounded-full">
                         📄
                     </div>
                     <span class="text-lg font-medium text-gray-800">Terms & Conditions</span>
                 </a>
-    
+
                 <!-- Link 3 -->
-                <a href="{{route('privacy')}}" class="flex items-center space-x-4 p-4 bg-white shadow-md rounded-lg hover:bg-gray-200 transition">
+                <a href="{{ route('privacy') }}"
+                    class="flex items-center space-x-4 p-4 bg-white shadow-md rounded-lg hover:bg-gray-200 transition">
                     <div class="p-3 bg-red-100 text-red-600 rounded-full">
                         🔍
                     </div>
                     <span class="text-lg font-medium text-gray-800">Privacy Policy</span>
                 </a>
-    
+
                 <!-- Link 4 -->
-                <a href="{{route('shipping')}}" class="flex items-center space-x-4 p-4 bg-white shadow-md rounded-lg hover:bg-gray-200 transition">
+                <a href="{{ route('shipping') }}"
+                    class="flex items-center space-x-4 p-4 bg-white shadow-md rounded-lg hover:bg-gray-200 transition">
                     <div class="p-3 bg-yellow-100 text-yellow-600 rounded-full">
                         📢
                     </div>
                     <span class="text-lg font-medium text-gray-800">Shipping Policy</span>
                 </a>
-    
+
                 <!-- Link 5 -->
                 {{-- <a href="{{route('registration')}}" class="flex items-center space-x-4 p-4 bg-white shadow-md rounded-lg hover:bg-gray-200 transition">
                     <div class="p-3 bg-purple-100 text-purple-600 rounded-full">
@@ -792,19 +808,20 @@
                 </a>
      --}}
                 <!-- Link 6 -->
-                <a href="{{route('return')}}" class="flex items-center space-x-4 p-4 bg-white shadow-md rounded-lg hover:bg-gray-200 transition">
+                <a href="{{ route('return') }}"
+                    class="flex items-center space-x-4 p-4 bg-white shadow-md rounded-lg hover:bg-gray-200 transition">
                     <div class="p-3 bg-indigo-100 text-indigo-600 rounded-full">
                         💼
                     </div>
                     <span class="text-lg font-medium text-gray-800">Return Policy</span>
                 </a>
-    
+
             </div>
         </div>
     </section>
-    
 
-    
+
+
     <script>
         // Open modal
         function openModal() {

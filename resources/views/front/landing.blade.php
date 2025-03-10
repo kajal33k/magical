@@ -11,19 +11,19 @@
             <!-- Main Slider -->
             <div class="overflow-hidden relative">
                 <div id="slider" class="flex transition-transform duration-500">
-                    <img src="{{ asset('asset/img/post 04.jpg') }}" alt="Product Image 1"
+                    <img src="{{ asset('asset/img/post 04.jpg') }}" loading="lazy" alt="Product Image 1"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
                     {{-- <img src="{{ asset('asset/img/two.jpg') }}" alt="Product Image 2"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0"> --}}
-                    <img src="{{ asset('asset/img/three.jpg') }}" alt="Product Image 3"
+                    <img src="{{ asset('asset/img/post2.webp') }}" loading="lazy" alt="Product Image 3"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
-                    <img src="{{ asset('asset/img/four.jpg') }}" alt="Product Image 4"
+                    <img src="{{ asset('asset/img/post3.webp') }}"  loading="lazy" alt="Product Image 4"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
-                    <img src="{{ asset('asset/img/thumbnail1.jpg') }}" alt="Product Image 5"
+                    <img src="{{ asset('asset/img/post1.webp') }}"  loading="lazy" alt="Product Image 5"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
-                    <img src="{{ asset('asset/img/thumbnail2.jpg') }}" alt="Product Image 6"
+                    <img src="{{ asset('asset/img/post5.webp') }}" loading="lazy" alt="Product Image 6"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
-                    <img src="{{ asset('asset/img/thumbnail3.jpg') }}" alt="Product Image 7"
+                    <img src="{{ asset('asset/img/post6.webp') }}"   loading="lazy"alt="Product Image 7"
                         class="w-full h-auto lg:h-full object-cover flex-shrink-0">
 
                 </div>
@@ -41,25 +41,25 @@
 
             <!-- Thumbnails -->
             <div class="flex flex-wrap justify-center md:justify-start gap-x-2 sm:gap-x-4 mt-4">
-                <img data-slide="0" src="{{ asset('asset/img/post 04.jpg') }}" alt="Thumbnail 1"
+                <img data-slide="0" src="{{ asset('asset/img/post 04.jpg') }}" loading="lazy" alt="Thumbnail 1"
                     class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
 
                 {{-- <img data-slide="1" src="{{ asset('asset/img/two.jpg') }}" alt="Thumbnail 2"
                     class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"> --}}
 
-                <img data-slide="2" src="{{ asset('asset/img/three.jpg') }}" alt="Thumbnail 3"
+                <img data-slide="2" src="{{ asset('asset/img/post2.webp') }}" loading="lazy" alt="Thumbnail 3"
                     class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
 
-                <img data-slide="3" src="{{ asset('asset/img/four.jpg') }}" alt="Thumbnail 4"
+                <img data-slide="3" src="{{ asset('asset/img/post3.webp') }}" loading="lazy" alt="Thumbnail 4"
                     class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
 
-                <img data-slide="0" src="{{ asset('asset/img/thumbnail1.jpg') }}" alt="Thumbnail 1"
+                <img data-slide="0" src="{{ asset('asset/img/post1.webp') }}" loading="lazy" alt="Thumbnail 1"
                     class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
 
-                <img data-slide="1" src="{{ asset('asset/img/thumbnail2.jpg') }}" alt="Thumbnail 2"
+                <img data-slide="1" src="{{ asset('asset/img/post5.webp') }}" loading="lazy" alt="Thumbnail 2"
                     class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
 
-                <img data-slide="2" src="{{ asset('asset/img/thumbnail3.jpg') }}" alt="Thumbnail 3"
+                <img data-slide="2" src="{{ asset('asset/img/post6.webp') }}" loading="lazy" alt="Thumbnail 3"
                     class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
 
             </div>
@@ -265,7 +265,7 @@
                 <p class="text-sm text-black font-bold">Limited Time Offer</p>
                 <p class="text-sm text-gray-500">✨ Apply 50% Discount Code ✨</p>
                 <div class="flex justify-center">
-                    <img src="{{ asset('asset/img/FREESHIPPIng.avif') }}" alt="Free Shipping">
+                    <img src="{{ asset('asset/img/FREESHIPPIng.avif') }}" loading="lazy" alt="Free Shipping">
                 </div>
             </div>
 
@@ -290,7 +290,7 @@
                 </h2>
 
                 <div class="mt-4 sm:mt-6 flex justify-center">
-                    <img src="{{ asset('asset/img/hair3.avif') }}" alt="Hair Damage Warning"
+                    <img src="{{ asset('asset/img/hair3.avif') }}" loading="lazy" alt="Hair Damage Warning"
                         class="rounded-lg shadow-md max-w-[90%] sm:max-w-md lg:max-w-lg mx-auto">
                 </div>
 
@@ -303,39 +303,39 @@
             <!-- How to Use Section -->
             <div class=" flex justify-center">
                 <img src="https://cdn.shopnova.top/image/289c28790d6dc6998b0355e98e6b20373a2773f7.gif"
-                    alt="How to Use Step 1" class="rounded-lg shadow">
+                    alt="How to Use Step 1"  loading="lazy" class="rounded-lg shadow">
 
             </div>
 
             {{-- ugb --}}
             <div class=" flex justify-center">
                 <img src="{{ asset('asset/img/52109f4bae54f48f272aa6ec7695f20249e04bdd.avif') }}" alt="How to Use Step 1"
-                    class="rounded-lg shadow">
+                loading="lazy"  class="rounded-lg shadow">
 
             </div>
 
             <!-- How to Use Section -->
             <div class=" flex justify-center">
                 <img src="https://cdn.shopnova.top/image/8ac44b4dca6bf551f69d7912294355c6e468894e.gif"
-                    alt="How to Use Step 1" class="rounded-lg shadow">
+                    alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow">
 
             </div>
 
             {{-- ugb --}}
             <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/hair5.avif') }}" alt="How to Use Step 1" class="rounded-lg shadow">
+                <img src="{{ asset('asset/img/hair5.avif') }}"  loading="lazy" alt="How to Use Step 1" class="rounded-lg shadow">
 
             </div>
             <!-- How to Use Section -->
             <div class=" flex justify-center">
                 <img src="https://cdn.shopnova.top/image/b7a11538cdceb9d4f0d2ee0648f6c0a67bcbc9c6.gif"
-                    alt="How to Use Step 1" class="rounded-lg shadow">
+                    alt="How to Use Step 1"  loading="lazy" class="rounded-lg shadow">
 
             </div>
 
             {{-- ugb --}}
             <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/hair6.avif') }}" alt="How to Use Step 1" class="rounded-lg shadow">
+                <img src="{{ asset('asset/img/hair6.avif') }}"  loading="lazy" alt="How to Use Step 1" class="rounded-lg shadow">
 
             </div>
             <div>
@@ -345,13 +345,13 @@
 
             {{-- ugb --}}
             <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/hair7.avif') }}" alt="How to Use Step 1" class="rounded-lg shadow">
+                <img src="{{ asset('asset/img/hair7.avif') }}"  loading="lazy" alt="How to Use Step 1" class="rounded-lg shadow">
 
             </div>
             <!-- How to Use Section -->
             <div class=" flex justify-center">
                 <img src="https://cdn.shopnova.top/image/e0640f232d45b74aaa16b295cfc7dd1f7f7de0aa.gif"
-                    alt="How to Use Step 1" class="rounded-lg shadow">
+                    alt="How to Use Step 1"  loading="lazy" class="rounded-lg shadow">
 
             </div>
 
@@ -359,13 +359,13 @@
 
             {{-- ugb --}}
             <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/hair8.avif') }}" alt="How to Use Step 1" class="rounded-lg shadow">
+                <img src="{{ asset('asset/img/hair8.avif') }}"  loading="lazy" alt="How to Use Step 1" class="rounded-lg shadow">
 
             </div>
             <!-- How to Use Section -->
             <div class=" flex justify-center">
                 <img src="https://cdn.shopnova.top/image/5ec664374db2eb54f3f4131894813aa284527119.gif"
-                    alt="How to Use Step 1" class="rounded-lg shadow">
+                    alt="How to Use Step 1"  loading="lazy" class="rounded-lg shadow">
 
             </div>
 
@@ -378,23 +378,23 @@
             <!-- How to Use Section -->
             <div class=" flex justify-center">
                 <img src="http://cdn.shopnova.top/image/a1f2433281e01e8edf09a816e44553181f90080f.gif"
-                    alt="How to Use Step 1" class="rounded-lg shadow">
+                    alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow">
 
             </div>
 
             {{-- ujg --}}
             <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/hair10.avif') }}" alt="How to Use Step 1" class="rounded-lg shadow">
+                <img src="{{ asset('asset/img/hair10.avif') }}" loading="lazy" alt="How to Use Step 1" class="rounded-lg shadow">
 
             </div>
             {{-- 6fr8 --}}
             <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/hair11.avif') }}" alt="How to Use Step 1" class="rounded-lg shadow">
+                <img src="{{ asset('asset/img/hair11.avif') }}" loading="lazy" alt="How to Use Step 1" class="rounded-lg shadow">
 
             </div>
             {{-- last img --}}
             <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/steps.avif') }}" alt="How to Use Step 1" class="rounded-lg shadow">
+                <img src="{{ asset('asset/img/steps.avif') }}" loading="lazy" alt="How to Use Step 1" class="rounded-lg shadow">
 
             </div>
 
@@ -413,7 +413,7 @@
             <div class="flex flex-col md:flex-row items-center gap-6">
                 <!-- Image -->
                 <div class="w-full md:w-1/3">
-                    <img src="{{ asset('asset/img/testimonial4.jpg') }}" alt="John Doe's Testimonial"
+                    <img src="{{ asset('asset/img/testimonial4.jpg') }}" loading="lazy" alt="John Doe's Testimonial"
                         class="rounded-lg w-full h-auto object-cover">
                 </div>
                 <!-- Text Content -->
@@ -431,7 +431,7 @@
             <div class="flex flex-col md:flex-row-reverse items-center gap-6">
                 <!-- Image -->
                 <div class="w-full md:w-1/3">
-                    <img src="{{ asset('asset/img/testimonial2.jpg') }}" alt="Jane Doe's Testimonial"
+                    <img src="{{ asset('asset/img/testimonial2.jpg') }}" loading="lazy" alt="Jane Doe's Testimonial"
                         class="rounded-lg w-full h-auto object-cover">
                 </div>
                 <!-- Text Content -->
@@ -451,7 +451,7 @@
             <div class="flex flex-col md:flex-row items-center gap-6">
                 <!-- Image -->
                 <div class="w-full md:w-1/3">
-                    <img src="{{ asset('asset/img/testimonial3.jpg') }}" alt="Sam Smith's Testimonial"
+                    <img src="{{ asset('asset/img/testimonial3.jpg') }}" loading="lazy" alt="Sam Smith's Testimonial"
                         class="rounded-lg w-full h-auto object-cover">
                 </div>
                 <!-- Text Content -->
@@ -739,7 +739,7 @@
 
             <!-- Modal Icon Image -->
             <div class="mt-6">
-                <img src="{{ asset('asset/img/pop.webp') }}" alt="Order Confirmation"
+                <img src="{{ asset('asset/img/pop.webp') }}" loading="lazy" alt="Order Confirmation"
                     class="rounded-lg shadow-xl w-full">
             </div>
         </div>

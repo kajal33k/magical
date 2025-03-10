@@ -13,13 +13,16 @@
 
 {{-- icons --}}
 <link
-href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+{{-- href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+rel="stylesheet" --}}
+
+href="{{ asset('asset/css/icon.css') }}"
 rel="stylesheet"
 />
 {{-- fav icon --}}
 <link rel="icon" type="image/png" href="{{ asset('asset/img/New-Project-8-min.png') }}">
 
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
  <!-- Meta Pixel Code -->
  <script>
@@ -56,6 +59,6 @@ rel="stylesheet"
 
 @include('landing.footer')
 
-
+<script src="{{ asset('asset/js/swiper.js') }}"></script>
 </body>
 </html>

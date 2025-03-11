@@ -308,7 +308,7 @@
             <!-- How to Use Section -->
             <div class=" flex justify-center">
                 <img src="{{asset('asset/img/A.gif')}}"
-                    alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow">
+                    alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow h-auto w-auto">
 
             </div>
 
@@ -322,7 +322,7 @@
             <!-- How to Use Section -->
             <div class=" flex justify-center">
                 <img src="{{asset('asset/img/B.gif')}}"
-                    alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow">
+                    alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow h-auto w-auto">
 
             </div>
 
@@ -335,7 +335,7 @@
             <!-- How to Use Section -->
             <div class=" flex justify-center">
                 <img src="{{asset('asset/img/C.gif')}}"
-                    alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow">
+                    alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow h-auto w-auto">
 
             </div>
 
@@ -359,7 +359,7 @@
             <!-- How to Use Section -->
             <div class=" flex justify-center">
                 <img src="{{asset('asset/img/D.gif')}}"
-                    alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow">
+                    alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow h-auto w-auto">
 
             </div>
 
@@ -374,7 +374,7 @@
             <!-- How to Use Section -->
             <div class=" flex justify-center">
                 <img src="{{asset('asset/img/E.gif')}}"
-                    alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow">
+                    alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow h-auto w-auto">
 
             </div>
 
@@ -387,7 +387,7 @@
             <!-- How to Use Section -->
             <div class=" flex justify-center">
                 <img src="{{asset('asset/img/F.gif')}}"
-                    alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow">
+                    alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow h-auto w-auto">
 
             </div>
 

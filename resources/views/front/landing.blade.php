@@ -398,7 +398,7 @@
             </div>
             {{-- last img --}}
             <div class=" flex justify-center">
-                <img src="{{ asset('nine') }}"  alt="How to Use Step 1"
+                <img src="{{ asset('asset/img/niine.jpg') }}"  alt="How to Use Step 1"
                     class="rounded-lg shadow">
 
             </div>

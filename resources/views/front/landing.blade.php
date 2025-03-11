@@ -65,7 +65,7 @@
             </div>
 
         </div>
-        
+
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 const slider = document.getElementById("slider");
@@ -137,7 +137,7 @@
         <div class="right bg-white p-2 lg:pl-32 w-full">
             {{-- product --}}
             <div class="text-center space-y-4">
-                <h1 class="text-md md:text-3xl font-bold">Magical Black Hair shampoo (Ammonia Free) Hurry up 50% of offer
+                <h1 class="text-base font-bold">Magical Black Hair shampoo (Ammonia Free) Hurry up 50% of offer
                     Buy 1 Get 1 free..</h1>
                 <div class="flex justify-center items-center space-x-1">
                     <!-- Star Ratings -->

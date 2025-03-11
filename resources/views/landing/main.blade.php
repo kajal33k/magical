@@ -9,9 +9,7 @@
 
 
 
-    {{-- tailwindcss --}}
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-
+ 
     {{-- icons --}}
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
 
@@ -33,7 +31,11 @@
     @yield('content')
 
     @include('landing.footer')
-
+    
+    {{-- tailwindcss
+     --}}
+    <script src="https://cdn.tailwindcss.com"></script>
+    {{-- swiper --}}
     <script src="{{ asset('asset/js/swiper.js') }}"></script>
       <!-- Meta Pixel Code -->
       <script>
@@ -60,7 +62,8 @@
     </script>
     <noscript>
         <img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=1258237308597358&ev=PageView&noscript=1" /></noscript>
+            src="https://www.facebook.com/tr?id=1258237308597358&ev=PageView&noscript=1" />
+        </noscript>
     <!-- End Meta Pixel Code -->
 </body>
 

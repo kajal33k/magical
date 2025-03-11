@@ -307,7 +307,7 @@
 
             <!-- How to Use Section -->
             <div class=" flex justify-center">
-                <img src="https://cdn.shopnova.top/image/289c28790d6dc6998b0355e98e6b20373a2773f7.gif"
+                <img src="{{asset('asset/img/A.gif')}}"
                     alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow">
 
             </div>
@@ -321,7 +321,7 @@
 
             <!-- How to Use Section -->
             <div class=" flex justify-center">
-                <img src="https://cdn.shopnova.top/image/8ac44b4dca6bf551f69d7912294355c6e468894e.gif"
+                <img src="{{asset('asset/img/B.gif')}}"
                     alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow">
 
             </div>
@@ -334,7 +334,7 @@
             </div>
             <!-- How to Use Section -->
             <div class=" flex justify-center">
-                <img src="https://cdn.shopnova.top/image/b7a11538cdceb9d4f0d2ee0648f6c0a67bcbc9c6.gif"
+                <img src="{{asset('asset/img/C.gif')}}"
                     alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow">
 
             </div>
@@ -358,7 +358,7 @@
             </div>
             <!-- How to Use Section -->
             <div class=" flex justify-center">
-                <img src="https://cdn.shopnova.top/image/e0640f232d45b74aaa16b295cfc7dd1f7f7de0aa.gif"
+                <img src="{{asset('asset/img/D.gif')}}"
                     alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow">
 
             </div>
@@ -373,7 +373,7 @@
             </div>
             <!-- How to Use Section -->
             <div class=" flex justify-center">
-                <img src="https://cdn.shopnova.top/image/5ec664374db2eb54f3f4131894813aa284527119.gif"
+                <img src="{{asset('asset/img/E.gif')}}"
                     alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow">
 
             </div>
@@ -386,7 +386,7 @@
             </div> --}}
             <!-- How to Use Section -->
             <div class=" flex justify-center">
-                <img src="http://cdn.shopnova.top/image/a1f2433281e01e8edf09a816e44553181f90080f.gif"
+                <img src="{{asset('asset/img/F.gif')}}"
                     alt="How to Use Step 1" loading="lazy" class="rounded-lg shadow">
 
             </div>

@@ -5,7 +5,7 @@
         <!-- Logo Section -->
         <div>
             <a href="{{route('home')}}">
-            <img src="{{ asset('asset/img/New-Project-8.png') }}" alt="Magical Logo" class="h-10 lg:h-12 w-auto">
+            <img src="{{ asset('asset/img/logo.jpg') }}" alt="Magical Logo" class="h-10 lg:h-12 w-auto">
         </a>
         </div>
 

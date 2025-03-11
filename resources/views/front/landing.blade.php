@@ -682,7 +682,7 @@
                             class="spinner-border animate-spin border-4 border-t-4 border-gray-900 rounded-full w-8 h-8 mx-auto">
                         </div>
                     </div>
-                </form>
+                </form> 
 
 
                 {{-- <!-- Include jQuery -->

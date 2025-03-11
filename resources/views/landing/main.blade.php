@@ -21,6 +21,9 @@
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"> --}}
     <link rel="stylesheet" href="{{ asset('asset/css/swiper.css') }}">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+
+
   
 </head>
 

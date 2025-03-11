@@ -7,23 +7,16 @@
             <!-- Main Slider -->
             <div class="overflow-hidden relative">
                 <div id="slider" class="flex transition-transform duration-500">
-                    <img src="{{ asset('asset/img/s1.jpg') }}"  alt="Product Image 1"
-                        class="w-full h-auto lg:h-full object-cover flex-shrink-0">
-                    {{-- <img src="{{ asset('asset/img/two.jpg') }}" alt="Product Image 2"
-                        class="w-full h-auto lg:h-full object-cover flex-shrink-0"> --}}
-                    <img src="{{ asset('asset/img/s2.jpg') }}"  alt="Product Image 3"
-                        class="w-full h-auto lg:h-full object-cover flex-shrink-0">
-                    <img src="{{ asset('asset/img/s3.jpg') }}"  alt="Product Image 4"
-                        class="w-full h-auto lg:h-full object-cover flex-shrink-0">
-                    <img src="{{ asset('asset/img/s8.jpg') }}"  alt="Product Image 5"
-                        class="w-full h-auto lg:h-full object-cover flex-shrink-0">
-                    <img src="{{ asset('asset/img/s5.jpg') }}"  alt="Product Image 6"
-                        class="w-full h-auto lg:h-full object-cover flex-shrink-0">
-                    <img src="{{ asset('asset/img/s6.jpg') }}" alt="Product Image 7"
-                        class="w-full h-auto lg:h-full object-cover flex-shrink-0">
-
+                    @foreach (['s1.jpg', 's2.jpg', 's3.jpg', 's8.jpg', 's5.jpg', 's6.jpg'] as $index => $image)
+                        <img 
+                            data-src="{{ asset('asset/img/' . $image) }}" 
+                            src="{{ asset('asset/img/placeholder.jpg') }}" 
+                            alt="Product Image {{ $index + 1 }}" 
+                            class="w-full h-auto lg:h-full object-cover flex-shrink-0" 
+                            loading="lazy">
+                    @endforeach
                 </div>
-
+        
                 <!-- Navigation Buttons -->
                 <button id="prev" aria-label="Previous slide"
                     class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
@@ -34,34 +27,23 @@
                     &#8250;
                 </button>
             </div>
-
+        
             <!-- Thumbnails -->
             <div class="flex flex-wrap justify-center md:justify-start gap-x-2 sm:gap-x-4 mt-4">
-                <img data-slide="0" src="{{ asset('asset/img/s1.jpg') }}"  alt="Thumbnail 1"
-                    class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
-
-                {{-- <img data-slide="1" src="{{ asset('asset/img/two.jpg') }}" alt="Thumbnail 2"
-                    class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"> --}}
-
-                <img data-slide="2" src="{{ asset('asset/img/s2.jpg') }}"  alt="Thumbnail 3"
-                    class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
-
-                <img data-slide="3" src="{{ asset('asset/img/s3.jpg') }}"  alt="Thumbnail 4"
-                    class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
-
-                <img data-slide="0" src="{{ asset('asset/img/s8.jpg') }}"  alt="Thumbnail 1"
-                    class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
-
-                <img data-slide="1" src="{{ asset('asset/img/s5.jpg') }}"  alt="Thumbnail 2"
-                    class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
-
-                <img data-slide="2" src="{{ asset('asset/img/s6.jpg') }}"  alt="Thumbnail 3"
-                    class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
-
+                @foreach (['s1.jpg', 's2.jpg', 's3.jpg', 's8.jpg', 's5.jpg', 's6.jpg'] as $index => $image)
+                    <img 
+                        data-slide="{{ $index }}" 
+                        data-src="{{ asset('asset/img/' . $image) }}" 
+                        src="{{ asset('asset/img/placeholder.jpg') }}" 
+                        alt="Thumbnail {{ $index + 1 }}" 
+                        class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                        loading="lazy">
+                @endforeach
             </div>
-
         </div>
-        <script>
+        
+        <!-- Lazy Loading & Slider Script -->
+        <script defer>
             document.addEventListener("DOMContentLoaded", function() {
                 const slider = document.getElementById("slider");
                 const thumbnails = document.querySelectorAll("[data-slide]");
@@ -70,32 +52,32 @@
                 const slideCount = slider.children.length;
                 let currentIndex = 0;
                 let autoplayInterval;
-
+        
                 function updateSlider() {
                     slider.style.transform = `translateX(-${currentIndex * 100}%)`;
                 }
-
+        
                 // Navigate to the previous slide
                 prevButton.addEventListener("click", () => {
                     currentIndex = (currentIndex - 1 + slideCount) % slideCount;
                     updateSlider();
                 });
-
+        
                 // Navigate to the next slide
                 nextButton.addEventListener("click", () => {
                     currentIndex = (currentIndex + 1) % slideCount;
                     updateSlider();
                 });
-
+        
                 // Thumbnail click event
                 thumbnails.forEach((thumbnail) => {
-                    thumbnail.addEventListener("click", (e) => {
+                    thumbnail.addEventListener("click", () => {
                         currentIndex = parseInt(thumbnail.dataset.slide);
                         updateSlider();
                         resetAutoplay(); // Restart autoplay after manual interaction
                     });
                 });
-
+        
                 // Autoplay function
                 function startAutoplay() {
                     autoplayInterval = setInterval(() => {
@@ -103,16 +85,16 @@
                         updateSlider();
                     }, 2000); // 2-second interval
                 }
-
+        
                 function stopAutoplay() {
                     clearInterval(autoplayInterval);
                 }
-
+        
                 function resetAutoplay() {
                     stopAutoplay();
                     startAutoplay();
                 }
-
+        
                 // Stop autoplay when hovering over slider or buttons
                 slider.addEventListener("mouseenter", stopAutoplay);
                 slider.addEventListener("mouseleave", startAutoplay);
@@ -120,12 +102,44 @@
                 prevButton.addEventListener("mouseleave", startAutoplay);
                 nextButton.addEventListener("mouseenter", stopAutoplay);
                 nextButton.addEventListener("mouseleave", startAutoplay);
-
+        
                 // Initialize
                 updateSlider();
                 startAutoplay();
             });
+        
+            // Lazy Loading with Intersection Observer
+            document.addEventListener("DOMContentLoaded", function() {
+                const lazyImages = document.querySelectorAll("img[loading='lazy']");
+        
+                if ("IntersectionObserver" in window) {
+                    let observer = new IntersectionObserver((entries, observer) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                let img = entry.target;
+                                img.src = img.dataset.src;
+                                img.removeAttribute("data-src");
+                                observer.unobserve(img);
+                            }
+                        });
+                    }, { rootMargin: "0px 0px 100px 0px" });
+        
+                    lazyImages.forEach(img => {
+                        observer.observe(img);
+                    });
+                } else {
+                    // Fallback: Load images immediately if Intersection Observer is not supported
+                    lazyImages.forEach(img => {
+                        img.src = img.dataset.src;
+                        img.removeAttribute("data-src");
+                    });
+                }
+            });
         </script>
+        
+        <!-- Load jQuery with Defer -->
+        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script> --}}
+        
         <div class="right bg-white p-2 lg:pl-32 w-full">
             {{-- product --}}
             <div class="text-center space-y-4">

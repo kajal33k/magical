@@ -65,6 +65,7 @@
             </div>
 
         </div>
+        
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 const slider = document.getElementById("slider");

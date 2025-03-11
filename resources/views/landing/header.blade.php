@@ -14,11 +14,13 @@
             class="md:hidden block flex justify-end items-end absolute left-1/2 transform -translate-x-1/2 -mt-2 z-9 animate-zoom-blink">
             <a href="tel:7048943878"
                 class="text-black py-1 px-2 shadow-sm text-sm font-semibold hover:bg-yellow-300 transition duration-300">
-                <i class="ri-phone-fill text-[#88D040] text-3xl"></i>
+             
+                    <i class="fa fa-phone text-[#88D040] text-3xl"></i>
+                  
             </a>
             <a href="https://wa.me/7048943878"
                 class="text-black py-1 px-2 shadow-sm text-sm font-semibold hover:bg-yellow-300 transition duration-300">
-                <i class="ri-whatsapp-fill text-[#88D040] text-3xl"></i>
+                <i class="fa-brands fa-whatsapp  text-[#88D040] text-3xl"></i>
             </a>
         </div>
 

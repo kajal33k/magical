@@ -277,7 +277,7 @@
                 <p class="text-sm text-black font-bold">Limited Time Offer</p>
                 <p class="text-sm text-gray-500">✨ Apply 50% Discount Code ✨</p>
                 <div class="flex justify-center">
-                    <img src="{{ asset('asset/img/feeship.jpg') }}"  alt="Free Shipping">
+                    <img src="{{ asset('asset/img/feeship.jpg') }}"  alt="Free Shipping" >
                 </div>
             </div>
 
@@ -295,127 +295,68 @@
                 </ul>
             </div>
 
-            <!-- Warning Section -->
-            <div class="mt-8 px-4 sm:px-6 lg:px-8">
-                <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-center text-gray-800">
-                    Attention! Poor quality hair dye can cause multiple conditions
-                </h2>
+            
+          <!-- Warning Section -->
+  <!-- Warning Section -->
+<div class="mt-8 px-4 sm:px-6 lg:px-8">
+    <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-center text-gray-800">
+        Attention! Poor quality hair dye can cause multiple conditions
+    </h2>
 
-                <div class="mt-4 sm:mt-6 flex justify-center">
-                    <img src="{{ asset('asset/img/one.jpg') }}"  alt="Hair Damage Warning"
-                        class="rounded-lg shadow-md max-w-[90%] sm:max-w-md lg:max-w-lg mx-auto">
-                </div>
+    <div class="mt-4 sm:mt-6 flex justify-center">
+        <img data-src="{{ asset('asset/img/one.jpg') }}" alt="Hair Damage Warning"
+            class="lazy-load rounded-lg shadow-md max-w-[90%] sm:max-w-md lg:max-w-lg mx-auto">
+    </div>
 
-                <p class="text-center text-sm sm:text-base text-gray-600 mt-4">
-                    Choose high-quality products to avoid damage to your hair and scalp.
-                </p>
-            </div>
+    <p class="text-center text-sm sm:text-base text-gray-600 mt-4">
+        Choose high-quality products to avoid damage to your hair and scalp.
+    </p>
+</div>
 
+<!-- How to Use Section -->
+@php
+    $images = [
+        'A.gif', 'two.jpg', 'B.gif', 'three.jpg', 'C.gif', 'four.jpg',
+        'five.jpg', 'D.gif', 'six.jpg', 'E.gif', 'F.gif', 'seven.jpg',
+        'eight.jpg', 'niine.jpg'
+    ];
+@endphp
 
-            <!-- How to Use Section -->
-            <div class=" flex justify-center">
-                <img src="{{asset('asset/img/A.gif')}}"
-                    alt="How to Use Step 1"  class="rounded-lg shadow h-auto w-auto">
+@foreach($images as $image)
+    <div class="flex justify-center">
+        <img data-src="{{ asset('asset/img/' . $image) }}" alt="{{ pathinfo($image, PATHINFO_FILENAME) }}"
+            class="lazy-load rounded-lg shadow h-auto w-auto">
+    </div>
+@endforeach
 
-            </div>
+<div class="text-center mt-6 text-gray-800 font-semibold">
+    3-in-1 Magic: Say goodbye to multiple products! Magical combines shampooing, conditioning, and hair dyeing in one easy step.
+</div>
 
-            {{-- ugb --}}
-            <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/two.jpg') }}" alt="How to Use Step 1"
-                     class="rounded-lg shadow">
+<!-- Lazy Loading Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const lazyImages = document.querySelectorAll(".lazy-load");
 
-            </div>
+        const lazyLoad = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src; // Set src from data-src
+                    img.removeAttribute("data-src");
+                    observer.unobserve(img);
+                }
+            });
+        };
 
-            <!-- How to Use Section -->
-            <div class=" flex justify-center">
-                <img src="{{asset('asset/img/B.gif')}}"
-                    alt="How to Use Step 1"  class="rounded-lg shadow h-auto w-auto">
+        const observer = new IntersectionObserver(lazyLoad, {
+            root: null,
+            threshold: 0.1
+        });
 
-            </div>
-
-            {{-- ugb --}}
-            <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/three.jpg') }}"  alt="How to Use Step 1"
-                    class="rounded-lg shadow">
-
-            </div>
-            <!-- How to Use Section -->
-            <div class=" flex justify-center">
-                <img src="{{asset('asset/img/C.gif')}}"
-                    alt="How to Use Step 1"  class="rounded-lg shadow h-auto w-auto">
-
-            </div>
-
-            {{-- ugb --}}
-            <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/four.jpg') }}"  alt="How to Use Step 1"
-                    class="rounded-lg shadow">
-
-            </div>
-            <div>
-                3-in-1 Magic: Say goodbye to multiple products! Magical combines shampooing, conditioning, and hair
-                dyeing in one easy step.
-            </div>
-
-            {{-- ugb --}}
-            <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/five.jpg') }}"  alt="How to Use Step 1"
-                    class="rounded-lg shadow">
-
-            </div>
-            <!-- How to Use Section -->
-            <div class=" flex justify-center">
-                <img src="{{asset('asset/img/D.gif')}}"
-                    alt="How to Use Step 1"  class="rounded-lg shadow h-auto w-auto">
-
-            </div>
-
-
-
-            {{-- ugb --}}
-            <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/six.jpg') }}"  alt="How to Use Step 1"
-                    class="rounded-lg shadow">
-
-            </div>
-            <!-- How to Use Section -->
-            <div class=" flex justify-center">
-                <img src="{{asset('asset/img/E.gif')}}"
-                    alt="How to Use Step 1"  class="rounded-lg shadow h-auto w-auto">
-
-            </div>
-
-
-            {{-- ugb --}}
-            {{-- <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/hair9.avif') }}" alt="How to Use Step 1" class="rounded-lg shadow">
-
-            </div> --}}
-            <!-- How to Use Section -->
-            <div class=" flex justify-center">
-                <img src="{{asset('asset/img/F.gif')}}"
-                    alt="How to Use Step 1"  class="rounded-lg shadow h-auto w-auto">
-
-            </div>
-
-            {{-- ujg --}}
-            <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/seven.jpg') }}"  alt="How to Use Step 1"
-                    class="rounded-lg shadow">
-
-            </div>
-            {{-- 6fr8 --}}
-            <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/eight.jpg') }}"  alt="How to Use Step 1"
-                    class="rounded-lg shadow">
-
-            </div>
-            {{-- last img --}}
-            <div class=" flex justify-center">
-                <img src="{{ asset('asset/img/niine.jpg') }}"  alt="How to Use Step 1"
-                    class="rounded-lg shadow">
-
-            </div>
+        lazyImages.forEach(img => observer.observe(img));
+    });
+</script>
 
         </div>
     </div>
@@ -433,7 +374,7 @@
                 <!-- Image -->
                 <div class="w-full md:w-1/3">
                     <img src="{{ asset('asset/img/test3.jpg') }}"  alt="John Doe's Testimonial"
-                        class="rounded-lg w-full h-auto object-cover">
+                        class="rounded-lg w-full h-auto object-cover" >
                 </div>
                 <!-- Text Content -->
                 <div class="w-full md:w-2/3 text-center md:text-left">
@@ -451,7 +392,7 @@
                 <!-- Image -->
                 <div class="w-full md:w-1/3">
                     <img src="{{ asset('asset/img/test2.jpg') }}"  alt="Jane Doe's Testimonial"
-                        class="rounded-lg w-full h-auto object-cover">
+                        class="rounded-lg w-full h-auto object-cover" >
                 </div>
                 <!-- Text Content -->
                 <div class="w-full md:w-2/3 text-center md:text-right">
@@ -471,7 +412,7 @@
                 <!-- Image -->
                 <div class="w-full md:w-1/3">
                     <img src="{{ asset('asset/img/test1.jpg') }}"  alt="Sam Smith's Testimonial"
-                        class="rounded-lg w-full h-auto object-cover">
+                        class="rounded-lg w-full h-auto object-cover" >
                 </div>
                 <!-- Text Content -->
                 <div class="w-full md:w-2/3 text-center md:text-left">

@@ -22,15 +22,15 @@ class OrderRequestValidation extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
+            'name' => 'nullable|string|max:255',
             'email' => 'nullable|email|max:255',
             'mobile_number' => 'required|string|min:10|max:15',
-            'house_village_name' => 'required|string|max:255',
-            'area_landmark' => 'required|string|max:255',
-            'state' => 'required|string|max:255',
-            'city' => 'required|string|max:255',
-            'pin_code' => 'required|string|min:6|max:6',  // Assuming pin code is a 6-digit number
-            'color' => 'required|in:black,brown',
+            'house_village_name' => 'nullable|string|max:255',
+            'area_landmark' => 'nullable|string|max:255',
+            'state' => 'nullable|string|max:255',
+            'city' => 'nullable|string|max:255',
+            'pin_code' => 'nullable|string|min:6|max:6',  // Assuming pin code is a 6-digit number
+            'color' => 'nullable|in:black,brown',
         ];
     }
 

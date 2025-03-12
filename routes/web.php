@@ -15,8 +15,14 @@ use App\Http\Controllers\OrderRequestController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\VisitorController;
 
+use App\Http\Controllers\PhonePeController;
 
+Route::get('/phonepe/pay', function () {
+    return view('phonepe.form');
+})->name('phonepe.form');
 
+Route::post('/phonepe/initiate', [PhonePeController::class, 'initiatePayment'])->name('phonepe.initiate');
+Route::post('/phonepe/callback', [PhonePeController::class, 'handleCallback'])->name('phonepe.callback');// 
 Route::get('visitors/index', [VisitorController::class, 'index'])->name('visitors.index')->middleware('auth');
 
 

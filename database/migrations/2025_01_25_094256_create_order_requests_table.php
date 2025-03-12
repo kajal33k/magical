@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('order_requests', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('email')->nullable();
             $table->string('mobile_number');
-            $table->string('house_village_name');
-            $table->string('area_landmark');
-            $table->string('state');
-            $table->string('city');
-            $table->string('pin_code');
+            $table->string('house_village_name')->nullable();
+            $table->string('area_landmark')->nullable();
+            $table->string('state')->nullable();
+            $table->string('city')->nullable();
+            $table->string('pin_code')->nullable();
             $table->enum('color',['black','brown'])->default('black');
 
             $table->timestamps();

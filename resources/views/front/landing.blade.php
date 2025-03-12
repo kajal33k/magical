@@ -758,7 +758,7 @@
 
             <!-- Modal Icon Image -->
             <div class="mt-6">
-                <img src="{{ asset('asset/img/pop.webp') }}"  alt="Order Confirmation"
+                <img src="{{ asset('asset/img/feeship.jpg') }}"  alt="Order Confirmation"
                     class="rounded-lg shadow-xl w-full">
             </div>
         </div>

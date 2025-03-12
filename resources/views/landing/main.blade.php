@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Magical Brands</title>
+    <title>Magical Brands </title>
 
     {{-- icons
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" /> --}}
@@ -21,8 +21,8 @@
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"> --}}
     <link rel="stylesheet" href="{{ asset('asset/css/swiper.css') }}">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
-
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+ --}}
 
   
 </head>
@@ -41,7 +41,7 @@
     {{-- swiper --}}
     <script src="{{ asset('asset/js/swiper.js') }}"></script>
       <!-- Meta Pixel Code -->
-      <script>
+      {{-- <script>
         ! function(f, b, e, v, n, t, s) {
             if (f.fbq) return;
             n = f.fbq = function() {
@@ -66,7 +66,7 @@
     <noscript>
         <img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=1258237308597358&ev=PageView&noscript=1" />
-        </noscript>
+        </noscript> --}}
     <!-- End Meta Pixel Code -->
 </body>
 
